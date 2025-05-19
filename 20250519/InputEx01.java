@@ -13,14 +13,13 @@ public class InputEx01 {
 	try {
 		//아스키 코드 값 입력 받아서 처리하는 명령어
 		
-		
 		System.out.print("문자 입력:");
-		int i = System.in.read();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+		int i = System.in.read();
 		System.out.println();
 		System.out.println("ASCII 코드 값:" +i);
 		
 	} catch(IOException e) {
 		e.printStackTrace(); //(*error가 발생하면 이것을 출력해라)
-	}
 }
+	}
 }
