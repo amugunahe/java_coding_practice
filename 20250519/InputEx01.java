@@ -5,7 +5,6 @@ import java.io.*; //클래스를 가져다 쓰겠다
 public class InputEx01 {
 
 	public static void main(String[] args) throws IOException {
-		
 	/*	예외 전가: 실행할때 실행 메소드가 알아서 처리하게끔 위임 
 	(*에러가 발생했다면 알아서 처리하도록 시키는 것)
 	throws -> 예외 전가 메소드 가로 뒤에 처리해야함
