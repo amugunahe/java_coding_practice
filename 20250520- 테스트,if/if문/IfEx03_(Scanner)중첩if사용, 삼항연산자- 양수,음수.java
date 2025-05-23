@@ -5,7 +5,7 @@ package com.condition;
  *   판정하는 프로그램을 구현하시오. 
  *  
  *  단, scanner 클래스로 
- *  또한 조건 삼항연산자도구현하시오.
+ *  또한 조건 삼항연산자도 구현하시오.
  */
 import java.util.*;
 
@@ -15,7 +15,7 @@ public class IfEx03 {
 		
 		Scanner sc = new Scanner(System.in);  
 									    /*int n;
-		                                  String str;
+		           String str;
 		                                  System.out.print("정수 입력: ");
 		                                  n= sc.nextInt(); */
 		int userInput= sc.nextInt(); 
