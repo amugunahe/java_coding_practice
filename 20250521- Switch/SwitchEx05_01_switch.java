@@ -39,10 +39,10 @@ public class SwitchEx05_01_switch {
 		System.out.println(com);
 
 		switch(user-com) {
-		case 2: case-2:
+		case 1: case-2:
 			System.out.println("사용자가 이겼습니다");
 		break;
-		case 1: case-1: 
+		case 2: case-1: 
 			System.out.println("컴퓨터가 이겼습니다");
 		break;
 		case 0:
