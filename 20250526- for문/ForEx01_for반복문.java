@@ -1,4 +1,4 @@
-package com.roop;
+package com.loop;
 
 /*
  * 반복문 형식

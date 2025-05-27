@@ -1,4 +1,4 @@
-package com.roop;
+package com.loop;
 
 /*
  * 문] 1~100까지의 수중 전체 합계, 홀수의 합, 짝수의 합을 구하는 프로그램을 구현하시오.

@@ -48,7 +48,7 @@ public class IfEx09 {
 			c=imsi;*/
 			
 			a= a^c;
-			c= c^a;
+			b= c^a;
 			a= a^c;
 		}
 		if (b>c) {
@@ -62,7 +62,8 @@ public class IfEx09 {
 		}
 		//결과 출력
 		System.out.println("결과:" +a + " "+b+ " "+ c);
-		}	
+		}
+	
 }		
 
 	

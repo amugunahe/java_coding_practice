@@ -1,4 +1,4 @@
-package com.roop;
+package com.loop;
 
 /*
  * 문] 1~10까지의 합계를 구하는 프로그램을 구현하시오.

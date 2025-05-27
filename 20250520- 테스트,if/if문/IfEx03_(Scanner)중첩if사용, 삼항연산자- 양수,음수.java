@@ -1,11 +1,11 @@
 package com.condition;
 
-/* 문] 중첩 if를 사용 
+/* 문] 중첩 if를 사용  
  *   사용자로부터 임의의 정수를 입력받아 입력받은 정수가 양수인지, 음수인지, 0인지를 
  *   판정하는 프로그램을 구현하시오. 
  *  
  *  단, scanner 클래스로 
- *  또한 조건 삼항연산자도 구현하시오.
+ *  또한 조건 삼항연산자도구현하시오.
  */
 import java.util.*;
 
@@ -15,7 +15,7 @@ public class IfEx03 {
 		
 		Scanner sc = new Scanner(System.in);  
 									    /*int n;
-		           String str;
+		                                  String str;
 		                                  System.out.print("정수 입력: ");
 		                                  n= sc.nextInt(); */
 		int userInput= sc.nextInt(); 

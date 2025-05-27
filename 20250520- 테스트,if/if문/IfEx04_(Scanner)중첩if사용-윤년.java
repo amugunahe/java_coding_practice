@@ -18,15 +18,19 @@ public class IfEx04 {
 		int n;
 		n = sc.nextInt();
 		
-		/*
-		 * if(n % 4 == 0) { if(n % 100 != 0) {// System.out.println(n+ "은 윤년 입니다."); }
-		 * else { if(n % 400 == 0) { System.out.println(n + "은 윤년입니다."); } else {
-		 * System.out.println(n+ "은 평년입니다."); }
-		 * 
-		 * }
-		 * 
-		 * } else{ System.out.println(n + "은 평년 입니다."); }
+		/* 	if(n % 4 == 0) { 
+		  		if(n % 100 != 0) { 
+		 			System.out.println(n+ "은 윤년 입니다."); 
+		 	} else { 
+		          if(n % 400 == 0) { 
+		         	System.out.println(n + "은 윤년입니다."); } 
+		         else {
+		         	System.out.println(n+ "은 평년입니다."); }
+		 			} 
+		 	 				else{ 
+		  System.out.println(n + "은 평년 입니다."); }
 		 */
+		
 	if(n%4 == 0 && n%100 != 0) {
 		System.out.println(n+ "는 윤년입니다.");
 	}else {
