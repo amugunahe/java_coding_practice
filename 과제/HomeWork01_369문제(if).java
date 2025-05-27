@@ -50,11 +50,42 @@ public class HomeWork01 {
 
 	}
 /*
- * 답안]
- * 
- * 
- * 
- * 
- * 
+  답안]
+ 	int n, cnt=0;
+ 	int a,b;  //a는 10의자리 b는 1의자리 
+ 	
+  	Scanner sc = new Scanner(System.in);
+ 		System.out.printt("1~99 사이의 정수: ");
+		n=sc.nextInt();
+		
+ 	
+ 	//1~99까지의 정수 범위
+ 	if(n>=1&& n<=99){
+ 
+ 	a= n/10;   //10의 자리 
+ 	b= n%10;  // 1의 자리 
+ 
+ //십의 자리 정수에 3,6,9 중 하나가 있는 경우 cnt를 증가시킴
+  	if(a !=0 && a %3 ==0){
+  	cnt++;
+  }
+ //일의 자리 정수에 3,6,9 중 하나가 있는 경우 cnt를 증가시킴 
+ 	if (b !=0 && b%3==0){
+ 	cnt++;
+ 	}
+ 	
+ 	if (cnt ==2) 
+ 		System.out.println("박수 짝짝");
+ 	else if (cnt ==1)
+ 		System.out.println("박수 짝");
+ 	else if (cnt ==0)
+ 		System.out.println("박수 없음");
+  	}else {
+  	System.out.println("숫자의 범위를 벗어났습니다.");
+  	return;
+  	}
+ }
+  
+  
  */
 
