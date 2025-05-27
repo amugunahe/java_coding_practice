@@ -10,14 +10,12 @@ import java.io.*;
  *	 String name= br.readLine();
  * */
 public class InputEx04 {
-
 	public static void main(String[] arg) throws IOException {
 		
 		String name;
 		String age;
 		String address;
 		String tel;
-		
 		
 		//객체생성
 		/*
@@ -36,7 +34,7 @@ public class InputEx04 {
 		tel=br.readLine();
 		//출력처리
 		
-		System.out.println("나의 이름은"+ name+ "이고\n, 나이는"+ age+"세, 주소는" + address+"이며\n 전번은"+ tel+"입니다");
-		
+		System.out.println("나의 이름은"+ name+ "이고\n, 나이는"+ age+"세, 주소는" + address+
+				"이며\n 전번은"+ tel+"입니다");
 	}
 }
