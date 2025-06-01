@@ -36,11 +36,11 @@ public class IfEx03 {
 	 str= (n<0)? "음수":((n==0)? "0": "양수");*/
 	
 	/* if(n ==0)
-	   str = "영"
+	   str = "영";
 	  else if(n<0)
-	   str= "음수"
+	   str= "음수";
 	  else 
-	   str= "양수"
+	   str= "양수";
 	   System.out.println(n +"==>" + str);
 	 */
 }
