@@ -15,12 +15,12 @@ package com.ioex;
  * 
  *  문자열을 숫자로
  *  String str = br.readLine();
- *  byte b= Byte.parseByte(str);
+ *  byte b = Byte.parseByte(str);
  *  short s = Short.parseShort(str);
  *  int i = Integer.parseInt(str);
  *  long l = Long.parseLong(str);
- *  float f= Float.parseFloat(str);
- *  double d= Double.parseDouble(str);
+ *  float f = Float.parseFloat(str);
+ *  double d = Double.parseDouble(str);
  * */
 import java.io.*;
 
@@ -39,13 +39,13 @@ public class InputEx05 {
 	eng = Integer.parseInt(br.readLine());
 
 	System.out.print("수학 점수:");
-	mat= Integer.parseInt(br.readLine());
+	mat = Integer.parseInt(br.readLine());
 	
-	int sum= kor+ eng+ mat;
-	float avg= sum/(float)3.0;
+	int sum = kor + eng + mat;
+	float avg = sum / (float)3.0;
 	
-	System.out.println("총점:"+ sum);
-	System.out.printf("평균:%.2f\n", avg);
+	System.out.println("총점: "+ sum);
+	System.out.printf("평균: %.2f\n", avg);
 	float f;
 	System.out.print("실수 입력:");
 	f= Float.parseFloat(br.readLine());
