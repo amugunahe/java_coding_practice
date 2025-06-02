@@ -25,7 +25,7 @@ public class IfEx02_01 {
 		
 		
 		//홀수인지 짝수인지를 판정
-		if(n%2 == 0) {
+		if(n % 2 == 0) {
 			str= "짝수"; 
 		}else {
 			str= "홀수";
