@@ -11,10 +11,10 @@ public class Test01 {
 	
 		int gender = 0;
 		
-		System.out.print("성별 입력(1:남성, 2:여성):");
+		System.out.print("성별 입력(1:남성, 2:여성): ");
 		gender = System.in.read()-48;
 		
-		String str = (gender == 1? "남성":"여성");
+		String str = (gender == 1? "남성" : "여성");
 		//System.out.println("당신은 " + (gender == 1? "남성" : "여성") + "입니다.");
 		System.out.println("당신은 " + str + "입니다.");
 }
