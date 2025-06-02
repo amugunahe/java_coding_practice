@@ -27,7 +27,7 @@ public class IfEx11 {
 		//System.out.println((char)(n-32));
 
 		
-		//입력 받은 값이 대문자라면( 정수로 했을 경우)?
+		//입력 받은 값이 대문자라면? (정수로 했을 경우)
 		if(n >= 65 && n <= 90) {
 			n += 32;  //n값을 32 증가시켜라
 			System.out.println((char)(n));	
