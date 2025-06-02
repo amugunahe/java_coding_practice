@@ -19,22 +19,27 @@ public class InputEx04 {
 		
 		//객체생성
 		/*
-		 * InputStreamReader is = new InputStreamReader(System.in); BufferedReader br =
-		 * new BufferedReader(is);
+		 * InputStreamReader is = new InputStreamReader(System.in); 
+   		 * BufferedReader br = new BufferedReader(is);
 		 */
+		
 		//입력처리
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
 		System.out.print("이름 입력:");
-		name= br.readLine();
+		name = br.readLine();
+		
 		System.out.print("나이 입력:");
-		age=br.readLine();
+		age = br.readLine();
+		
 		System.out.print("주소 입력:");
-		address=br.readLine();
+		address = br.readLine();
+		
 		System.out.print("전번 입력:");
-		tel=br.readLine();
+		tel = br.readLine();
 		//출력처리
 		
-		System.out.println("나의 이름은"+ name+ "이고\n, 나이는"+ age+"세, 주소는" + address+
-				"이며\n 전번은"+ tel+"입니다");
+		System.out.println("나의 이름은 "+ name + "이고\n, 나이는 "+ age + "세, 주소는 " + address +
+				"이며\n 전번은 " + tel + "입니다");
 	}
 }
