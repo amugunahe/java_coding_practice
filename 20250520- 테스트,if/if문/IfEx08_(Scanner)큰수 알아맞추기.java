@@ -11,7 +11,7 @@ public class IfEx08 {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	int a, b, max=0;
+	int a, b, max = 0;
 	
 	System.out.print("첫번째 정수: ");
 	a = sc.nextInt();
