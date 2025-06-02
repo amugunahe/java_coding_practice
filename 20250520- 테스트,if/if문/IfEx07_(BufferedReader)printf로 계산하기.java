@@ -9,7 +9,7 @@ public class IfEx07 {
 		char c;
 		
 		System.out.print("첫번째 정수 입력: ");
-        a= Integer.parseInt(br.readLine());
+       		a= Integer.parseInt(br.readLine());
 		
 		System.out.print("연산자 입력:");
 		c= (char)System.in.read();
