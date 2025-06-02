@@ -11,12 +11,13 @@ public class OperEx04 {
 		boolean a;
 		boolean b;
 		
-		if((a= 4>3)|(b= 5>7)) { 
-	//a= true, b=false => true
-		System.out.println("a:"+a);
-		System.out.println("b:"+b);
+		if((a = 4 > 3)|(b = 5 > 7)) { 
+	        //a = true, b = false => true
+		System.out.println("a: " + a);
+		System.out.println("b: " + b);
 		}
+		
 		// 에러 원인: 초기화 되지 않음
-		// a= true, b= false => true
+		// a = true, b = false => true
 	}		
 }
