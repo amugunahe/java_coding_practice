@@ -17,7 +17,7 @@ public class IfEx03 {
 						 /*int userInput;
 		                                  String str;
 		                                  System.out.print("정수 입력: ");
-		                                  n= sc.nextInt(); */
+		                                  userInput= sc.nextInt(); */
 		System.out.print("정수를 입력: ");
 		int userInput= sc.nextInt(); 
 		String str;
