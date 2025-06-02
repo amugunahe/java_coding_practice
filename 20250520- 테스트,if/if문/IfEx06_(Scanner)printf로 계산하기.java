@@ -27,14 +27,14 @@ public class IfEx06 {
 		System.out.println("두번째 정수 입력: ");
 		b= sc.nextInt();
 		
-		if(c== '+') {
-			System.out.printf("%d +%d= %d",a,b, (a+b));
+		if(c == '+') {
+			System.out.printf("%d + %d= %d", a, b, (a + b));
 		} else if(c == '-') {
-			System.out.printf("%d - %d= %d", a, b, (a=b));
+			System.out.printf("%d - %d= %d", a, b, (a - b));
 		} else if(c == '*') {
-			System.out.printf("%d * %d= %d", a, b, (a*b));
+			System.out.printf("%d * %d= %d", a, b, (a * b));
 		} else if(c == '/') {
-			System.out.printf("%d / %d= %d", a, b, (a/b));
+			System.out.printf("%d / %d= %d", a, b, (a / b));
 		}
 	}
 }
