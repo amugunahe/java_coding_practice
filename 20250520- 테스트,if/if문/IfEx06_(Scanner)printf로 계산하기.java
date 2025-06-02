@@ -19,41 +19,24 @@ public class IfEx06 {
 		char c;
 		
 		System.out.print("첫번째 정수 입력: ");
-		a= sc.nextInt();
+		a = sc.nextInt();
 		
-		System.out.print("연산자 입력:");
-		c= sc.next().charAt(0);
+		System.out.print("연산자 입력: ");
+		c = sc.next().charAt(0);
 		
 		System.out.println("두번째 정수 입력: ");
-		b= sc.nextInt();
+		b = sc.nextInt();
 		
-		if(c== '+') {
-			System.out.printf("%d +%d= %d",a,b, (a+b));
+		if(c == '+') {
+			System.out.printf("%d + %d= %d", a, b, (a + b));
 		} else if(c == '-') {
-			System.out.printf("%d - %d= %d", a, b, (a=b));
+			System.out.printf("%d - %d= %d", a, b, (a - b));
 		} else if(c == '*') {
-			System.out.printf("%d * %d= %d", a, b, (a*b));
+			System.out.printf("%d * %d= %d", a, b, (a * b));
 		} else if(c == '/') {
-			System.out.printf("%d / %d= %d", a, b, (a/b));
+			System.out.printf("%d / %d= %d", a, b, (a / b));
 		}
 	}
 }
-
-		
-		/* 내가 쓴 코드 
-		  System.out.println("첫번째 정수 입력: ");
-			a = sc.nextInt();
-			if (a>=0)
-			System.out.println("첫번째 정수는 :" + a+ "입니다");
-			else 
-			System.out.println("정수가 아닙니다.");
-			System.out.println("연산자 + 를 입력하세요" );
-			c= sc.next().charAt(0);
-			System.out.println("두번째 정수 입력: ");
-			b = sc.nextInt();
-			System.out.println("첫번째와 두번째 정수 합은: " + (a + b) + "입니다");
-		}
-	}
- */
 		
 

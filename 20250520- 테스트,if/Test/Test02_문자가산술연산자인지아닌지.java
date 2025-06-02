@@ -12,18 +12,18 @@ public class Test02 {
 		char yon;
 		boolean bool = false;
 		
-		System.out.print("산술 연산자 입력(+, -, *, /, %):");
-		yon=(char)System.in.read();
+		System.out.print("산술 연산자 입력(+, -, *, /, %): ");
+		yon = (char)System.in.read();
 		
-		bool= yon == '+'|| yon == '-' || yon =='*' || yon== '/'
-			|| yon == '%'? true:false; 	
+		bool = yon == '+' || yon == '-' || yon == '*' || yon == '/'
+			|| yon == '%'? true : false; 	
 		
-		/* if(yon == '+'|| yon == '-' || yon =='*' || yon== '/' || yon == '%')
+		/* if(yon == '+' || yon == '-' || yon == '*' || yon == '/' || yon == '%')
 		 * bool true;
 		 * else
-		 * bool false;
-		 * 
-		 */		System.out.print(bool+"는 산술연산자"+ (bool? "입": "가 아닙")+"니다");
+		 * bool false; 
+		 */
+		System.out.print(bool + "는 산술연산자" + (bool? "입" : "가 아닙") + "니다");
 
 	}
 }

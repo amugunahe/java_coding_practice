@@ -14,13 +14,14 @@ public class IfEx05 {
 	Scanner sc = new Scanner(System.in);
 		int a;  //임의의 정수를 저장할 변수
 		System.out.print("정수 입력:");
-		a= sc.nextInt();
-		if(a%2==0 && a%3==0)
+		a = sc.nextInt();
+		
+		if(a % 2 == 0 && a % 3 == 0)
 			System.out.println("2와 3의 배수입니다.");
-		 else if (a % 2==0) 
+		 else if (a % 2 == 0) 
 			System.out.println("2의 배수입니다");
 			
-			else if (a%3==0)
+			else if (a % 3 == 0)
 				System.out.println("3의 배수입니다.");
 			else 
 				System.out.println("2와 3의 배수가 아닙니다.");

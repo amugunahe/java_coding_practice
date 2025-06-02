@@ -14,23 +14,26 @@ public class IfEx11 {
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
 		//변수 선언
 		char ch;
 		int n;
 		
 		//연산 및 처리작업
 		System.out.print("알파벳 입력: ");
-		//문자로 했을 경우: ch= (char)System.in.read();
-		n= System.in.read();
-		//System.out.println((char)(n-32));
 		
-		//입력 받은 값이 대문자라면( 정수로 했을 경우) ?
-		if(n>=65 && n<=90) {
-			n +=32;  //n값을 32 증가시켜라
+		//문자로 했을 경우: ch = (char)System.in.read();
+		n = System.in.read();
+		//System.out.println((char)(n-32));
+
+		
+		//입력 받은 값이 대문자라면? (정수로 했을 경우)
+		if(n >= 65 && n <= 90) {
+			n += 32;  //n값을 32 증가시켜라
 			System.out.println((char)(n));	
 			
-		}else if(n >=97 && n<=122) { //입력값이 소문자라면
-			n-=32;  //n값을 32 감소시켜라
+		}else if(n >=97 && n <= 122) { //입력값이 소문자라면
+			n -= 32;  //n값을 32 감소시켜라
 			System.out.println((char)(n));
 		}else {
 			System.out.println("입력 오류 입니다.");
@@ -38,12 +41,12 @@ public class IfEx11 {
 		
 		
 		/*
-		 * if(ch>='A' && ch<='Z') { 
-		 * ch +=32;   //ch 값을 32 증가시켜라 
+		 * if(ch >= 'A' && ch <= 'Z') { 
+		 * ch += 32;   //ch 값을 32 증가시켜라 
 		 * System.out.println(ch);
 		 * 
-		 * }else if(ch >='a' && ch<='z') { //입력값이 소문자라면 
-		 * ch-=32;   //ch값을 32 감소시켜라
+		 * }else if(ch >= 'a' && ch <= 'z') { //입력값이 소문자라면 
+		 * ch -= 32;   //ch 값을 32 감소시켜라
 		 * System.out.println(ch); }
 		 * else { 
 		 * System.out.println("입력 오류 입니다."); 

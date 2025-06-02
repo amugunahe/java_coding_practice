@@ -25,43 +25,43 @@ public class IfEx09 {
 		Scanner sc = new Scanner(System.in);
 		int a, b, c, imsi;
 		System.out.print("첫번째 정수: ");
-		a= sc.nextInt();
+		a = sc.nextInt();
 		
 		System.out.print("두번째 정수: ");
-		b= sc.nextInt();
+		b = sc.nextInt();
 		
 		System.out.print("세번째 정수: ");
-		c= sc.nextInt();
+		c = sc.nextInt();
 		
-		if(a>b) {
+		if(a > b) {
 			/* imsi=a;
-			a=b;
-			b=imsi; */
+			a = b;
+			b = imsi; */
 			
-			a= a^b;
-			b= b^a;
-			a= b^a;
+			a = a ^ b;
+			b = a ^ b;
+			a = a ^ b;
 		}
-		else if(a>c) {
-		/*	imsi=a;
-			a=c;
-			c=imsi;*/
+		else if(a > c) {
+			/* imsi = a;
+			a = c;
+			c = imsi; */
 			
-			a= a^c;
-			b= c^a;
-			a= a^c;
+			a = a ^ c;
+			c = a ^ c;
+			a = a ^ c;
 		}
-		if (b>c) {
-			/*imsi=b;
-			b=c;
-			c=imsi;*/
+		if(b > c) {
+			/* imsi = b;
+			b = c;
+			c = imsi; */
 			
-			b= b^c;
-			c= c^b;
-			b= b^c;
+			b = b ^ c;
+			c = b ^ c;
+			b = b ^ c;
 		}
 		//결과 출력
-		System.out.println("결과:" +a + " "+b+ " "+ c);
+		System.out.println("결과: " + a + " " + b + " " + c);
 		}
 	
 }		

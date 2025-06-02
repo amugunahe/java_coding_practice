@@ -18,25 +18,25 @@ public class Exam01 {
 		boolean issingle; //boolean single = false;
 		
 		System.out.print("이름: ");
-		name= sc.next();
+		name = sc.next();
 		
 		System.out.print("도시: ");
-		city= sc.next();
+		city = sc.next();
 		
 		System.out.print("나이: ");
-		age= sc.nextInt();
+		age = sc.nextInt();
 		
 		System.out.print("체중: ");
-		weight= sc.nextDouble();
+		weight = sc.nextDouble();
 		
 		System.out.print("독신 (true/false): ");
 		issingle = sc.nextBoolean();
 		
-		System.out.println("이름은 "+ name+ ", 도시는 " + city + " , 나이는 " + age + ", 체중은 "
-		+ weight +", 독신 여부는 "+ issingle + " 입니다." );
+		System.out.println("이름은 " + name + ", 도시는 " + city + " , 나이는 " + age + ", 체중은 "
+		+ weight + ", 독신 여부는 " + issingle + " 입니다." );
 		/*
-		 * System.out.println("나의 이름은 "+ name+"이고 \n 거주지는" + city+ "이며 \n 나이는 "age+ "이고
-		 * \n" + weight+ "kg이고 + "독신 여부는 " + isSingle + " 입니다.");
+		 * System.out.println("나의 이름은 " + name + "이고 \n 거주지는" + city+ "이며 \n 나이는 "age + "이고
+		 * \n" + weight + "kg이고 + "독신 여부는 " + isSingle + " 입니다.");
 		 */	
 	}
 

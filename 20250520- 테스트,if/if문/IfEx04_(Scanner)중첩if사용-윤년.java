@@ -16,6 +16,7 @@ public class IfEx04 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int year;
+		System.out.print("연도 입력: ");
 		year = sc.nextInt();
 		
 		/* 	if(year % 4 == 0) { 
@@ -31,7 +32,7 @@ public class IfEx04 {
 		  System.out.println(year + "은 평년 입니다."); }
 		 */
 		
-	if(year%4 == 0 && year%100 != 0) {
+	if(year % 4 == 0 && year % 100 != 0) {
 		System.out.println(year + "는 윤년입니다.");
 	}else {
 		if(year % 400 == 0) {
@@ -47,13 +48,13 @@ public class IfEx04 {
 
 
 /* if 연산자 
-   if(year % 4 ==0 && year% 100 !=0 || (year % 400 == 0)){
+   if(year % 4 ==0 && year % 100 !=0 || (year % 400 == 0)){
  	System.out.println(year+ " ==> 윤년");
  	}else {
 	System.out.println(year + " ==> 평년");
 
 삼항 연산자
-str = ((year %4 == 0 && year % 100 !=0)||(year % 400 == 0))? "윤년":"평년"
+str = ((year % 4 == 0 && year % 100 !=0)||(year % 400 == 0))? "윤년":"평년"
 
 
 */
