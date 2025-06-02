@@ -51,7 +51,7 @@ public class IfEx09 {
 			c = a ^ c;
 			a = a ^ c;
 		}
-		if (b > c) {
+		if(b > c) {
 			/* imsi = b;
 			b = c;
 			c = imsi; */
