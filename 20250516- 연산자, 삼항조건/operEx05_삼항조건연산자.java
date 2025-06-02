@@ -10,9 +10,9 @@ public class OperEx05 {
 		int a = 20, b = 30, max;
 		max = a > b ? ++a : ++b;
 
-		System.out.println("max:" + max);
-		System.out.println("a:" + a);
-		System.out.println("b:" + b);
+		System.out.println("max: " + max);
+		System.out.println("a: " + a);
+		System.out.println("b: " + b);
 
 	}
 
