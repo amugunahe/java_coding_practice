@@ -15,29 +15,29 @@ public class IfEx04 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int n;
-		n = sc.nextInt();
+		int year;
+		year = sc.nextInt();
 		
-		/* 	if(n % 4 == 0) { 
-		  		if(n % 100 != 0) { 
-		 			System.out.println(n+ "은 윤년 입니다."); 
+		/* 	if(year % 4 == 0) { 
+		  		if(year % 100 != 0) { 
+		 			System.out.println(year + "은 윤년 입니다."); 
 		 	} else { 
-		          if(n % 400 == 0) { 
-		         	System.out.println(n + "은 윤년입니다."); } 
+		          if(year % 400 == 0) { 
+		         	System.out.println(year + "은 윤년입니다."); } 
 		         else {
-		         	System.out.println(n+ "은 평년입니다."); }
+		         	System.out.println(year + "은 평년입니다."); }
 		 			} 
-		 	 				else{ 
-		  System.out.println(n + "은 평년 입니다."); }
+		 	 else{ 
+		  System.out.println(year + "은 평년 입니다."); }
 		 */
 		
-	if(n%4 == 0 && n%100 != 0) {
-		System.out.println(n+ "는 윤년입니다.");
+	if(year%4 == 0 && year%100 != 0) {
+		System.out.println(year + "는 윤년입니다.");
 	}else {
-		if(n % 400 == 0) {
-			System.out.println(n+ "는 윤년입니다.");
+		if(year % 400 == 0) {
+			System.out.println(year + "는 윤년입니다.");
 		}else {
-			System.out.println(n+ "는 평년입니다.");
+			System.out.println(year + "는 평년입니다.");
 		}
 	}
 }
@@ -47,10 +47,10 @@ public class IfEx04 {
 
 
 /* if 연산자 
-   if(year % 4 ==0 && year% 100 !=0 || (year % 400 == 0){
- 	System.out.println(year+ " ==> " + 윤년);
+   if(year % 4 ==0 && year% 100 !=0 || (year % 400 == 0)){
+ 	System.out.println(year+ " ==> 윤년");
  	}else {
-	System.out.println(year + " ==> " + 평년);
+	System.out.println(year + " ==> 평년");
 
 삼항 연산자
 str = ((year %4 == 0 && year % 100 !=0)||(year % 400 == 0))? "윤년":"평년"
