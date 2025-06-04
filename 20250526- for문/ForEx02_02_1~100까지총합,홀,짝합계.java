@@ -9,7 +9,8 @@ public class ForEx02_02 {
 
 	public static void main(String[] args) {
 		int i, sum = 0;
-		int odd = 0, even = 0; // 홀수의 합, 짝수의 합
+		int odd = 0;   // 홀수의합
+		int even = 0; // 짝수의 합
 
 		for (i = 1; i <= 100; i++) {
 
