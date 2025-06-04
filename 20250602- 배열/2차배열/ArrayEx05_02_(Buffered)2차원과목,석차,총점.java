@@ -12,7 +12,7 @@ public static void main(String[] args) throws IOException {
 
 	int sub[][] = new int[3][subname.length + 2];
 	// 0: 첫번째 사람, 1: 두번째 사람, 2: 세번째 사람
-	// sub[0]:국어점수, sub[1]: 영어점수, sub[2]:수학점수, sub[3]:총점, sub[4]:석차
+	// sub[0]: 국어점수, sub[1]: 영어점수, sub[2]:수학점수, sub[3]:총점, sub[4]:석차
 	
 	float[] avg = new float[3];
 
