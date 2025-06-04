@@ -25,7 +25,6 @@ public class Exam01 {
 		won = sc.nextInt();
 		
 		System.out.printf("%d원은 $ %.2f 입니다", won, (float)won / rate);	
-		
 	}
 
 }
