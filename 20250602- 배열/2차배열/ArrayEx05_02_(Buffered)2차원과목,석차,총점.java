@@ -31,7 +31,7 @@ public static void main(String[] args) throws IOException {
 		} // end for(i)
 			// 평균:
 		avg[k] = sub[k][sub[k].length - 2] / (float) (sub[k].length - 2);
-		sub[k][sub[k].length - 1]=1;
+		sub[k][sub[k].length - 1] = 1;
 
 	} // end for(k)
 
