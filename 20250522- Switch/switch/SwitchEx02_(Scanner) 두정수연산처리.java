@@ -22,32 +22,32 @@ public class SwitchEx02 {
 		char op;
 		
 		System.out.print("첫번째 정수: " );
-		a= sc.nextInt();
+		a = sc.nextInt();
 		
 		System.out.print("연산자 입력: " );
 		op = sc.next().charAt(0);
 		
 		System.out.print("두번째 정수: " );
-		b= sc.nextInt();
+		b = sc.nextInt();
 		
 		switch(op) {
 		case '+':
-			System.out.printf("%d + %d = %d", a+b);
+			System.out.printf("%d + %d = %d", a, b, a + b);
 			break;
 		case '-':
-			System.out.printf("%d - %d = %d", a-b);
+			System.out.printf("%d - %d = %d", a, b, a - b);
 			break;
 		case '*':
-			System.out.printf("%d * %d = %d", a*b);
+			System.out.printf("%d * %d = %d", a, b, a * b);
 			break;
 		case '/':
-			System.out.printf("%d / %d = %d", a/b);
+			System.out.printf("%d / %d = %d", a, b, a / b);
 			break;
 		
 		default:
 			System.out.println("연산자가 아닙니다.");
 			break;
 		}
-		}
+	}
 
 }
