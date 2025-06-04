@@ -22,30 +22,30 @@ double num1, num2;
 char cal;
 
 System.out.print("첫번째 수 입력: ");
-	num1= sc.nextDouble();
+	num1 = sc.nextDouble();
 	
 	System.out.print("연산기호 입력(+, -, *, /): ");
-	cal= sc.next().charAt(0);
+	cal = sc.next().charAt(0);
 	
 	System.out.print("두번째수 입력:");
-	num2= sc.nextDouble();
+	num2 = sc.nextDouble();
 	
 	switch(cal) {
 	case '+':
-		System.out.printf("%f + %f = %f", num1, num2, num1+num2);
+		System.out.printf("%f + %f = %f", num1, num2, num1 + num2);
 		break;
 	case '-':
-		System.out.printf("%f - %f = %f", num1, num2, num1-num2);
+		System.out.printf("%f - %f = %f", num1, num2, num1 - num2);
 		break;
 	case '*':
-		System.out.printf("%f * %f= %f", num1, num2, num1*num2);
+		System.out.printf("%f * %f= %f", num1, num2, num1 * num2);
 		break;
 	case '/':
-		if (num2==0) {
+		if (num2 == 0) {
 			System.out.println("0으로 나눌수 없습니다 ");
 		}
 		else {
-			System.out.printf("%f/ %f = %f", num1, num2,  num1/num2);
+			System.out.printf("%f / %f = %f", num1, num2, num1/num2);
 		}
 		break;
 	default: 
@@ -57,10 +57,10 @@ System.out.print("첫번째 수 입력: ");
 /*
  * 답안] if문 활용
  	
- 	double a, b, res=0;
+ 	double a, b, res = 0;
  	String op;
  	
- Scanner sc= new Scanner(System.in);
+ Scanner sc = new Scanner(System.in);
   	System.out.print("첫번째 정수: ");
     	a = sc.nextDouble();
     
@@ -89,7 +89,7 @@ System.out.print("첫번째 수 입력: ");
  		}else 
  		res = a / b;
  	}else{
- 			System.out.println("연산자가 아닙니다.");
+ 		System.out.println("연산자가 아닙니다.");
  		return;
  	}
  	
@@ -104,7 +104,7 @@ System.out.print("첫번째 수 입력: ");
  		System.out.println("0으로 나눌수 없습니다.");
  		return;
  		}else{ 
- 		res= a / b;
+ 		res = a / b;
  		}
  		break;
  		default: 
