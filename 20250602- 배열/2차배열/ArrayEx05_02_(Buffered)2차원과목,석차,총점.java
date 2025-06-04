@@ -17,7 +17,7 @@ public static void main(String[] args) throws IOException {
 	float[] avg = new float[3];
 
 	for (int k = 0; k < sub.length; k++) {
-		System.out.println(k+1+"번째 사람 ");
+		System.out.println(k + 1 + "번째 사람 ");
 	
 		for (int i = 0; i < sub[k].length - 2; i++) {
 			do {
@@ -31,23 +31,22 @@ public static void main(String[] args) throws IOException {
 		} // end for(i)
 			// 평균:
 		avg[k] = sub[k][sub[k].length - 2] / (float) (sub[k].length - 2);
-		sub[k][sub[k].length-1]=1;
+		sub[k][sub[k].length - 1]=1;
 
 	} // end for(k)
 
 	
-	for(int k = 0;k<sub.length; k++){
-	for(int i =0; i<sub.length; i++) {
-		if(sub[k][sub[k].length - 2]<sub[i][sub[i].length-2]) {
-			sub[k][sub[k].length-1]++;
+	for(int k = 0; k<sub.length; k++){
+	for(int i = 0; i<sub.length; i++) {
+		if(sub[k][sub[k].length - 2]<sub[i][sub[i].length - 2]) {
+			sub[k][sub[k].length - 1]++;
 		}
 	}
 }
 
-	for(
-	int k = 0;k<sub.length;k++){
+	for(int k = 0; k < sub.length; k++){
 		System.out.println(k+1+"번째 사람 ");
-		System.out.println("석차: "+sub[k][sub[k].length-1] + "등");
+		System.out.println("석차: " + sub[k][sub[k].length - 1] + "등");
 		System.out.println("총점: " + sub[k][sub[k].length - 2]);
 		System.out.printf("평균: %.2f%n", avg[k]);
 	}
