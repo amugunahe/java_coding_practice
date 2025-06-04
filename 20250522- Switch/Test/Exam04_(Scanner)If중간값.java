@@ -15,21 +15,21 @@ import java.util.*;
 public class Exam04 {
 
 	public static void main(String[] args) {
-		Scanner sc= new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		int a, b, c;
 		
 		System.out.print("정수 3개 입력");
-		a= sc.nextInt();
-		b= sc.nextInt();
-		c= sc.nextInt();
+		a = sc.nextInt();
+		b = sc.nextInt();
+		c = sc.nextInt();
 		
 		int median = a;  //초기화
-		if ((a>= b && a<=c)|| (a>=c && a<=b))
-			median= a;
-		else if ((b>= a && b<=c)||(b>=c && b<=a))
-			median= b;
+		if ((a >= b && a <= c)|| (a >=c && a <= b))
+			median = a;
+		else if ((b >= a && b<=c)||(b >= c && b <= a))
+			median = b;
 		else
-			median= c;
+			median = c;
 		
 		System.out.println("중간값: " + median);
 	}
