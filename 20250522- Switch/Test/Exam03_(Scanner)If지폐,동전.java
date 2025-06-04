@@ -37,46 +37,44 @@ public class Exam03 {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	
-	//돈의 종류 상수화 시킴
+		//돈의 종류 상수화 시킴
 		int money, result;
 		
 		System.out.print("금액을 입력하세요: ");
 		money = sc.nextInt();
 		
-		result = money / omanwon; //오만원권 개수
-		money = money % omanwon;  //돈이 수정
+		result = money / omanwon; // 오만원권 개수
+		money = money % omanwon;  // 돈이 수정
 		if(result > 0)
 			System.out.println("오만원권: " + result + "매 입니다.");
 		
-		result = money / manwon; //만원권 개수
-		money = money % manwon;  //돈이 수정
+		result = money / manwon; // 만원권 개수
+		money = money % manwon;  // 돈이 수정
 		if(result > 0)
 			System.out.println("만원권: " + result + "매 입니다.");
 		
-		result = money / ochunwon; //오천원권 개수
-		money = money % ochunwon;  //돈이 수정
+		result = money / ochunwon; // 오천원권 개수
+		money = money % ochunwon;  // 돈이 수정
 		if(result > 0)
 			System.out.println("오천원권: " + result + "매 입니다.");
-
-
 		
-		result = money / chunwon; //천원권 개수
-		money = money % chunwon;  //돈이 수정
+		result = money / chunwon; // 천원권 개수
+		money = money % chunwon;  // 돈이 수정
 		if(result > 0)
 			System.out.println("천원권: " + result + "매 입니다.");
 	
-		result = money / obekwon; //500원 개수
-		money = money % obekwon;  //돈이 수정
+		result = money / obekwon; // 500원 개수
+		money = money % obekwon;  // 돈이 수정
 		if(result > 0)
 			System.out.println("500원: " + result + "개 입니다.");
 		
-		result = money/bekwon; //100원 개수
-		money = money % bekwon;  //돈이 수정
+		result = money/bekwon; // 100원 개수
+		money = money % bekwon;  // 돈이 수정
 		if(result > 0)
 			System.out.println("100원: " + result + "개 입니다.");
 		
-		result = money / osipwon; //50원 개수
-		money = money % osipwon;  //돈이 수정
+		result = money / osipwon; // 50원 개수
+		money = money % osipwon;  // 돈이 수정
 		if(result > 0)
 			System.out.println("50원: " + result + "개 입니다.");
 		
@@ -85,12 +83,10 @@ public class Exam03 {
 		if(result > 0)
 			System.out.println("10원: " + result + "개 입니다.");
 		
-		result = money / ilwon; //1원 개수
-		money = money % ilwon;  //돈이 수정
+		result = money / ilwon; // 1원 개수
+		money = money % ilwon;  // 돈이 수정
 		if(result > 0)
 			System.out.println("1원: " + result + "개 입니다.");
-	
-		
 	}
 
 }
