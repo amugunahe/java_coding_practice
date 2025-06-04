@@ -36,8 +36,8 @@ public static void main(String[] args) throws IOException {
 	} // end for(k)
 
 	
-	for(int k = 0; k<sub.length; k++){
-	for(int i = 0; i<sub.length; i++) {
+	for(int k = 0; k < sub.length; k++){
+	for(int i = 0; i < sub.length; i++) {
 		if(sub[k][sub[k].length - 2]<sub[i][sub[i].length - 2]) {
 			sub[k][sub[k].length - 1]++;
 		}
