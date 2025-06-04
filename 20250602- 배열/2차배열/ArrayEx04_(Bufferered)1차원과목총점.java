@@ -16,7 +16,7 @@ public class ArrayEx04 {
 		String[] subname = { "국어점수", "영어점수", "수학점수" };
 
 		int sub[] = new int[subname.length + 1];
-		// sub[0]:국어점수, sub[1]: 영어점수, sub[2]:수학점수, sub[3]:총점
+		// sub[0]: 국어점수, sub[1]: 영어점수, sub[2]:수학점수, sub[3]:총점
 		float avg = 0.0f;
 
 		for (int i = 0; i < sub.length - 1; i++) {
