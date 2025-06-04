@@ -60,34 +60,34 @@ System.out.print("첫번째 수 입력: ");
  	double a, b, res=0;
  	String op;
  	
- 	Scanner sc= new Scanner(System.in);
+ Scanner sc= new Scanner(System.in);
   	System.out.print("첫번째 정수: ");
-    a= sc.nextDouble();
+    	a = sc.nextDouble();
     
     System.out.print("연산자 입력: ");
- 	op= sc.next();
+ 	op = sc.next();
     
     System.out.print("두번째 정수: ");
- 	b= sc.nexDouble();
+ 	b = sc.nexDouble();
  	
  	if(op.equals("+")){     //String 이용할 때 사용
- 	res= a+b;
+ 	res = a + b;
  	} else if(op.equals("-")){
- 	res= a-b;
+ 	res = a - b;
  	} else if(op.equals("*")){
- 	res= a*b;
+ 	res = a * b;
  	} else if (op.equals("/"){
- 		if(b==0){
+ 		if(b == 0){
  		System.out.println("0으로 나눌수 없습니다.");
  		return;
  		}else 
- 		res=a/b;
+ 		res = a / b;
  	}else{
- 			if(b==0){
+ 			if(b == 0){
  		System.out.println("연산자가 아닙니다.");
  		return;
  		}else 
- 		res=a/b;
+ 		res = a / b;
  	}else{
  			System.out.println("연산자가 아닙니다.");
  		return;
@@ -95,16 +95,16 @@ System.out.print("첫번째 수 입력: ");
  	
   답안] switch문 활용
   switch(op)
-  case"+":;
-  	res= a+b;
+  case "+":
+  	res = a + b;
   	break;
   	
   case "/":
-  	if(b==0){
+  	if(b == 0){
  		System.out.println("0으로 나눌수 없습니다.");
  		return;
  		}else{ 
- 		res=a/b;
+ 		res= a / b;
  		}
  		break;
  		default: 
