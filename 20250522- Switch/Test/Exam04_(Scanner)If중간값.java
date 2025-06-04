@@ -24,9 +24,9 @@ public class Exam04 {
 		c = sc.nextInt();
 		
 		int median = a;  //초기화
-		if ((a >= b && a <= c)|| (a >=c && a <= b))
+		if ((a >= b && a <= c) || (a >=c && a <= b))
 			median = a;
-		else if ((b >= a && b<=c)||(b >= c && b <= a))
+		else if ((b >= a && b<=c) || (b >= c && b <= a))
 			median = b;
 		else
 			median = c;
