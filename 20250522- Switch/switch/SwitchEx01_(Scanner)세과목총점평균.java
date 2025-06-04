@@ -41,44 +41,46 @@ public class SwitchEx01 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int kor, eng, mat, sum= 0;
-		float avg= 0.0f;
-		char grade =' ';
+		int kor, eng, mat, sum = 0;
+		float avg = 0.0f;
+		char grade = ' ';
 		
 		System.out.print("국어 입력: ");
-		kor= sc.nextInt();
+		kor = sc.nextInt();
 		
 		System.out.print("영어 입력: ");
-		eng= sc.nextInt();
+		eng = sc.nextInt();
 		
 		System.out.print("수학 입력: ");
-		mat= sc.nextInt();
+		mat = sc.nextInt();
+		
 		// 총점
 		sum = kor + eng + mat;
+		
 		// 평균
-		avg= sum/3;
+		avg = sum / 3;
 		
 		//System.out.println("총점: " + sum);
 		System.out.println("평균: " + avg);
-		switch((int)(avg/10)) {
+		switch((int)(avg / 10)) {
 		case 10:
 		case 9:
-			grade= 'A';   //90~100
+			grade = 'A';   //90~100
 			break;
 		case 8:
-			grade= 'B';  //80~89
+			grade = 'B';  //80~89
 			break;
 		case 7:
-			grade= 'C';  //70~79
+			grade = 'C';  //70~79
 			break;
 		case 6:
-			grade= 'D';  //60~69
+			grade = 'D';  //60~69
 			break;
 		default:
-			grade= 'F';  //50~59
+			grade = 'F';  //50~59
 			break;
 		}
-		System.out.println("당신의 학점은 " + grade +" 입니다.");
+		System.out.println("당신의 학점은 " + grade + " 입니다.");
 	
 	}
 
