@@ -13,8 +13,8 @@ public class SwitchEx03 {
 	
 	int month;
 	
-	System.out.print("숫자로 월을 입력하세요:");
-	month= sc.nextInt();
+	System.out.print("숫자로 월을 입력하세요: ");
+	month = sc.nextInt();
 	
 	switch(month) {
 	case 3: case 4: case 5:
