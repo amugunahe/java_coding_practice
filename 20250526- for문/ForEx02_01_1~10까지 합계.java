@@ -8,14 +8,11 @@ package com.loop;
 public class ForEx02_01 {
 
 	public static void main(String[] args) {
-		int i, sum=0;
+		int i, sum = 0;
 		
-		for(i=1; i<=10; i++) {
-			sum+=i;
-			System.out.println("1부터 "+ i + "까지의 합계: " + sum );
-			
+		for(i = 1; i <= 10; i++) {
+			sum += i;
+			System.out.println("1부터 " + i + "까지의 합계: " + sum);
 		}
-
 	}
-
 }
