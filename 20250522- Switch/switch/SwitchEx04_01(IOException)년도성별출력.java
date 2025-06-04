@@ -17,32 +17,30 @@ public class SwitchEx04_01 {
 	public static void main(String[] args)throws IOException {
 	
 	System.out.print("주민등록번호 7번째 자리 입력: ");
-	int x= System.in.read()-48;
+	int x = System.in.read()-48;
 	
-	int year= 0;
-	String gender= " ";
+	int year = 0;
+	String gender = " ";
 	
 	switch(x) {
 	case 9 : case 0:
-	year=1800;
+	year = 1800;
 	break;
 	case 1 : case 2:
-	year=1900;
+	year = 1900;
 	break;
 	case 3 : case 4:
-	year=2000;
+	year = 2000;
 	break;
 	default:
 	System.out.println("잘못 입력하셨습니다.");
 	System.exit(-1); //return;
 	}
 	
-	gender = (x % 2 == 0)? "여성":"남성";
+	gender = (x % 2 == 0)? "여성" : "남성";
 				
-	System.out.println("당신은 " + year +"년대생 "+ gender +" 입니다.");
+	System.out.println("당신은 " + year + "년대생 " + gender + " 입니다.");
 
 	}
 		
-	}
-
-
+}
