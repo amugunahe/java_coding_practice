@@ -51,7 +51,7 @@ public class EXam02 {
 		return;
 		}
 		
-		ten = n / 10;   //10의 자리
+		ten = n / 10;   // 10의 자리
 		one = n % 10;  // 1의 자리
 	
 	//십의 자리와 일의 자리가 같은지를 비교
