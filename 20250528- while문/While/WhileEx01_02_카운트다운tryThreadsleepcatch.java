@@ -14,7 +14,7 @@ public class WhileEx01_02 {
 
 		while (i-- != 0) {
 			try {
-				Thread.sleep(1000); // 1000분의 1씩
+			Thread.sleep(1000); // 1000분의 1씩
 			} catch (InterruptedException e) {
 
 			}
@@ -23,5 +23,4 @@ public class WhileEx01_02 {
 		}
 		System.out.println("GAME OVER");
 	}
-
 }
