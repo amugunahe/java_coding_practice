@@ -30,12 +30,10 @@ public class WhileEx01_01 {
 			cnt++;
 			System.out.print("정수 입력하고 마지막에 -1를 입력: ");
 			n = sc.nextInt();
-			// System.out.println("합계:" + sum);
-			// System.out.println("카운트:" + cnt);
+			// System.out.println("합계: " + sum);
+			// System.out.println("카운트: " + cnt);
 		}
 		avg = sum / cnt;
 		System.out.println("합계: " + sum + ", 평균: " + avg);
-
 	}
-
 }
