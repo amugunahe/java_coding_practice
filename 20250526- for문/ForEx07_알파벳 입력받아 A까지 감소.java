@@ -10,8 +10,6 @@ package com.loop;
  *   abc
  *   ab
  *   a
- *   
- * 
  */
 
 import java.util.*;
@@ -20,17 +18,14 @@ public class ForEx07 {
 
 	public static void main(String[] args) {
 		System.out.print("알파벳 입력: ");
-		Scanner sc= new Scanner(System.in);
-		char alph= sc.next().charAt(0);
+		Scanner sc = new Scanner(System.in);
+		char alph = sc.next().charAt(0);
 		
-
-		for(char ch='A'; ch<=alph; ch++) {
-			for(char bb='A'; bb<=alph-(ch-'A'); bb++) {
+		for(char ch = 'A'; ch <= alph; ch++) {
+			for(char bb = 'A'; bb <= alph - (ch -'A'); bb++) {
 				System.out.print(bb);
 			}
 			System.out.println();
 		}
-
 	}
-
 }
