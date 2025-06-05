@@ -23,19 +23,19 @@ public class ForEx10 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("첫번째 정수: ");
 		a = sc.nextInt();
+		
 		System.out.print("두번째 정수: ");
 		b = sc.nextInt();
 
 		if (a > b) {
 			a = a ^ b;
-			b = b ^ a;
+			b = a ^ b;
 			a = a ^ b;
 		}
 
 		for (int i = a; i <= b; i++) {
 			sum += i;
 		}
-		System.out.print("두 수의 합계:" + sum);
+		System.out.print("두 수의 합계: " + sum);
 	}
-
 }
