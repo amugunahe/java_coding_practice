@@ -44,9 +44,42 @@ public class ArrayExam01 {
 		// System.out.println(jumsu[jumsu.length - 1]);
 		float avg = jumsu[jumsu.length - 1] / (float) subject.length;
 		// 소수점 3자리에서 반올림
-		avg = (int)((avg + 0.005) * 100)/1000.f;
-		System.out.println(avg);
+		avg = (int) ((avg + 0.005) * 100) / 1000.f;
+		// System.out.println(avg);
 
+		char hak = 0;
+		switch ((int) (avg / 10)) {
+		case 10:
+		case 9:
+			hak = 'A';
+			break;
+		case 8:
+			hak = 'B';
+			break;
+		case 7:
+			hak = 'C';
+			break;
+		case 6:
+			hak = 'D';
+			break;
+		default:
+			hak = 'F';
+			break;
+		}
+		System.out.println();
+		System.out.println("*********성적표*********");
+		System.out.print("이름\t");
+		for (int i = 0; i < subject.length; i++) {
+			System.out.print(subject[i] + "\t");
+		}
+		System.out.println("총점\t평균\t\t학점");
+		System.out.print(name + "\t");
+		for(int i = 0 ; i< subject.length+1; i++) {
+		System.out.print(jumsu[i]+"\t");
+		}
+		System.out.println(avg+"\t\t"+hak);
+		}	
+	
 	}
 
-}
+
