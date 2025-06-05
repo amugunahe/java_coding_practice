@@ -11,7 +11,7 @@ public class WhileEx02 {
 
 		int i = 0, sum = 0;
 
-		while ((sum+=++i)<=100) {
+		while ((sum += ++i) <= 100) {
 			/*
 			 * sum += i;
 			 * 
