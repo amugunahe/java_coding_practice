@@ -25,5 +25,4 @@ public class WhileEx03 {
 		}
 		System.out.println("합계: " + sum);
 	}
-
 }
