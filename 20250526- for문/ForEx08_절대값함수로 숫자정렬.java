@@ -13,7 +13,7 @@ package com.loop;
  *          6543210123456 
  * 		   765432101234567
  * 
- * 절대값: math.abs()
+ * 절대값 함수: math.abs()
  */
 
 public class ForEx08 {
@@ -26,12 +26,11 @@ public class ForEx08 {
 		for (i = 0; i <= num; i++) {
 			for (j = num; j >= -num; j--) {
 				if (Math.abs(j) > i)
-					System.out.printf("%s"," ");
+					System.out.printf("%s", " ");
 				else 
 					System.out.print(Math.abs(j));
 			}
 			System.out.println();
 		}
 	}
-
 }
