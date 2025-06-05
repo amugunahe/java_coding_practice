@@ -1,10 +1,5 @@
 package com.loop;
 
-/*
- * 
- */
-
-import java.io.*;
 import java.util.*;
 
 public class WhileEx04 {
@@ -25,5 +20,4 @@ public class WhileEx04 {
 			}
 		}
 	}
-
 }
