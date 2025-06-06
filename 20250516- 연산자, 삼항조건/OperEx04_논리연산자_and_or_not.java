@@ -1,7 +1,6 @@
 package com.operex;
 
-/*
- * 논리 연산자 &&(and), ||(or), !(not)
+/*논리 연산자 &&(and), ||(or), !(not)
 */
 
 public class OperEx04 {
