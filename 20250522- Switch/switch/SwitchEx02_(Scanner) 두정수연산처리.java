@@ -1,21 +1,22 @@
 package com.switchex;
 
-/*문] 사용자로부터 두 정수와 연산자를 입력받아 해당 연산을 처리하는
+/* 문] 사용자로부터 두 정수와 연산자를 입력받아 해당 연산을 처리하는
 
 프로그램을 구현하시오 
-*  출력 결과
-*  첫번째 정수입력: 10
-*  연산자 입력{+ - / *}: +
-*  두번째 정수입력: 14
-*  
-*  10+ 14 = 24
+출력 결과
+첫번째 정수입력: 10
+연산자 입력{+ - / *}: +
+두번째 정수입력: 14
+
+10+ 14 = 24
 */
 
-
 import java.util.*;
+
 public class SwitchEx02 {
 
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
 		
 		int a, b;
@@ -49,5 +50,4 @@ public class SwitchEx02 {
 			break;
 		}
 	}
-
 }
