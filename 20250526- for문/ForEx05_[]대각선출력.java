@@ -8,7 +8,7 @@ public class ForEx05 {
 			for (int j = 1; j <= 9; j++) { // 열 컬럼
 				if (i == j) {
 					System.out.printf("[%d, %d]", i, j);
-				}else {
+				} else {
 				System.out.printf("%8c",' ');
 				}
 			}
