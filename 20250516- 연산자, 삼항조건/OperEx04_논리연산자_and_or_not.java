@@ -2,7 +2,6 @@ package com.operex;
 
 /*
  * 논리 연산자 &&(and), ||(or), !(not)
- * 
 */
 public class OperEx04 {
 
@@ -11,8 +10,7 @@ public class OperEx04 {
 		boolean a;
 		boolean b;
 		
-		if((a = 4 > 3)|(b = 5 > 7)) { 
-	        //a = true, b = false => true
+		if((a = 4 > 3)|(b = 5 > 7)) {   //a = true, b = false => true
 		System.out.println("a: " + a);
 		System.out.println("b: " + b);
 		}
