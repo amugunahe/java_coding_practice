@@ -34,10 +34,11 @@ public class HomeWork03 {
  for (c = 1; c <= 3; c++) {  // 묶음 
  	for (b = 1; b <= 9; b++) { //  곱해지는 수 (행)
   		for (a = c * 3 - 1; a <= c * 3 + 1; a++) { // 단 (열) 
-    				if (a < 10) System.out.printf("%2d * %2d = %2d", a, b, b * a);
- 			} System.out.println(); 
- 			} System.out.println(); 
-} 
-   	} 
-  }
+    				if (a < 10) 
+				System.out.printf("%2d * %2d = %2d", a, b, b * a);
+ 				} System.out.println(); 
+ 		} System.out.println(); 
+	} 
+   } 
+}
 */
