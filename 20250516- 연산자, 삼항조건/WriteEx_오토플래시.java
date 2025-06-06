@@ -13,6 +13,6 @@ public class WriteEx {
 		System.out.println();
 		
 		byte[] by = {'J','A','V','A'};
-		System.out.write(by, 0, 4);   //바이트 배열의 사용한 경우는 autoflush 기능이 내장되어있다 
+		System.out.write(by, 0, 4);   // 바이트 배열의 사용한 경우는 autoflush 기능이 내장되어있다 
 	}
 }
