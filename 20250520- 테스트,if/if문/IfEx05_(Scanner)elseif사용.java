@@ -13,7 +13,7 @@ public class IfEx05 {
 		
 	Scanner sc = new Scanner(System.in);
 		
-		int a;  //임의의 정수를 저장할 변수
+		int a;  // 임의의 정수를 저장할 변수
 		
 		System.out.print("정수 입력:");
 		a = sc.nextInt();
