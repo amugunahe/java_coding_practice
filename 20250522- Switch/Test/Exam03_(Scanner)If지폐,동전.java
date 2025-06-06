@@ -1,28 +1,25 @@
 package com.exam;
 
-/*
- * 문]
- *  정수로 된 돈의 금액을 입력받아 오만원권, 만원권, 오천원권, 천원권, 
- *  500원 동전 100원 동전, 50원 동전, 10원 동전, 1원 동전이
- *  각각 몇개인지를 반환하는 프로그램을 구현하시오.
- *  
- *  단, if문만 사용하여 구현.
- *  
- *  65376
- *  오만원권 1매
- *  만원권 1매
- *  천원권 5매
- *  100원 3개
- *  50원 1개
- *  10원 2개
- *  1원  6개 
- *
- * 
- */
+/* 문] 정수로 된 돈의 금액을 입력받아 오만원권, 만원권, 오천원권, 천원권, 
+500원 동전 100원 동전, 50원 동전, 10원 동전, 1원 동전이
+각각 몇개인지를 반환하는 프로그램을 구현하시오.
+  
+단, if문만 사용하여 구현.
+
+65376
+오만원권 1매
+만원권 1매
+천원권 5매
+100원 3개
+50원 1개
+10원 2개
+1원  6개  
+*/
 
 import java.util.*;
 
 public class Exam03 {
+	
 	final static int omanwon = 50000;
 	final static int manwon = 10000;
 	final static int ochunwon = 5000;
@@ -35,10 +32,10 @@ public class Exam03 {
 	
 
 	public static void main(String[] args) {
+		
 	Scanner sc = new Scanner(System.in);
 	
-		//돈의 종류 상수화 시킴
-		int money, result;
+		int money, result; //돈의 종류 상수화 시킴
 		
 		System.out.print("금액을 입력하세요: ");
 		money = sc.nextInt();
@@ -88,5 +85,4 @@ public class Exam03 {
 		if(result > 0)
 			System.out.println("1원: " + result + "개 입니다.");
 	}
-
 }
