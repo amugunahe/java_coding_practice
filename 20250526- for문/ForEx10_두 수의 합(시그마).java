@@ -22,6 +22,7 @@ public class ForEx10 {
 		int a, b, sum = 0;
 		
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.print("첫번째 정수: ");
 		a = sc.nextInt();
 		
