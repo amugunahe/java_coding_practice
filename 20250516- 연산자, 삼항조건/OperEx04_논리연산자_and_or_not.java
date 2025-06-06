@@ -15,7 +15,6 @@ public class OperEx04 {
 		System.out.println("a: " + a);
 		System.out.println("b: " + b);
 		}
-		
 		// 에러 원인: 초기화 되지 않음
 		// a = true, b = false => true
 	}		
