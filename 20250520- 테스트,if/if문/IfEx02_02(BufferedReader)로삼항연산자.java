@@ -18,7 +18,7 @@ public class IfEx02_02 {
 		System.out.print("정수 입력: ");
 		n= Integer.parseInt(br.readLine());
 		
-		str= n % 2 == 0? "짝수" : "홀수";
+		str = n % 2 == 0? "짝수" : "홀수";
 		System.out.println(n + " ==> " + str);
 	}
 }
