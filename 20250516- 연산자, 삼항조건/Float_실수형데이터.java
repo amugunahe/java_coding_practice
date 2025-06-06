@@ -1,6 +1,5 @@
 package com.test;
 
-
 // float: 실수형 데이터(4byte)
 // 실수형의 기본 자료형은 double
 
