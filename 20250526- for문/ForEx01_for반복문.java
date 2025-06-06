@@ -1,12 +1,11 @@
 package com.loop;
 
-/*
- * 반복문 형식
+/* 반복문 형식
  * for(초기 값; 조건식; 증감식){
  * 반복 수행할 문장;
  * } 
- * 
  */
+
 public class ForEx01 {
 
 	public static void main(String[] args) {
@@ -16,14 +15,17 @@ public class ForEx01 {
 		System.out.println("I can do it.");
 		}
 		System.out.println();
+		
 		for(i = 10; i >= 1; i--) {
 			System.out.println(i + "\t");
 		}
 		System.out.println();
+		
 		for(i = 1; i <= 10; i *= 3) {
 			System.out.println(i + "\t");
 		}
 		System.out.println();
+		
 		for(i = 1; i <= 10; i += 3) {
 			System.out.println(i + "\n");
 		}
@@ -44,6 +46,5 @@ public class ForEx01 {
 		 * i++;  // 1씩 증가 
 		 }
    		 */
-	
 	}
 }
