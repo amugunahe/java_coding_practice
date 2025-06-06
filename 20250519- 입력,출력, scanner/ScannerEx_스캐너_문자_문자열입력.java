@@ -1,13 +1,15 @@
 package com.ioex;
+
 import java.util.*;
+
 public class ScannerEx {
 
 	public static void main(String[] args) {
-	 //스캐너 객체 생성
-		Scanner sc = new Scanner(System.in);
 		
-		String name;  //문자가 하나 이상
-		char c; //문자 하나
+		Scanner sc = new Scanner(System.in); // 스캐너 객체 생성
+		
+		String name;  // 문자가 하나 이상
+		char c; // 문자 하나
 		
 		System.out.print("이름 입력: ");
 		name = sc.next();
@@ -17,8 +19,5 @@ public class ScannerEx {
 		
 		System.out.println(name);
 		System.out.println(c);
-		
-		
 	}
-
 }
