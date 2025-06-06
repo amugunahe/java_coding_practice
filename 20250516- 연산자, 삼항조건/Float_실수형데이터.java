@@ -19,7 +19,4 @@ public class Float {
 	int a = 99;
 	System.out.printf("%b", (a > =100) && (a <= 200));
 	}
-	
-	
-
 }
