@@ -7,6 +7,7 @@ package com.test;
 public class Float {
 
 	public static void main(String[] args) {
+		
 		float var1;
 		var1 = 3.4f;
 		
@@ -16,7 +17,7 @@ public class Float {
 		System.out.println("var1: " + var1);
 		System.out.println("var2: " + var2);
 	
-	int a = 99;
-	System.out.printf("%b", (a > =100) && (a <= 200));
+		int a = 99;
+		System.out.printf("%b", (a > =100) && (a <= 200));
 	}
 }
