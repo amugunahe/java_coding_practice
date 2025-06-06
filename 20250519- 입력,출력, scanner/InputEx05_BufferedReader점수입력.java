@@ -1,16 +1,13 @@
 package com.ioex;
 
-
 /* 숫자열(두자리 이상)입력 받기 
- * 
- * BufferedReader br = 
- * new BufferedReader(new InputStreamReader(System.in));
+ * BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
  * 
  * String imsi= br.readLine(); --> 문자열로 입력
- * -> 문자열을 숫자열로 바꿔주는 메소드 
- * 
+ 
+ -> 문자열을 숫자열로 바꿔주는 메소드 
  * integer.parseInt(imsi);
- * integer ->Wrapper 클래스
+ * integer -> Wrapper 클래스
  * 숫자를 문자열로 바꾸려면 String.valueOf(imsi);
  * 
  *  문자열을 숫자로
@@ -21,13 +18,16 @@ package com.ioex;
  *  long l = Long.parseLong(str);
  *  float f = Float.parseFloat(str);
  *  double d = Double.parseDouble(str);
- * */
+ */
+
 import java.io.*;
 
-//각 과목을 점수를 입력 받으시오(국어, 영어, 수학)
+// 각 과목을 점수를 입력 받으시오(국어, 영어, 수학)
+
 public class InputEx05 {
 
 	public static void main(String[] args) throws IOException {
+		
 	int kor, eng, mat; 
 	
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -46,9 +46,9 @@ public class InputEx05 {
 	
 	System.out.println("총점: "+ sum);
 	System.out.printf("평균: %.2f\n", avg);
+		
 	float f;
 	System.out.print("실수 입력:");
 	f= Float.parseFloat(br.readLine());
 	}
-
 }
