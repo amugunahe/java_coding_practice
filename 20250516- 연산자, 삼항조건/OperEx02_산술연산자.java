@@ -1,10 +1,9 @@
 package com.operex;
 /*
-산술 연산자
-   = > +, -, *, /, %
-   byte, short, char, int 사이의 연산 결과는 int형 
+산술 연산자 = > +, -, *, /, %
+byte, short, char, int 사이의 연산 결과는 int형 
    
-   long, float, double 사이의 연산 결과는 큰자료형으로 결정됨
+long, float, double 사이의 연산 결과는 큰자료형으로 결정됨
 */
 
 public class OperEx02 {
