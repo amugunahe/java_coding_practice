@@ -30,13 +30,13 @@ public class IfEx06 {
 		b = sc.nextInt();
 		
 		if(c == '+') {
-			System.out.printf("%d + %d= %d", a, b, (a + b));
+			System.out.printf("%d + %d = %d", a, b, (a + b));
 		} else if(c == '-') {
-			System.out.printf("%d - %d= %d", a, b, (a - b));
+			System.out.printf("%d - %d = %d", a, b, (a - b));
 		} else if(c == '*') {
-			System.out.printf("%d * %d= %d", a, b, (a * b));
+			System.out.printf("%d * %d = %d", a, b, (a * b));
 		} else if(c == '/') {
-			System.out.printf("%d / %d= %d", a, b, (a / b));
+			System.out.printf("%d / %d = %d", a, b, (a / b));
 		}
 	}
 }
