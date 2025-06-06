@@ -18,11 +18,11 @@ public class InputEx04 {
 		String tel;
 		
 		/* 객체생성
-		 * InputStreamReader is = new InputStreamReader(System.in); 
-   		 * BufferedReader br = new BufferedReader(is);
+		 InputStreamReader is = new InputStreamReader(System.in); 
+   		 BufferedReader br = new BufferedReader(is);
 		 */
 		
-		//입력처리
+		// 입력처리
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.print("이름 입력:");
