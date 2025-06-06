@@ -1,21 +1,20 @@
 package com.exam;
 
-/*
- * 문]
- * 정수 3개를 받고 3개의 정수 중 중간크기의 수를 출력하는 프로그램을 작성하시오.
- * 
- * 출력
- * 정수 3개 입력: 20 100 33
- * 중간 값은: 33
- * 
- * 단 if문을 사용해라 
+/* 문] 정수 3개를 받고 3개의 정수 중 중간크기의 수를 출력하는 프로그램을 작성하시오.
+출력
+정수 3개 입력: 20 100 33
+중간 값은: 33
+단 if문을 사용해라 
  */
 
 import java.util.*;
+
 public class Exam04 {
 
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
+		
 		int a, b, c;
 		
 		System.out.print("정수 3개 입력");
@@ -33,5 +32,4 @@ public class Exam04 {
 		
 		System.out.println("중간값: " + median);
 	}
-
 }
