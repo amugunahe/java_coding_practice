@@ -16,6 +16,3 @@ public class ForEx05 {
 		}
 	}
 }
-
-
-
