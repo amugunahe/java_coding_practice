@@ -34,10 +34,10 @@ public class IfEx04 {
 		
 	if(year % 4 == 0 && year % 100 != 0) {
 		System.out.println(year + "는 윤년입니다.");
-	}else {
+	} else {
 		if(year % 400 == 0) {
 			System.out.println(year + "는 윤년입니다.");
-		}else {
+		} else {
 			System.out.println(year + "는 평년입니다.");
 		}
 	}
@@ -48,13 +48,11 @@ public class IfEx04 {
 
 
 /* if 연산자 
-   if(year % 4 ==0 && year % 100 !=0 || (year % 400 == 0)){
+   if(year % 4 ==0 && year % 100 !=0 || (year % 400 == 0)) {
  	System.out.println(year+ " ==> 윤년");
- 	}else {
+ 	} else {
 	System.out.println(year + " ==> 평년");
 
 삼항 연산자
 str = ((year % 4 == 0 && year % 100 !=0)||(year % 400 == 0))? "윤년":"평년"
-
-
 */
