@@ -1,10 +1,10 @@
 package com.ioex;
 
 /* 문자 하나 이상일때를 문자열로 처리
- * InputStreamReader is = new InputStreamReader(System.in);
- * BufferedReader br = new BufferedReader(is)
- * String name = br.readLine();
- */
+InputStreamReader is = new InputStreamReader(System.in);
+BufferedReader br = new BufferedReader(is)
+String name = br.readLine();
+*/
 
 import java.io.*;
 
