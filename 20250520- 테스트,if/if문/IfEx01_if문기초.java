@@ -1,7 +1,7 @@
 package com.condition;
 
 /* 제어문의 종류
- * 1. 분기문(비교조건문) -> if, switch문
+   1. 분기문(비교조건문) -> if, switch문
     -주어진 조건의 결과에 따라 실행 문장을 다르게 하여 전혀 다른 
     결과를 얻기 위해 사용하는 제어문
     
@@ -19,10 +19,10 @@ public class IfEx01 {
 		
 		int a = 10;
 		
-		if(a == 10) {  //조건이 참일 때 => 조건이 맞는 문장이 하나 이상일 경우는 {}을 정해주어야함 
-			System.out.println("a는 10값과 같습니다.");
-		}else { //조건 거짓일 때 
-			System.out.println("a는 10값과 같지 않습니다.");
+		if(a == 10) {  // 조건이 참일 때 => 조건이 맞는 문장이 하나 이상일 경우는 {}을 정해주어야함 
+		System.out.println("a는 10값과 같습니다.");
+		} else { // 조건 거짓일 때 
+		System.out.println("a는 10값과 같지 않습니다.");
 		}
 	}
 }
