@@ -49,6 +49,6 @@ public class InputEx05 {
 		
 	float f;
 	System.out.print("실수 입력:");
-	f= Float.parseFloat(br.readLine());
+	f = Float.parseFloat(br.readLine());
 	}
 }
