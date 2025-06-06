@@ -11,8 +11,8 @@ import java.util.Scanner;
  *두번째 정수: 1
  *
  *두 수의 합계: 55
- *
  */
+
 import java.util.*;
 
 public class ForEx10 {
@@ -20,6 +20,7 @@ public class ForEx10 {
 	public static void main(String[] args) {
 
 		int a, b, sum = 0;
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("첫번째 정수: ");
 		a = sc.nextInt();
