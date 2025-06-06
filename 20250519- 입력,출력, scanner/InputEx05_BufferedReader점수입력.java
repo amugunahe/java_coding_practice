@@ -1,23 +1,23 @@
 package com.ioex;
 
 /* 숫자열(두자리 이상)입력 받기 
- * BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
- * 
- * String imsi= br.readLine(); --> 문자열로 입력
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+String imsi= br.readLine(); --> 문자열로 입력
  
- -> 문자열을 숫자열로 바꿔주는 메소드 
- * integer.parseInt(imsi);
- * integer -> Wrapper 클래스
- * 숫자를 문자열로 바꾸려면 String.valueOf(imsi);
- * 
- *  문자열을 숫자로
- *  String str = br.readLine();
- *  byte b = Byte.parseByte(str);
- *  short s = Short.parseShort(str);
- *  int i = Integer.parseInt(str);
- *  long l = Long.parseLong(str);
- *  float f = Float.parseFloat(str);
- *  double d = Double.parseDouble(str);
+-> 문자열을 숫자열로 바꿔주는 메소드 
+integer.parseInt(imsi);
+integer -> Wrapper 클래스
+숫자를 문자열로 바꾸려면 String.valueOf(imsi);
+ 
+문자열을 숫자로
+String str = br.readLine();
+byte b = Byte.parseByte(str);
+short s = Short.parseShort(str);
+int i = Integer.parseInt(str);
+long l = Long.parseLong(str);
+float f = Float.parseFloat(str);
+double d = Double.parseDouble(str);
  */
 
 import java.io.*;
@@ -33,7 +33,7 @@ public class InputEx05 {
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	
 	System.out.print("국어 점수: ");
-	kor = Integer.parseInt(br.readLine());  // 문자열 ->정수로 변환한 후에 정수형 변수에 저장한다.
+	kor = Integer.parseInt(br.readLine());  // 문자열 -> 정수로 변환한 후에 정수형 변수에 저장한다.
 	
 	System.out.print("영어 점수: ");
 	eng = Integer.parseInt(br.readLine());
