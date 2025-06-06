@@ -1,6 +1,6 @@
 package com.variable;
 
-/*byte
+/* byte
  -1byte 자료형
   범위: 256 => -128~ 127
 */
