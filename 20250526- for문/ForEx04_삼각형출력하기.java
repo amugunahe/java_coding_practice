@@ -5,16 +5,18 @@ import java.util.Scanner;
 public class ForEx04 {
 
 	public static void main(String[] args) {
-		/*  노가다 방법
-  		System.out.println("**********");
-		System.out.println("**********");
-		System.out.println("**********");
-		System.out.println("**********");
-		System.out.println("**********");
-		System.out.println("**********");
-		*/
+		
+/* 노가다 방법
+System.out.println("**********");
+System.out.println("**********");
+System.out.println("**********");
+System.out.println("**********");
+System.out.println("**********");
+System.out.println("**********");
+*/
 		
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.print("*을 입력할 라인 수 입력:");
 		int line = sc.nextInt();
 		
