@@ -18,6 +18,5 @@ public class OperEx02 {
 	
 	int c = a + b;  // 같은 자료형이 더해지면 결과는 int (short랑 short랑 더했다고 short가 되는게 아님)
 	System.out.println("c의 값은: " + c);
-
 	}
 }
