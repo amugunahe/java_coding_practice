@@ -27,5 +27,4 @@ public class IfEx05 {
 			else 
 				System.out.println("2와 3의 배수가 아닙니다.");
 		}
-	
 }
