@@ -16,7 +16,6 @@ package com.variable;
 정수 => 1byte, 2byte, 4byte, 8byte(byte, short, int, long)
 실수 => 4byte, 8byte(float, double)
 
-
 참조 자료형(reference data type)
 - 자바 API(Application programming interface)에서 제공 되거나,
 프로그래머에 의해서 만들어진 클래스를 자료형으로 선언하는 경우
