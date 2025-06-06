@@ -13,12 +13,11 @@ package com.condition;
  * 모음 X
  * 
  * 문자 입력: 1
- * 입력 오류
- *  
+ * 입력 오류  
  */
 
-
 import java.util.*;
+
 public class IfEx10 {
 
 	public static void main(String[] args) {
@@ -27,24 +26,22 @@ public class IfEx10 {
 	
 		char ch;
 		
-		System.out.print("알파벳 입력:" );
+		System.out.print("알파벳 입력: ");
 		ch = sc.next().charAt(0);
+		
 		if((ch >= 'a' && ch <= 'z')||(ch >= 'A' && ch <= 'Z')) {
-			/*
-			if((ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') || (ch == 'A' || ch == 'E' ||  ch == 'I' || ch == 'O' || ch == 'U'))
-				System.out.print("모음 O");
+			/* if((ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') || (ch == 'A' || ch == 'E' ||  ch == 'I' || ch == 'O' || ch == 'U'))
+			    System.out.print("모음 O");
 			*/
 			if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
 				System.out.print("모음 O");
-			}else if(ch == 'A' || ch == 'E' || ch == 'I' ||  ch == 'O' || ch == 'U'){
+			} else if(ch == 'A' || ch == 'E' || ch == 'I' ||  ch == 'O' || ch == 'U'){
 				System.out.println("모음 O");
-			}else { 
+			} else { 
 				return;
-		}
-			
-		}else{
+			}	
+		} else {
 			System.out.print("입력 오류");
 		}
 	}	
 }
-
