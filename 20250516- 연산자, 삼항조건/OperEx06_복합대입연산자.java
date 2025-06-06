@@ -4,18 +4,18 @@ package com.operex;
  * +=, -=, ....  a= a+b => a+=b
  */
 
-
 public class OperEx06 {
+	
 	public static void main(String[] args) {
 			
 			int a = 10;
 			int result = 0;
 			
 			result += a;
-			System.out.println("result: " + result);  //10
+			System.out.println("result: " + result);  // 10
 			
 			result *= a;
-			System.out.println("result: " + result); //100
+			System.out.println("result: " + result); // 100
 		
 			result -= a;
 			System.out.println("result: " + result);
