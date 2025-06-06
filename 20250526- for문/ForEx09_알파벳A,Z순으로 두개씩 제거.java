@@ -1,7 +1,6 @@
 package com.loop;
 
-/* 문] 
- * 중첩 for문을 이용하여 다음과 같이 출력 되도록 구현하시오.
+/* 문] 중첩 for문을 이용하여 다음과 같이 출력 되도록 구현하시오.
  
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
  BCDEFGHIJKLMNOPQRSTUVWXY
@@ -15,8 +14,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
          JKLMNOPQ
           KLMNOP
            LMNO
-            MN
-             
+            MN            
 */
 
 public class ForEx09 {
@@ -33,5 +31,4 @@ public class ForEx09 {
 			System.out.println();
 		}
 	}
-
 }
