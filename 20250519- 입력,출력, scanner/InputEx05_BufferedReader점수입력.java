@@ -32,13 +32,13 @@ public class InputEx05 {
 	
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	
-	System.out.print("국어 점수:");
-	kor = Integer.parseInt(br.readLine());//문자열 ->정수로 변환한 후에 정수형 변수에 저장한다.
+	System.out.print("국어 점수: ");
+	kor = Integer.parseInt(br.readLine());  // 문자열 ->정수로 변환한 후에 정수형 변수에 저장한다.
 	
-	System.out.print("영어 점수:");
+	System.out.print("영어 점수: ");
 	eng = Integer.parseInt(br.readLine());
 
-	System.out.print("수학 점수:");
+	System.out.print("수학 점수: ");
 	mat = Integer.parseInt(br.readLine());
 	
 	int sum = kor + eng + mat;
@@ -48,7 +48,7 @@ public class InputEx05 {
 	System.out.printf("평균: %.2f\n", avg);
 		
 	float f;
-	System.out.print("실수 입력:");
+	System.out.print("실수 입력: ");
 	f = Float.parseFloat(br.readLine());
 	}
 }
