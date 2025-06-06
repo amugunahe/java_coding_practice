@@ -1,8 +1,7 @@
 package com.variable;
 
-/* byte
- -1byte 자료형
-  범위: 256 => -128~ 127
+/* byte: 1byte 자료형
+범위: 256 => -128~ 127
 */
 
 public class ByteEx {
