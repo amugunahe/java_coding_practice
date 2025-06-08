@@ -5,6 +5,7 @@ package com.loop;
 public class WhileEx05 {
 
 	public static void main(String[] args) {
+
 		int i = 2, j;
 		
 		while (i <= 9) {
@@ -16,7 +17,5 @@ public class WhileEx05 {
 			i++;
 			System.out.println();
 		}
-
 	}
-
 }
