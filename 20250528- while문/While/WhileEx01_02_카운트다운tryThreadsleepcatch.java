@@ -1,7 +1,6 @@
 package com.loop;
 
-/*
- I can do it 5번 출력
+/* I can do it 5번 출력
 i의 값이 0이 아닌 동안 출력
 5 4 3 2 1 0 => -1씩 감소 
  */
