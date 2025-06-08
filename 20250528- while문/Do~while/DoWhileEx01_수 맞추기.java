@@ -18,7 +18,7 @@ public class DoWhileEx01 {
 
 		int input = 0, answer = 0; 
 
-	// 1~100 사이의 정수를 구함
+  	// 1~100 사이의 정수를 구함
 		answer = (int) (Math.random() * 100) + 1;
 		// System.out.println(answer);
 
