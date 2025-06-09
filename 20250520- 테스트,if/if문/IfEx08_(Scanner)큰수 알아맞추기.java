@@ -19,11 +19,11 @@ public class IfEx08 {
 	System.out.print("두번째 정수: ");
 	b = sc.nextInt();
 	
-	if(a > b) {
+	if (a > b) {
 		max = a; 
 		System.out.print("첫번째 수 " + a + "가 두번째 수 " + b + "보다 크기 때문에 큰 수는 "+ max + "입니다.");
 		 // System.out.print("첫번째 수 (" + a +")가 두번째 수 ("+ b +")보다 큰 수입니다.");
-	} else{
+	} else {
 		max = b;  
 		System.out.print("첫번째 수 " + a + "가 두번째 수 "+ b + "보다 작기 때문에 큰 수는 "+ max + "입니다.");
 		//System.out.print("첫번째 수 ("+a+")가 두번째 수 ("+ b +")보다 작은 수입니다.");
