@@ -17,7 +17,7 @@ public class ArrayEx07 {
 
 		Scanner sc = new Scanner(System.in);
 		
-	 		// words[0][0], words[0][1]
+	 	// words[0][0], words[0][1]
 		String[][] words = { { "chair", "의자" }, { "computer", "컴퓨터" }, { "integer", "정수" }, { "love", "사랑" }, { "happy", "행복" } };
 
 		for (int i = 0; i < words.length; i++) {
