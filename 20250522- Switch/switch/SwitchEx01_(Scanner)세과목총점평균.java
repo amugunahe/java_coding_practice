@@ -8,7 +8,7 @@ package com.switchex;
 - 실수형은 사용불가
 - break문은 하나의 조건값마다 하나의 수행문만 필요할 경우 사용함, 단 break문이 없을 경우 모든 수행을 실행한다.
     
- 형식
+형식
 switch(조건){
 case 조건1:
 수행문;
@@ -55,22 +55,22 @@ public class SwitchEx01 {
 		//System.out.println("총점: " + sum);
 		System.out.println("평균: " + avg);
 		
-		switch((int)(avg / 10)) {
+		switch ((int)(avg / 10)) {
 		case 10:
 		case 9:
-			grade = 'A';   //90~100
+			grade = 'A';   // 90~100
 			break;
 		case 8:
-			grade = 'B';  //80~89
+			grade = 'B';  // 80~89
 			break;
 		case 7:
-			grade = 'C';  //70~79
+			grade = 'C';  // 70~79
 			break;
 		case 6:
-			grade = 'D';  //60~69
+			grade = 'D';  // 60~69
 			break;
 		default:
-			grade = 'F';  //50~59
+			grade = 'F';  // 50~59
 			break;
 		}
 		System.out.println("당신의 학점은 " + grade + " 입니다.");
