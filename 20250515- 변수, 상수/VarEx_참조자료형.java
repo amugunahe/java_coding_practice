@@ -37,7 +37,7 @@ public class VarEx {
 	aa[1] = 10;
 	aa[2] = 10;
 	
-	for(int i = 0; i < aa.length; i++) {
+	for (int i = 0; i < aa.length; i++) {
 		System.out.println(aa[i]);
 		}
 	}
