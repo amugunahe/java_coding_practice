@@ -18,7 +18,7 @@ public class IfEx05 {
 		System.out.print("정수 입력:");
 		a = sc.nextInt();
 		
-		if(a % 2 == 0 && a % 3 == 0)
+		if (a % 2 == 0 && a % 3 == 0)
 			System.out.println("2와 3의 배수입니다.");
 		 else if (a % 2 == 0) 
 			System.out.println("2의 배수입니다");
