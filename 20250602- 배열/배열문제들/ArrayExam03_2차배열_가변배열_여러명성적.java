@@ -22,8 +22,7 @@ public class ArrayExam03 {
 		float[] avg = new float[human];
 		char[] hak = new char[human];
 		int[] rank = new int[human];
-		
-		
+	
 		for (int i = 0; i < human; i++) {
 			System.out.print("이름: ");
 			name[i] = br.readLine();
@@ -32,7 +31,7 @@ public class ArrayExam03 {
 			int imsi = Integer.parseInt(br.readLine());
 			subject[i] = new String[imsi];
 			
-			for (int j = 0; j< subject[i].length; j++) {
+			for (int j = 0; j < subject[i].length; j++) {
 				System.out.print((j + 1) + "번째 과목: ");
 				subject[i][j] = br.readLine();
 			}
