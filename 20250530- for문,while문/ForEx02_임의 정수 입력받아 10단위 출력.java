@@ -60,7 +60,7 @@ public class ForEx02 {
 				System.out.println("1~" + i + "까지의 짝수 합계: " + even);
 				System.out.println("1~" + i + "까지의 홀수 합계: " + odd);
 			
-			}else if (i == n) {  //전부
+			} else if (i == n) {  //전부
 				System.out.println("1~" + i + "까지의 전체의 합계: " + sum);
 				System.out.println("1~" + i + "까지의 짝수 합계: " + even);
 				System.out.println("1~" + i + "까지의 홀수 합계: " + odd);
