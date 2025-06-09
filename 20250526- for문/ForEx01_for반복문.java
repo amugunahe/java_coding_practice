@@ -12,32 +12,32 @@ public class ForEx01 {
 		
 		int i;   //반복을 수행할 변수 
  
-		for(i = 1; i <= 100; i++) {
+		for (i = 1; i <= 100; i++) {
 		System.out.println("I can do it.");
 		}
 		System.out.println();
 		
-		for(i = 10; i >= 1; i--) {
+		for (i = 10; i >= 1; i--) {
 			System.out.println(i + "\t");
 		}
 		System.out.println();
 		
-		for(i = 1; i <= 10; i *= 3) {
+		for (i = 1; i <= 10; i *= 3) {
 			System.out.println(i + "\t");
 		}
 		System.out.println();
 		
-		for(i = 1; i <= 10; i += 3) {
+		for (i = 1; i <= 10; i += 3) {
 			System.out.println(i + "\n");
 		}
 		
-		/* 초기값 빈칸으로 두기  
-		int i = 1;
+/* 초기값 빈칸으로 두기  
+int i = 1;
 		
-		for(; i <= 100; i++) 
-		System.out.println("I can do it.");
+for(; i <= 100; i++) 
+System.out.println("I can do it.");
 		 
-/* 증감식도 빈칸으로 두기
+// 증감식도 빈칸으로 두기
 
 int i = 1;
 
@@ -45,6 +45,6 @@ for( ; i <= 100; )  { // 조건식이 거짓일 때 반복문은 탈출한다
 System.out.println("I can do it.");
 i++;  // 1씩 증가 
  }
- */
-	}
+*/
+  }
 }
