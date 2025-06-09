@@ -61,5 +61,4 @@ public class ArrayEx01 {
 			System.out.print(arr[i] + " ");
 		}
 	}
-
 }
