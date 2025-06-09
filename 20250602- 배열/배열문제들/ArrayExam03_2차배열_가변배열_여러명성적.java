@@ -17,7 +17,7 @@ public class ArrayExam03 {
 		
 		String[][] subject = new String[human][]; 
 
-		int[][] jumsu = new int[human][]; // [2][4]
+		int[][] jumsu = new int[human][]; 
 		
 		float[] avg = new float[human];
 		char[] hak = new char[human];
