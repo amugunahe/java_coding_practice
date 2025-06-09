@@ -29,22 +29,22 @@ public class IfEx11 {
 
 		
 		// 입력 받은 값이 대문자라면? (정수로 했을 경우)
-		if(n >= 65 && n <= 90) {
+		if (n >= 65 && n <= 90) {
 			n += 32;  //n값을 32 증가시켜라
 			System.out.println((char)(n));	
 			
-		} else if(n >=97 && n <= 122) { //입력값이 소문자라면
+		} else if (n >=97 && n <= 122) { //입력값이 소문자라면
 			n -= 32;  //n값을 32 감소시켜라
 			System.out.println((char)(n));
 		} else {
 			System.out.println("입력 오류 입니다.");
 		}
 		
-		/* if(ch >= 'A' && ch <= 'Z') { 
+		/* if (ch >= 'A' && ch <= 'Z') { 
 		  ch += 32;   // ch 값을 32 증가시켜라 
 		  System.out.println(ch);
 		  
-		  } else if(ch >= 'a' && ch <= 'z') { // 입력값이 소문자라면 
+		  } else if (ch >= 'a' && ch <= 'z') { // 입력값이 소문자라면 
 		  ch -= 32;   // ch 값을 32 감소시켜라
 		 System.out.println(ch); 
  		  } else { 
