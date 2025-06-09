@@ -19,11 +19,11 @@ public class HomeWork07 {
 		// 배열에 값 저장
 		for (int i = 0; i < arr.length; i++) {
 			
-			if (i % 2 == 0) {
+			if (i % 2 == 0) { // 짝수 행
 				for (int j = 0; j < arr[i].length; j++) {
 					arr[i][j] = n++;
 				}
-			} else {
+			} else { // 홀수 행
 				for (int j = arr[i].length - 1; j >= 0; j--) {
 					arr[i][j] = n++;
 				}
@@ -41,7 +41,7 @@ public class HomeWork07 {
 }		
 		
 /* 내가 쓴 답]
- * 
+
 int num = 1;
 
 int[][] arr = new int[4][5];
@@ -56,7 +56,7 @@ int[][] arr = new int[4][5];
 				for (int j = 0; j < arr[i].length; j++)
 					System.out.print(arr[i][j] + " ");
 			} else {
-				for (int j = arr[i].length-1; j>= 0; j--)
+				for (int j = arr[i].length - 1; j>= 0; j--)
 					System.out.print(arr[i][j]+ " ");
 			}
 			System.out.println();
