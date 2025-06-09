@@ -11,8 +11,8 @@ public class ContinueEX01 {
 
 	public static void main(String[] args) {
 		
-		for(int i = 0; i <= 10; i++) {
-			if(i % 3 == 0)
+		for (int i = 0; i <= 10; i++) {
+			if (i % 3 == 0)
 				continue;  // 반복문을 끝내지 않고 계속 반복 수행
 			System.out.print(i + " ");
 		}
