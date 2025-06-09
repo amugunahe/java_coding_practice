@@ -6,7 +6,7 @@ package com.exam;
 정수 입력: 7 
 7의 팩토리얼은 5040입니다. 
 
-7*6*5*4*3*2*1 
+7 * 6 * 5 * 4 * 3 * 2 * 1 
  */
 
 import java.util.*;
@@ -16,18 +16,19 @@ public class ForEx03 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		
-		int n, f;
-		n = f = 1;
-		
+
+		int n, f = 1;
+
 		System.out.print("정수 입력: ");
 		n = sc.nextInt();
-		
-		for (int i = 1; i <= n; i++) {
-			f *= i;
-			System.out.println(i + "의 팩토리얼은 " + f + "입니다.");
-		}
-		if (n <= 0)
+
+		if (n <= 0) {
 			System.out.println("정수는 1 이상부터 입력하세요.");
+		} else {
+			for (int i = 1; i <= n; i++) {
+				f *= i;
+				System.out.println(i + "의 팩토리얼은 " + f + "입니다.");
+			}
+		}
 	}
 }
