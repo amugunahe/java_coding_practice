@@ -24,13 +24,13 @@ public class IfEx07 {
 		System.out.println("두번째 정수 입력: ");
 		b = Integer.parseInt(br.readLine());
 		
-		if(c == '+') {
+		if( c == '+') {
 			System.out.printf("%d + %d = %d", a, b, (a + b));
-		} else if(c == '-') {
+		} else if (c == '-') {
 			System.out.printf("%d - %d = %d", a, b, (a - b));
-		} else if(c == '*') {
+		} else if (c == '*') {
 			System.out.printf("%d * %d = %d", a, b, (a * b));
-		} else if(c == '/') {
+		} else if (c == '/') {
 			System.out.printf("%d / %d = %d", a, b, (a / b));
 		}
 	}
