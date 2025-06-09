@@ -11,20 +11,20 @@ public class ArrayExam02 {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		int human = Integer.parseInt(args[0]); // 사람수
+		int human = Integer.parseInt(args[0]); // 첫 번째 인자는 사람 수
 		// System.out.println(human);
 
-		String[] name = new String[human]; // 이름을 저장할 공간
-		String[] subject = new String[args.length - 1]; // 과목명 초기화
+		String[] name = new String[human]; // 학생 이름
+		String[] subject = new String[args.length - 1]; // 나머지는 과목명
 		// System.out.println(subject.length);
 
-		// 정수와 총점 처리 배열을 선언
-		int[][] jumsu = new int[human][args.length]; // [2][4]
+		// 정수와 총점 처리 배열을 선언 [2][4]
+		int[][] jumsu = new int[human][args.length]; // 과목 점수 
 		// System.out.println(args.length);
 		
-		float[] avg = new float[human];
-		char[] hak = new char[human];
-		int[] rank = new int[human];
+		float[] avg = new float[human]; // 평균
+		char[] hak = new char[human]; // 학점
+		int[] rank = new int[human];  // 석차
 		
 		// args 배열에 있는 과목명을 subject 배열에 저장
 		for (int i = 0; i < args.length - 1; i++) {
