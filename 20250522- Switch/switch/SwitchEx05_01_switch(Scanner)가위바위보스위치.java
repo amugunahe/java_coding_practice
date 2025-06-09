@@ -20,7 +20,7 @@ random() => 0.0 ~ 1.0 사이의 실수(double)를 반환해야함
    
 4째 단계:  0 + 1 <= (int)(Math.random() * 3) + 1 < 3 + 1
 1~3
- */
+*/
 
 import java.util.*;
 
@@ -38,7 +38,7 @@ public class SwitchEx05_01_switch {
 		System.out.println(user);
 		System.out.println(com);
 
-		switch(user - com) {
+		switch (user - com) {
 		case 1: case -2:
 			System.out.println("사용자가 이겼습니다");
 		break;
