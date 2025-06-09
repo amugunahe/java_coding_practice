@@ -30,7 +30,6 @@ public class ArrayEx02 {
 				System.out.print(arr[i] + "\t");
 		}
 		System.out.println("\n3의 배수");
-
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] % 3 == 0)
 				System.out.print(arr[i] + "\t");
