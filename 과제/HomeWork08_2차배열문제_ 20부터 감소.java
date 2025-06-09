@@ -12,22 +12,21 @@ public class HomeWork08 {
 
 	public static void main(String[] args) {
 
-		int cnt_i = 4, cnt_j = 5;
+		int cnt_i = 4, cnt_j = 5;  // 4행 5열 배열
 		
 		int[][] arr = new int[cnt_i][cnt_j];
 		
 		// 행 값 저장 
 		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
+			for (int j = 0; j < arr[i].length; j++) {
 				
 				/* 1. 숫자는 하나씩 증가한다.
 				   2. 행의 시작은 행 * 열 - i, 열의 시작은 행의 크기 * 열의 인덱스 
 				*/
 				
-				arr[i][j] = (cnt_i * cnt_j - i) - (cnt_i * j);			
+				arr[i][j] = (cnt_i * cnt_j - i) - (cnt_i * j);       // (20 - i) - (4 * j) = 20 - i - 4j 
 				}
 		}
-		
 		// 배열의 저장된 값 출력 
 		for (int i = 0; i < arr.length; i++) {
 			for(int j = 0; j <arr[i].length; j++) {
