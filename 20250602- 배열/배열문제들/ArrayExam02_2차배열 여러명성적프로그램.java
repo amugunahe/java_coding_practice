@@ -63,7 +63,7 @@ public class ArrayExam02 {
 		// 학점 계산
 		for (int i = 0; i < human; i++) {
 			
-			switch ((int)(avg[i]/ 10)) {
+			switch ((int)(avg[i] / 10)) {
 				case 10:
 				case 9: hak[i] = 'A'; 
 				break;
@@ -86,7 +86,7 @@ public class ArrayExam02 {
 				}
 			}
 		}
-		// 여기까지가 이름 입력 받고, 과목별 점수 입력 받고, 총점 구하고, 평균 구하고, 학점 구하고 , 석차까지 계산완료 
+		// 여기까지가 이름 입력 받고, 과목별 점수 입력 받고, 총점 구하고, 평균 구하고, 학점 구하고, 석차까지 계산완료 
 		
 		
 		// 모든 결과 출력
