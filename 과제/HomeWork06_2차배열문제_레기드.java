@@ -12,11 +12,11 @@ public class HomeWork06 {
 
 	public static void main(String[] args) {
 
-		int[][] arr = new int[4][];
+		int[][] arr = new int[4][];  // 행 4개는 고정 열 크기는 지정 안 됨- 가변 배열
 		int n = 1;
 		
 		// 배열에 값을 저장 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++) { // 각 행마다 열의 크기를 i + 1로 지 
 			arr[i] = new int[i + 1];
 			for (int j = 0; j < arr[i].length; j++) {
 				arr[i][j]= n++;
