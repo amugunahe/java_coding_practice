@@ -29,13 +29,13 @@ public class IfEx10 {
 		System.out.print("알파벳 입력: ");
 		ch = sc.next().charAt(0);
 		
-		if((ch >= 'a' && ch <= 'z')||(ch >= 'A' && ch <= 'Z')) {
+		if ((ch >= 'a' && ch <= 'z')||(ch >= 'A' && ch <= 'Z')) {
 			/* if((ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') || (ch == 'A' || ch == 'E' ||  ch == 'I' || ch == 'O' || ch == 'U'))
 			    System.out.print("모음 O");
 			*/
-			if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+			if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
 				System.out.print("모음 O");
-			} else if(ch == 'A' || ch == 'E' || ch == 'I' ||  ch == 'O' || ch == 'U'){
+			} else if (ch == 'A' || ch == 'E' || ch == 'I' ||  ch == 'O' || ch == 'U'){
 				System.out.println("모음 O");
 			} else { 
 				return;
