@@ -15,8 +15,8 @@ public class ForEx06 {
 		}
 		System.out.println();
 		
-		for(char ch = 'A'; ch <='Z'; ch++) {
-			for(char bb = ch; bb <= 'Z'; bb++) {
+		for (char ch = 'A'; ch <='Z'; ch++) {
+			for (char bb = ch; bb <= 'Z'; bb++) {
 				System.out.print(bb);
 			}
 			System.out.println();
