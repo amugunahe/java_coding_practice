@@ -10,9 +10,9 @@ public class WhileEx01 {
 
 	public static void main(String[] args) {
 
-		int i = 0;
-		int sum = 0;
-		int plus = 1;
+		int i = 0;  // 현재 숫자 
+		int sum = 0;   // 최종 누적 합
+		int plus = 1;  // 부호를 제어하는 변수- +1, -1 반복
 
 		/* while (i <= 100) {
 			if (i % 2 == 0) {
