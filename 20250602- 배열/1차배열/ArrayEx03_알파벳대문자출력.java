@@ -16,11 +16,13 @@ public class ArrayEx03 {
       		 arr1[25] = 'Z';
 	
 		 두번째
-		char[]arr2 = {'A','B','C','D','E','F','G'~~'Z'};
+		char[] arr2 = {'A','B','C','D','E','F','G'~~'Z'};
 	
 		 세번째
- 		char[] arr3 = new char[26]; for(int i = 0, b = 65; i < arr3.length; i++, b++) {
-		arr3[i] = (char)b; System.out.print(arr3[i] + " ");
+ 		char[] arr3 = new char[26]; 
+   		for(int i = 0, b = 65; i < arr3.length; i++, b++) {
+		arr3[i] = (char)b; 
+  		System.out.print(arr3[i] + " ");
 		 */
 
 		char[] arr3 = new char[26];
