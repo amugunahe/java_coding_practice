@@ -11,7 +11,7 @@ public class ArrayExam03 {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		int human = Integer.parseInt(args[0]); // 사람수
+		int human = Integer.parseInt(args[0]); // 사람 수를 받음
 		
 		String[] name = new String[human]; // 이름을 저장할 공간
 		
