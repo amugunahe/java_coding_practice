@@ -22,14 +22,14 @@ public class IfEx03 {
 		            userInput= sc.nextInt(); */
 		
 		System.out.print("정수를 입력: ");
-		int userInput= sc.nextInt(); 
+		int userInput = sc.nextInt(); 
 		String str;
 		
 		//중첩 if
-		if(userInput!=0) {
-			if(userInput>0) {
+		if (userInput!= 0) {
+			if (userInput > 0) {
 				System.out.println(userInput + "은 양수입니다.");
-			}else {
+			} else {
 				System.out.println(userInput+ "은 음수입니다.");
 			}
 		} else {
