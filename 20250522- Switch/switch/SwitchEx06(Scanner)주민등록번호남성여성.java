@@ -13,9 +13,9 @@ public class SwitchEX06 {
 		 
 		 char gender = jumin.charAt(7);
 
-		 switch(gender) {
+		 switch (gender) {
 		 case '1': case '3':  // 남성 
-			 switch(gender) {
+			 switch (gender) {
 			 case '1':
 				 System.out.println("1900년대 출생한 남성입니다.");
 				 break;
@@ -25,7 +25,7 @@ public class SwitchEX06 {
 				 }
 			 break;
 		  case '2': case '4':  // 여성
-			 switch(gender) {
+			 switch (gender) {
 			 case '2':
 				 System.out.println("1900년대 출생한 여성입니다.");
 			 	 break;
