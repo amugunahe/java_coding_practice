@@ -11,7 +11,7 @@ public class inputEx03 {
 	System.out.print("첫번째 숫자: ");
 	num1 = System.in.read()-'0';
 		
-	/*System.in.read();  // \r-> 아스키 코드값 13
+	/* System.in.read();  // \r-> 아스키 코드값 13
 	System.in.read();  // \n:개행
 	*/
 		
