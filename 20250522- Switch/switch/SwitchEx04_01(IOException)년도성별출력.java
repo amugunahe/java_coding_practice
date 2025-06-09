@@ -20,7 +20,7 @@ public class SwitchEx04_01 {
 	int year = 0;
 	String gender = " ";
 	
-	switch(x) {
+	switch (x) {
 	case 9 : case 0:
 	year = 1800;
 	break;
@@ -32,7 +32,7 @@ public class SwitchEx04_01 {
 	break;
 	default:
 	System.out.println("잘못 입력하셨습니다.");
-	System.exit(-1); //return;
+	System.exit(-1); // return;
 	}
 	gender = (x % 2 == 0)? "여성" : "남성";
 				
