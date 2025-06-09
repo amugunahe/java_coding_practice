@@ -45,7 +45,6 @@ public class ArrayEx03 {
 			}
 			avg = sum / (float) score[i].length;
 			System.out.printf("%5d %6.1f%n", sum, avg);
-
 		}
 		System.out.println("---------------------------------------------");
 		System.out.printf("총점: %4d %4d %4d%n", korTot, engTot, mathTot);
