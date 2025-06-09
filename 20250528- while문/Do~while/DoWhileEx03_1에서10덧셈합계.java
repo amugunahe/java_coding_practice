@@ -18,7 +18,7 @@ public class DoWhileEx03 {
 		do {
 			sum += i;
 			i++;
-		} while(i <= 10);
+		} while (i <= 10);
 		System.out.println(sum);
 	}
 }
