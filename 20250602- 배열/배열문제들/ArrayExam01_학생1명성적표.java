@@ -1,7 +1,7 @@
 package com.arrayExam;
 
 /* 문] 1명의 학생에 대해 성적 처리 프로그램을 구현하시오.
-과목명1~~~~과목명n과 같이 함
+과목명1~~~~과목명 n과 같이 함
 
 run - run configurations- Arguments
  */
@@ -19,19 +19,18 @@ public class ArrayExam01 {
 		if (ar.length == 0) {
 			System.out.println("배열에 저장된 값이 없습니다.");
 			System.exit(0);
-		} // ar.length == 과목수 value = 과목명
+		} // ar.length == 과목수, value = 과목명
 
 		System.out.print("이름: ");
 		String name = br.readLine();
 
 		String[] subject = new String[ar.length];
 
-		// 과목명 = ar.length -> subject
-
+		// 과목명 = ar.length -> subject로 복사 
 		for (int i = 0; i < ar.length; i++) {
 			subject[i] = ar[i];
 		}
-		int[] jumsu = new int[subject.length + 1]; // 총점이 들어갈 자리
+		int[] jumsu = new int[subject.length + 1]; // 총점 자리 생성
 		// 4 -> 0: 국어, 1: 영어, 2: 수학, 3: 총점
 
 		// 점수 입력 받기
@@ -39,13 +38,13 @@ public class ArrayExam01 {
 			System.out.print(subject[i] + "점수: ");
 			jumsu[i] = Integer.parseInt(br.readLine());
 			
-			// 총점 -> 누적합계
+			// 총점 -> 누적 합계
 			jumsu[jumsu.length - 1] += jumsu[i];
 		}
 		// System.out.println(jumsu[jumsu.length - 1]);
 		float avg = jumsu[jumsu.length - 1] / (float) subject.length;
 		
-		// 소수점 3자리에서 반올림
+		// 평균 계산: 소수점 3자리에서 반올림해서 2째 자리까지 표기 
 		avg = (int) ((avg + 0.005) * 100) / 1000.f;
 		// System.out.println(avg);
 
@@ -77,7 +76,8 @@ public class ArrayExam01 {
 		}
 		System.out.println("총점\t평균\t\t학점");
 		System.out.print(name + "\t");
-		for (int i = 0 ; i< subject.length+1; i++) {
+		
+		for (int i = 0 ; i < subject.length + 1; i++) {
 		System.out.print(jumsu[i] + "\t");
 		}
 		System.out.println(avg + "\t\t" + hak);
