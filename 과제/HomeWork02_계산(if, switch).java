@@ -68,7 +68,7 @@ public class HomeWork02 {
         b = sc.nextDouble();
 
         // 연산자 조건 처리
-        if (op.equals("+")) {
+        if (op.equals("+")) {   // op.equals- 내용을 비교하는 함수  
             res = a + b;
         } else if (op.equals("-")) {
             res = a - b;
@@ -110,15 +110,12 @@ public class HomeWork02 {
             case "+":
                 res = a + b;
                 break;
-
             case "-":
                 res = a - b;
                 break;
-
             case "*":
                 res = a * b;
                 break;
-
             case "/":
                 if (b == 0) {
                     System.out.println("0으로 나눌 수 없습니다.");
@@ -127,7 +124,6 @@ public class HomeWork02 {
                     res = a / b;
                 }
                 break;
-
             default:
                 System.out.println("연산자가 아닙니다.");
                 return;
