@@ -13,7 +13,7 @@ package com.arrayex;
 
 배열에 값을 대입
 변수명[인덱스] = 값;
-aa[0]=10; 
+aa[0] = 10; 
  */
 
 public class ArrayEx01 {
@@ -36,14 +36,14 @@ public class ArrayEx01 {
 
 		/* System.out.println(arr[0]); 
   		  System.out.println(arr[1]);
-		 System.out.println(arr[2]); 
-   		 System.out.println(arr[3]);
-		 System.out.println(arr[4]); 
-   		 System.out.println(arr[5]);
-		 System.out.println(arr[6]); 
-   		 System.out.println(arr[7]);
-		 System.out.println(arr[8]); 
-   		 System.out.println(arr[9]);
+		  System.out.println(arr[2]); 
+   		  System.out.println(arr[3]);
+		  System.out.println(arr[4]); 
+   		  System.out.println(arr[5]);
+		  System.out.println(arr[6]); 
+   		  System.out.println(arr[7]);
+		  System.out.println(arr[8]); 
+   		  System.out.println(arr[9]);
 		 */
 
 		/* for (int i = 0; i < 10; i++) { 
@@ -52,7 +52,7 @@ public class ArrayEx01 {
 		 */
 
 		/* for (int temp : arr) { 
-  			System.out.println(temp);
+  		  System.out.println(temp);
      		  }
 		 */
 
