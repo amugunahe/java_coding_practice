@@ -12,10 +12,10 @@ public class WhileEx02 {
 
 		while ((sum += ++i) <= 100) {
 		
-	/* sum += i;
+			/* sum += i;
 			  
 			if (sum <= 100) {
-   System.out.printf("%d ==> %d%n", i, sum); 
+   			System.out.printf("%d ==> %d%n", i, sum); 
 			 i++; }
 			 */
 
