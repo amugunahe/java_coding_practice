@@ -19,20 +19,20 @@ public class ArrayEx05_01 {
 		for (int k = 0; k < sub.length; k++) {
 			for (int i = 0; i < sub[k].length - 1; i++) {
 				do {
-					System.out.print(subname[i] + ":");
-					// 각 과목별 점수 입력
+					System.out.print(subname[i] + ":"); // 각 과목별 점수 입력
 					sub[k][i] = Integer.parseInt(br.readLine());
+					
 				} while (sub[k][i] < 0 || sub[k][i] > 100);
 				// 입력받은 과목의 총점을 구함
 				
 				// 총점
 				sub[k][sub[k].length - 1] += sub[k][i];
-			} // end for(i)
+			} // end for(i)- 안쪽 for문 끝
 			
 			// 평균:
 			avg[k] = sub[k][sub[k].length - 1] / (float) (sub[k].length - 1);
 
-		} // end for(k)
+		} // end for(k)- 바깥쪽 for문 끝
 		for (int k = 0; k < sub.length; k++) {
 			System.out.println("총점: " + sub[k][sub[k].length - 1]);
 			System.out.printf("평균: %.2f%n", avg[k]);
