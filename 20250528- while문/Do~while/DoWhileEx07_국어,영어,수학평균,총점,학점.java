@@ -44,7 +44,7 @@ public class DoWhileEx07 {
 		sum = kor + eng + mat;
 		avg = sum / 3.0;
 		
-		switch((int)(avg / 10)){
+		switch ((int)(avg / 10)) {
 		case 10:
 		case 9:
 			hak = 'A';
