@@ -23,7 +23,7 @@ public class HomeWork01 {
 		n = sc.nextInt();
 		
  	
- 	// 1  ~99까지의 정수 범위
+ 	// 1 ~ 99까지의 정수 범위
  	if (n >= 1 && n <= 99) {
  
  	a = n / 10;   // 10의 자리 
