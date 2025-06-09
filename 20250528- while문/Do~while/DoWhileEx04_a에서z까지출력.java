@@ -1,7 +1,6 @@
 package dowhileex;
 
-/* a~z까지 출력
-*/
+// a~z까지 출력
 
 public class DoWhileEx04 {
 
