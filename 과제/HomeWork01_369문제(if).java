@@ -15,49 +15,15 @@ public class HomeWork01 {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		
-		int num = 0;
-		
-		System.out.print("1~99 사이의 정수 입력: ");
-		num = sc.nextInt();
-			
-		if (num > 0 && num < 100) {
-	}
-		else {
-			System.out.println("범위보고 다시 입력하세요.");
-			return;
-		}
-		
-		int chak = num / 10;
-		int chakchak = num % 10;
-		
-	
-			if (chak == 0 || chak == 1 || chak == 2 || chak == 4 || chak == 5 || chak == 7 || chak == 8) {
-			 	if (chakchak == 3 || chakchak == 6 || chakchak == 9) {
-			 		System.out.println("박수 짝");
-			 	} else {
-			 		System.out.println("박수 X");{
-			 		}
-			 	}
-			} else if ((chak == 3 || chak == 6|| chak == 9) && (chakchak == 3) || (chakchak == 6) || (chakchak == 9))  {
-				System.out.println("박수 짝짝");
-			} else if (chak == 3 || chak == 6 || chak == 9) {
-				System.out.println("박수 짝");
-			} else if (chakchak == 3 || chakchak == 6 || chakchak == 9)
-				System.out.println("박수 짝");
-				}		
 
-	}
-/* 답안] int n, cnt = 0;
- 	int a, b;  // a는 10의자리 b는 1의자리 
- 	
-  	Scanner sc = new Scanner(System.in);
+		int n, cnt = 0;
+ 		int a, b;  // a는 10의자리 b는 1의자리 
    
- 		System.out.print("1~99 사이의 정수: ");
+ 		System.out.print("1 ~ 99 사이의 정수: ");
 		n = sc.nextInt();
 		
  	
- 	// 1~99까지의 정수 범위
+ 	// 1  ~99까지의 정수 범위
  	if (n >= 1 && n <= 99) {
  
  	a = n / 10;   // 10의 자리 
@@ -84,5 +50,36 @@ public class HomeWork01 {
   	return;
   	}
  } 
+		
+/* 내가 쓴 답] 
+int num = 0;
+		
+System.out.print("1 ~ 99 사이의 정수 입력: ");
+num = sc.nextInt();
+			
+	if (num > 0 && num < 100) {
+	}
+	 	else {
+			System.out.println("범위보고 다시 입력하세요.");
+			return;
+		}
+		
+		int chak = num / 10;
+		int chakchak = num % 10;
+		
+			if (chak == 0 || chak == 1 || chak == 2 || chak == 4 || chak == 5 || chak == 7 || chak == 8) {
+			 	if (chakchak == 3 || chakchak == 6 || chakchak == 9) {
+			 		System.out.println("박수 짝");
+			 	} else {
+			 		System.out.println("박수 X");{
+			 		}
+			 	}
+			} else if ((chak == 3 || chak == 6|| chak == 9) && (chakchak == 3) || (chakchak == 6) || (chakchak == 9))  {
+				System.out.println("박수 짝짝");
+			} else if (chak == 3 || chak == 6 || chak == 9) {
+				System.out.println("박수 짝");
+			} else if (chakchak == 3 || chakchak == 6 || chakchak == 9)
+				System.out.println("박수 짝");
+				}		
+	}
  */
-
