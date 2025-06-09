@@ -31,7 +31,7 @@ public class SwitchEx02 {
 		System.out.print("두번째 정수: " );
 		b = sc.nextInt();
 		
-		switch(op) {
+		switch (op) {
 		case '+':
 			System.out.printf("%d + %d = %d", a, b, a + b);
 			break;
@@ -44,7 +44,6 @@ public class SwitchEx02 {
 		case '/':
 			System.out.printf("%d / %d = %d", a, b, a / b);
 			break;
-		
 		default:
 			System.out.println("연산자가 아닙니다.");
 			break;
