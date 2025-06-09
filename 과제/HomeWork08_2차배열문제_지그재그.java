@@ -2,7 +2,6 @@ package com.test;
 
 /*
  문 3]
-
   20 16 12  8  4
   19 15 11  7  3
   18 14 10  6  2
@@ -24,9 +23,11 @@ public class HomeWork08 {
 				/* 1. 숫자는 하나씩 증가한다.
 				   2. 행의 시작은 행 * 열 - i, 열의 시작은 행의 크기 * 열의 인덱스 
 				*/
+				
 				arr[i][j] = (cnt_i * cnt_j - i) - (cnt_i * j);			
 				}
 		}
+		
 		// 배열의 저장된 값 출력 
 		for (int i = 0; i < arr.length; i++) {
 			for(int j = 0; j <arr[i].length; j++) {
