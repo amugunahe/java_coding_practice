@@ -28,12 +28,12 @@ public class ForEx01 {
 		/*　for (; n >= 0;) { 
   		　　sum += n; 
 　　　　　　　　　　　System.out.print("정수 입력:"); 
-　		  　 n = sc.nextInt();
-  　　　　　　　　　　cnt++; 
+　		  　n = sc.nextInt();
+  　　　　　　　　　cnt++; 
 	   　　　　　}
 		 */
 		
-	while(n　>=　0){
+	while (n >=　0){
 		sum　+=　n;
 			System.out.print("정수 입력:");
 			n = sc.nextInt();
