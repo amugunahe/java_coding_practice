@@ -20,8 +20,8 @@ public class ForEx07 {
 		System.out.print("알파벳 입력: ");
 		char alph = sc.next().charAt(0);
 		
-		for(char ch = 'A'; ch <= alph; ch++) {
-			for(char bb = 'A'; bb <= alph - (ch -'A'); bb++) {
+		for (char ch = 'A'; ch <= alph; ch++) {
+			for (char bb = 'A'; bb <= alph - (ch -'A'); bb++) {
 				System.out.print(bb);
 			}
 			System.out.println();
