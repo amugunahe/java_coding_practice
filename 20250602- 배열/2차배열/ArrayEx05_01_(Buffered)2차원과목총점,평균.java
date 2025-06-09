@@ -25,11 +25,11 @@ public class ArrayEx05_01 {
 				} while (sub[k][i] < 0 || sub[k][i] > 100);
 				// 입력받은 과목의 총점을 구함
 				
-				// 총점
+				// 총점 계산
 				sub[k][sub[k].length - 1] += sub[k][i];
 			} // end for(i)- 안쪽 for문 끝
 			
-			// 평균:
+			// 평균 계산
 			avg[k] = sub[k][sub[k].length - 1] / (float) (sub[k].length - 1);
 
 		} // end for(k)- 바깥쪽 for문 끝
