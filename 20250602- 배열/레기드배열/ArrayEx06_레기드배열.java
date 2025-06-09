@@ -22,9 +22,9 @@ public class ArrayEx06 {
 
 		int sum = 0;
 		
-		for (int i = 0; i < arr.length; i++) {
-			sum = 0;
-			for (int j = 0; j < arr[i].length; j++) {
+		for (int i = 0; i < arr.length; i++) { // 각 행 점수 순행 
+			sum = 0;  // 합계 다시 구하기 위해 sum = 0으로 초기화 
+			for (int j = 0; j < arr[i].length; j++) { // 각 열 점수 순행
 				System.out.print(arr[i][j] + "\t");
 				sum += arr[i][j];
 			}
