@@ -38,10 +38,7 @@ public class HomeWork07 {
 			System.out.println();
 		}
 	}
-}
-		
-		
-		
+}		
 		
 /* 내가 쓴 답]
  * 
@@ -49,7 +46,6 @@ int num = 1;
 
 int[][] arr = new int[4][5];
 
-		
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
 				arr[i][j] = num++;
@@ -60,7 +56,7 @@ int[][] arr = new int[4][5];
 				for (int j = 0; j < arr[i].length; j++)
 					System.out.print(arr[i][j] + " ");
 			} else {
-				for (int j = arr[i].length-1; j>=0; j--)
+				for (int j = arr[i].length-1; j>= 0; j--)
 					System.out.print(arr[i][j]+ " ");
 			}
 			System.out.println();
