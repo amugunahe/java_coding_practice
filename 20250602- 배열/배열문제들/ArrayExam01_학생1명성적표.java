@@ -1,17 +1,17 @@
 package com.arrayExam;
 
-/*
- * 문] 1명의 학생에 대해 성적 처리 프로그램을 구현하시오.
- * 	  과목명1~~~~과목명n과 같이 함
- *
- *  // run - run configurations- Arguments
- *
+/* 문] 1명의 학생에 대해 성적 처리 프로그램을 구현하시오.
+과목명1~~~~과목명n과 같이 함
+
+run - run configurations- Arguments
  */
+
 import java.io.*;
 
 public class ArrayExam01 {
 
 	public static void main(String[] ar) throws IOException {
+		
 		// String[] subject = {"국어", "영어", "수학"};
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -38,11 +38,13 @@ public class ArrayExam01 {
 		for (int i = 0; i < jumsu.length - 1; i++) {
 			System.out.print(subject[i] + "점수: ");
 			jumsu[i] = Integer.parseInt(br.readLine());
+			
 			// 총점 -> 누적합계
 			jumsu[jumsu.length - 1] += jumsu[i];
 		}
 		// System.out.println(jumsu[jumsu.length - 1]);
 		float avg = jumsu[jumsu.length - 1] / (float) subject.length;
+		
 		// 소수점 3자리에서 반올림
 		avg = (int) ((avg + 0.005) * 100) / 1000.f;
 		// System.out.println(avg);
@@ -69,17 +71,15 @@ public class ArrayExam01 {
 		System.out.println();
 		System.out.println("*********성적표*********");
 		System.out.print("이름\t");
+		
 		for (int i = 0; i < subject.length; i++) {
 			System.out.print(subject[i] + "\t");
 		}
 		System.out.println("총점\t평균\t\t학점");
 		System.out.print(name + "\t");
-		for(int i = 0 ; i< subject.length+1; i++) {
-		System.out.print(jumsu[i]+"\t");
+		for (int i = 0 ; i< subject.length+1; i++) {
+		System.out.print(jumsu[i] + "\t");
 		}
-		System.out.println(avg+"\t\t"+hak);
+		System.out.println(avg + "\t\t" + hak);
 		}	
-	
 	}
-
-
