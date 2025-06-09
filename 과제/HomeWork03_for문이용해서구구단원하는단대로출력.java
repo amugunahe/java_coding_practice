@@ -26,8 +26,7 @@ public class HomeWork03 {
 	}
 }
 
-/*
- Scanner sc = new Scanner(System.in); 
+/* Scanner sc = new Scanner(System.in); 
  
  int a, b, c;
  
