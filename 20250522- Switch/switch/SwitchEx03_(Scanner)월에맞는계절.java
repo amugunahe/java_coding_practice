@@ -17,7 +17,7 @@ public class SwitchEx03 {
 	System.out.print("숫자로 월을 입력하세요: ");
 	month = sc.nextInt();
 	
-	switch(month) {
+	switch (month) {
 	case 3: case 4: case 5:
 		System.out.println("봄입니다.");
 		break;
