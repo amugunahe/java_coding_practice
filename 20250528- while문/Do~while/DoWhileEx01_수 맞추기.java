@@ -18,12 +18,12 @@ public class DoWhileEx01 {
 
 		int input = 0, answer = 0; 
 
-  	// 1~100 사이의 정수를 구함
+  		// 1 ~ 100 사이의 정수를 구함
 		answer = (int) (Math.random() * 100) + 1;
 		// System.out.println(answer);
 
 		do {
-			System.out.print("1~100 사이의 정수 입력: ");
+			System.out.print("1 ~ 100 사이의 정수 입력: ");
 			input = sc.nextInt();
 			if (input > answer) {
 				System.out.println("더 작은 수를 입력하세요.");
