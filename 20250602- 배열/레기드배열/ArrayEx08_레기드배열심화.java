@@ -1,19 +1,19 @@
 package com.arraytwo;
 
 /* 가변배열
- * 선언:자료형[][] 배열명; 또는 자료형[] 배열명[]; 또는 자료형 배열명[][];
- * 초기화: 배열명 = new 자료형[행][]
- * int[][] arr= new int[3][];
- * arr[0]= new int[2];
- * arr[1]= new int[1];
- * arr[2]= new int[3];
- * 
+선언:자료형[][] 배열명; 또는 자료형[] 배열명[]; 또는 자료형 배열명[][];
+초기화: 배열명 = new 자료형[행][]
+int[][] arr= new int[3][];
+arr[0]= new int[2];
+arr[1]= new int[1];
+arr[2]= new int[3];
  */
+
 public class ArrayEx08 {
 
 	public static void main(String[] args) {
-		// 레기드 배열선언
-
+		
+		// 레기드 배열선언	
 		int[][] arr = new int[3][];
 
 		arr[0] = new int[2]; // 1행 초기화
