@@ -1,7 +1,7 @@
 package com.switchex;
 
 
-/*문] 커피 메뉴의 가격을 알려주는 프로그램을 작성하시오.
+/* 문] 커피 메뉴의 가격을 알려주는 프로그램을 작성하시오.
 커피 종류: 에스프레소, 카푸치노, 카페라떼 =>3500원
 아메리카노 => 2000원
 커피의 종류가 아닌 경우는 => 메뉴에 없습니다.를 출력하시오.
@@ -26,7 +26,7 @@ public class SwitchEx07 {
 		
 		System.out.println("무슨 커피: " + str);
 		
-		switch(str) {
+		switch (str) {
 		case "에스프레소": case "카푸치노": case "카페라떼":
 				System.out.println("3500원 입니다.");
 				break;
@@ -48,7 +48,7 @@ int price = 0;
 System.out.print("무슨 커피: ");
 order = sc.next();
 
-switch(order){
+switch (order){
 case "에스프레소": case "카푸치노": case "카페라떼":
 price = 3500;
 break;
@@ -58,6 +58,6 @@ default:
  System.out.println("메뉴에 없습니다.");
 }
 
-if(price != 0)
+if (price != 0)
 System.out.println(order + " 는 " + price + "입니다.");
  */
