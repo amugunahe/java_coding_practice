@@ -43,7 +43,7 @@ public class ArrayEx04 {
 		
 		System.out.println("전체 학생 수: " + n + "명");
 		System.out.println("이름\t전화번호");
-		for(int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++) {
 			System.out.println(name[i] + " " + phone[i]);
 		}
 	}
