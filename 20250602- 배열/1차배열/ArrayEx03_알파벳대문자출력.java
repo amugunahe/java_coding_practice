@@ -11,7 +11,9 @@ public class ArrayEx03 {
 	public static void main(String[] args) {
 		
 		/* 첫번째 
-		 char [] arr1 = new char [26]; arr1[0] = 'A'; arr1[25] = 'Z';
+		 char [] arr1 = new char [26]; 
+   		 arr1[0] = 'A'; 
+      		 arr1[25] = 'Z';
 	
 		 두번째
 		char[]arr2 = {'A','B','C','D','E','F','G'~~'Z'};
