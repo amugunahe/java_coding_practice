@@ -86,7 +86,7 @@ public class funcExam01 {
 
 	public static void main(String[] args) throws IOException {
 	
-	BufferedReader br =	new BufferedReader(new InputStreamReader(System.in));
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 	int x = 0;
 	
@@ -98,18 +98,19 @@ public class funcExam01 {
 		case 1:
 			System.out.println("둘중 최대수는 " + aaa() + "입니다.");
 			break; 
-			
 		case 2:
 			bbb();
-			break;
-			
+			break;	
 		case 3:
 			System.out.println("첫번째 수: ");
 			int firstSu = Integer.parseInt(br.readLine());
+				
 			System.out.println("두번째 수: ");
 			int secondSu = Integer.parseInt(br.readLine());
+				
 			System.out.println("세번째 수: ");
 			int thirdSu = Integer.parseInt(br.readLine());
+				
 			String str = ccc(firstSu, secondSu, thirdSu);
 			System.out.println("큰 순으로 나열은 " + str);
 			
