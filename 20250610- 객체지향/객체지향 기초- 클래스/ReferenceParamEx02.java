@@ -1,6 +1,6 @@
 package com.objectex;
 
-public class ReferencePraramEx02 {
+public class ReferenceParamEx02 {
 
 	public void increase(int[] n) {
 		for (int i = 0; i < n.length; i++)
@@ -10,7 +10,7 @@ public class ReferencePraramEx02 {
 	public static void main(String[] args) {
 		
 		int[] ref = {100, 800, 1000};
-		ReferencePraramEx02 rp = new ReferencePraramEx02();
+		ReferenceParamEx02 rp = new ReferenceParamEx02();
 		
 		rp.increase(ref);
 		
