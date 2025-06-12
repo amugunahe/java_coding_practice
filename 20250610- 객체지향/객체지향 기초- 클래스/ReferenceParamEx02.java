@@ -17,7 +17,5 @@ public class ReferencePraramEx02 {
 		for (int i = 0; i < ref.length; i++) {
 			System.out.println("ref[" + i + "]:" + ref[i]);
 		}
-	
 	}
-
 }
