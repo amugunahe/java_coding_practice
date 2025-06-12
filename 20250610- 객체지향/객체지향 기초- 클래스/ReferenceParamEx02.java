@@ -10,7 +10,7 @@ public class ReferencePraramEx02 {
 	public static void main(String[] args) {
 		
 		int[] ref = {100, 800, 1000};
-		ReferencePraramEx02 rp = new ReferencePraramEx02();
+		ReferenceParamEx02 rp = new ReferenceParamEx02();
 		
 		rp.increase(ref);
 		
