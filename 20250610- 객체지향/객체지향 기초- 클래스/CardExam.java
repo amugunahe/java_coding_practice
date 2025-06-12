@@ -27,6 +27,7 @@ public class CardExam {
 		System.out.println("c1의 width와 height를 각각 50, 80으로 변경하시오.");
 		c1.width = 50;
 		c1.height = 80; 
+		
 		c1.width = 150;
 		c1.height = 300; 
 		
