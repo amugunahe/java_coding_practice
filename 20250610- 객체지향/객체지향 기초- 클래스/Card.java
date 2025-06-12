@@ -9,7 +9,4 @@ public class Card {
 	
 	static int width = 100;  // 클래스 변수
 	static int height = 200;
-	
-	
-	
 }
