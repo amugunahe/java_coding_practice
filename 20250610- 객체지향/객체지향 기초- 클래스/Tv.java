@@ -3,9 +3,9 @@ package com.objectex;
 public class Tv {
 	
 	// 속성 = 멤버변수 = 필드 
-	private String color;    // 색상
+	public String color;    // 색상
 	private boolean power;   // 전원(on/off)
-	private int channel;     // 채널
+	public int channel;     // 채널
 	
 	public void setColor(String color) {
 		this.color = color;
