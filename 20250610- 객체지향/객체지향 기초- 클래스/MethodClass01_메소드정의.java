@@ -25,7 +25,7 @@ public class MethodClass01 {
 		System.out.println();
 	}
 	
-	static void intiArr(int[] numArr) {
+	static void initArr(int[] numArr) {
 		
 		for (int i = 0; i < 10; i++) {
 			numArr[i] = (int)(Math.random() * 10);
