@@ -5,7 +5,8 @@ package com.loop;
 알파벳 입력: e
 abcde
 abcd
-abcab
+abc
+ab
 a
 */
 
