@@ -1,7 +1,5 @@
 package com.loop;
 
-import java.util.Scanner;
-
 /* 문] 
 임의의 정수 두개를 입력받아 
 두 수 사이의 합계를 구하는 프로그램을 구현하시오.
