@@ -1,7 +1,6 @@
 package com.test;
 
-/* 
- 문 2]
+/* 문 2]
  1  2  3  4  5
  10  9  8  7  6
  11 12 13 14 15
@@ -12,55 +11,32 @@ public class HomeWork07 {
 
 	public static void main(String[] args) {
 
-		int[][] arr = new int[4][5];
+		int[][] arr = new int[4][5]; // 4행 5열의 2차원 정수 배열을 선언하고 초기화합니다.
 		
-		int n = 1;
+		int n = 1; // 카운터 'n'을 1로 초기화하며, 배열 요소를 채우는 데 사용됩니다.
 		
 		// 배열에 값 저장
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++) { // 외부 루프는 배열의 각 행(i=0부터 i=3까지)을 반복합니다.
 			
-			if (i % 2 == 0) { // 짝수 행
-				for (int j = 0; j < arr[i].length; j++) {
-					arr[i][j] = n++;
+			if (i % 2 == 0) { // 현재 행 인덱스 'i'가 짝수(0, 2)인지 확인합니다.
+				// 짝수 행의 경우, 왼쪽에서 오른쪽으로 채웁니다 (오름차순).
+				for (int j = 0; j < arr[i].length; j++) { // 내부 루프는 왼쪽에서 오른쪽으로 열(j=0부터 j=4까지)을 반복합니다.
+					arr[i][j] = n++; // 'n'의 현재 값을 배열 요소에 할당한 다음 'n'을 증가시킵니다.
 				}
-			} else { // 홀수 행
-				for (int j = arr[i].length - 1; j >= 0; j--) {
-					arr[i][j] = n++;
+			} else { // 현재 행 인덱스 'i'가 홀수(1, 3)인 경우.
+				// 홀수 행의 경우, 오른쪽에서 왼쪽으로 채웁니다 (내림차순).
+				for (int j = arr[i].length - 1; j >= 0; j--) { // 내부 루프는 오른쪽에서 왼쪽으로 열(j=4부터 j=0까지)을 반복합니다.
+					arr[i][j] = n++; // 'n'의 현재 값을 배열 요소에 할당한 다음 'n'을 증가시킵니다.
 				}
 			}
 		}
 	
 	// 배열에 저장된 값 출력
-		for (int i = 0; i < arr.length; i++) {
-			for(int j = 0; j <arr[i].length; j++) {
-				System.out.print(arr[i][j] + "\t");
+		for (int i = 0; i < arr.length; i++) { // 외부 루프는 각 행을 출력하기 위해 반복합니다.
+			for(int j = 0; j <arr[i].length; j++) { // 내부 루프는 현재 행의 각 열을 반복합니다.
+				System.out.print(arr[i][j] + "\t"); // 배열 요소를 출력하고 간격을 위해 탭을 추가합니다.
 			}
-			System.out.println();
-		}
-	}
-}		
-		
-/* 내가 쓴 답]
-
-int num = 1;
-
-int[][] arr = new int[4][5];
-
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[i].length; j++) {
-				arr[i][j] = num++;
-			}
-		}
-		for (int i = 0; i < arr.length; i++) {
-			if (i % 2 == 0) {
-				for (int j = 0; j < arr[i].length; j++)
-					System.out.print(arr[i][j] + " ");
-			} else {
-				for (int j = arr[i].length - 1; j>= 0; j--)
-					System.out.print(arr[i][j]+ " ");
-			}
-			System.out.println();
+			System.out.println(); // 한 행의 모든 요소를 출력한 후 다음 줄로 이동합니다.
 		}
 	}
 }
-*/
