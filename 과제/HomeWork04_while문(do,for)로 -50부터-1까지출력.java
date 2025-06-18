@@ -22,13 +22,32 @@ public class HomeWork04 {
 
 	public static void main(String[] args) {
 
-		int i = -50; // 초기값
+		int i = -50; // 정수형 변수 'i'를 선언하고 -50으로 초기화합니다.
 
+		// 'i'의 값이 1보다 작거나 같을 동안 반복하는 while 루프입니다.
+		// 이 루프는 'i'가 -50부터 1까지의 숫자를 처리합니다.
 		while (i <= 1) {
-			System.out.printf("\t%d\t", i);
-			i++;
-			if (i % 5 == 0)
-				System.out.println();
+			// 현재 'i'의 값을 출력하고, 탭 문자를 사용하여 일정한 간격을 둡니다.
+			System.out.printf("\t%d\t", i); 
+			
+			i++; // 'i'의 값을 1 증가시킵니다.
+			
+			// 'i'가 5의 배수인지 확인합니다. (여기서 'i'는 이미 1 증가된 상태의 값입니다.)
+			// 만약 'i'가 5의 배수이면 줄바꿈을 수행합니다.
+			if (i % 5 == 0) {
+				System.out.println(); // 새로운 줄로 이동합니다.
+			}
 		}
+
+		/*
+		 * do~while 문
+		 * * do { System.out.printf("\t%d\t", i); i++;
+		 * * if (i % 5 == 0) System.out.println(); }while(i<=1);
+		 * *
+		 * * for문
+		 * * for(;i<=1;){ if (i % 5 == 0) System.out.println(); }
+		 * */
+
 	}
+
 }
