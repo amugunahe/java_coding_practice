@@ -1,33 +1,60 @@
-package com.overex;
+package com.overex; // 이 코드가 속한 패키지(폴더) 이름이에요.
 
-class Rect {
-	
-	private int w, h;
-	
-	public int area() {
-		return w * h;
-	}
-	
-	public void write(int result) {
-		System.out.println("결과: " + result);
-	}
-	
-	public void setData(int w, int h) {
-		this.w = w;
-		this.h = h;	
-	}
-		
-}
+class Rect { // Rect 라는 이름의 클래스를 정의합니다. 사각형과 관련된 기능을 할 거예요.
 
-public class ThisEx {
+    // 1. 멤버 변수 선언
+    private int w, h; // private 키워드는 이 변수들이 Rect 클래스 안에서만 직접 접근 가능하다는 뜻이에요.
+                      // w는 width(너비), h는 height(높이)를 저장할 멤버 변수입니다.
+                      // 이 변수들은 Rect 객체가 만들어질 때마다 각각 고유한 값을 가질 수 있어요.
 
-	public static void main(String[] args) {
-		
-	Rect r = new Rect();
-	r.setData(10, 5);
+    // 2. 사각형의 넓이를 계산하는 메소드
+    public int area() { // public 키워드는 다른 클래스에서도 이 메소드를 호출할 수 있다는 뜻이에요.
+                        // 이 메소드는 매개변수가 없어요.
+        return w * h; // 멤버 변수 w와 h의 값을 곱해서 반환합니다.
+                      // 여기서 `this.w`와 `this.h`라고 써도 되지만, w와 h라는 이름의 지역 변수가 없으므로
+                      // 자바는 자동으로 멤버 변수인 w와 h를 사용한다고 판단해요.
+    }
 
-	int a = r.area();
-	r.write(a);	
-	}
+    // 3. 결과를 출력하는 메소드
+    public void write(int result) { // public 메소드, int형 result를 매개변수로 받아요.
+        System.out.println("결과: " + result); // "결과: "와 전달받은 result 값을 출력합니다.
+    }
 
+    // 4. 너비와 높이 값을 설정하는 메소드 (여기서 `this` 키워드 사용!)
+    public void setData(int w, int h) { // public 메소드, int형 w와 h를 매개변수로 받아요.
+                                        // 이 매개변수 w와 h는 이 메소드 안에서만 유효한 '지역 변수'예요.
+        this.w = w; // 'this.w'는 클래스의 '멤버 변수 w'를 의미해요.
+                    // '= w'는 매개변수로 넘어온 '지역 변수 w'의 값을 멤버 변수 w에 대입하라는 뜻이죠.
+                    // 만약 `w = w;`라고만 썼다면, 자바는 둘 다 지역 변수 w를 의미한다고 생각해서 아무 일도 일어나지 않을 거예요.
+        this.h = h; // 'this.h'는 클래스의 '멤버 변수 h'를 의미해요.
+                    // '= h'는 매개변수로 넘어온 '지역 변수 h'의 값을 멤버 변수 h에 대입하라는 뜻이죠.
+    }
+
+} // Rect 클래스 끝
+
+public class ThisEx { // 프로그램을 실행하는 메인 클래스입니다.
+
+    public static void main(String[] args) { // 프로그램의 시작점인 main 메소드입니다.
+
+        // 1. Rect 클래스의 객체(인스턴스) 생성
+        Rect r = new Rect(); // 'new Rect()'는 Rect 클래스를 바탕으로 실제 '사각형' 객체를 메모리에 만드세요! 라는 명령이에요.
+                             // 이렇게 만들어진 객체를 'r'이라는 변수가 가리키게 됩니다.
+                             // 이제 'r'은 자신만의 w, h 멤버 변수를 가지게 됩니다. (초기값은 0)
+
+        // 2. 사각형의 너비와 높이 설정
+        r.setData(10, 5); // r 객체의 setData 메소드를 호출합니다.
+                          // 매개변수로 10과 5를 넘겨줍니다.
+                          // setData 메소드 안에서 `this.w = 10;`과 `this.h = 5;`가 실행되어
+                          // r 객체의 멤버 변수 w는 10, h는 5가 됩니다.
+
+        // 3. 사각형의 넓이 계산
+        int a = r.area(); // r 객체의 area 메소드를 호출합니다.
+                          // area 메소드는 r 객체의 멤버 변수 w(10)와 h(5)를 사용하여 넓이(10 * 5 = 50)를 계산합니다.
+                          // 계산된 값 50이 int형 변수 a에 저장됩니다.
+
+        // 4. 결과 출력
+        r.write(a); // r 객체의 write 메소드를 호출합니다.
+                    // 매개변수로 변수 a의 값 (50)을 넘겨줍니다.
+                    // write 메소드가 "결과: 50"을 출력합니다.
+    }
 }
