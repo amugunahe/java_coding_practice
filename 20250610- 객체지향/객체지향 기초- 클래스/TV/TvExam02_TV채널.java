@@ -1,25 +1,76 @@
-package com.objectex;
+package com.objectex; // 이 코드가 속한 패키지(폴더) 이름이에요.
 
-public class TvExam02 {
+// (Tv 클래스가 정의되어 있다고 가정합니다. 일반적으로 다음과 같이 생겼을 거예요.)
+// class Tv {
+//     private int channel; // 채널 값을 저장할 인스턴스 변수
+//     public Tv() { // 생성자 (객체 생성 시 호출)
+//         channel = 0; // 초기 채널 값 설정
+//     }
+//     public int getChannel() { // 채널 값을 읽어오는 메소드
+//         return channel;
+//     }
+//     public void setChannel(int ch) { // 채널 값을 설정하는 메소드
+//         channel = ch;
+//     }
+// }
 
-	public static void main(String[] args) {
-		
-		/* Tv t1; 
-        t1 = new TV();
-		 */	
-		Tv t1 = new Tv(); // 위의 문자 한문장으로 가능
-		Tv t2 = new Tv();
-		System.out.println("t1의 채널 값은 " + t1.getChannel() + "입니다.");
-		System.out.println("t2의 채널 값은 " + t2.getChannel() + "입니다.");
-		
-		t2 = t1;  // t1이 저장하고 있는 주소값을 t2에 저장함
-		
-		// tv 채널 세팅
-		t1.setChannel(7);
-		System.out.println("t1의 채널 값을 " + t1.getChannel() + "로 변경되었습니다.");
-		
-		System.out.println("t1의 채널 값은 " + t1.getChannel() + "입니다.");
-		System.out.println("t2의 채널 값은 " + t2.getChannel() + "입니다.");
-	}
+public class TvExam02 { // TvExam02 라는 이름의 클래스를 정의합니다.
 
+    public static void main(String[] args) { // 프로그램의 시작점인 main 메소드입니다.
+
+        /* Tv t1; // 1. Tv 타입의 참조 변수 t1을 선언합니다. (아직 객체와 연결되지 않음)
+           t1 = new Tv(); // 2. 새로운 Tv 객체를 메모리에 생성하고, 그 객체의 주소를 t1에 저장합니다.
+         */
+        
+        // 위의 두 줄을 한 문장으로 줄여서 쓸 수 있어요.
+        // 1. 첫 번째 Tv 객체 생성
+        Tv t1 = new Tv(); // 새로운 Tv 객체 하나를 메모리에 만들고, 그 객체의 주소를 t1 변수에 저장합니다.
+                          // 이제 t1은 자신만의 독립적인 channel 값을 가집니다 (기본값 또는 생성자에 의해 초기화된 값).
+
+        // 2. 두 번째 Tv 객체 생성
+        Tv t2 = new Tv(); // 또 다른 새로운 Tv 객체 하나를 메모리에 만들고, 그 객체의 주소를 t2 변수에 저장합니다.
+                          // t2도 t1과는 독립적으로 자신만의 channel 값을 가집니다.
+                          // 이 시점에서 t1과 t2는 서로 다른 두 개의 Tv 객체를 가리키고 있습니다.
+
+        // 3. 초기 채널 값 확인 (가정: Tv 객체 생성 시 채널은 기본값 0으로 초기화됨)
+        System.out.println("t1의 채널 값은 " + t1.getChannel() + "입니다."); // 출력: "t1의 채널 값은 0입니다."
+        System.out.println("t2의 채널 값은 " + t2.getChannel() + "입니다."); // 출력: "t2의 채널 값은 0입니다."
+        
+        System.out.println("--- t2 = t1 실행 전 ---"); // 설명 위한 출력
+        // (가상의 메모리 상태)
+        // t1 변수 ----> [Tv 객체 A (channel: 0)] (메모리 주소 ex: @100)
+        // t2 변수 ----> [Tv 객체 B (channel: 0)] (메모리 주소 ex: @200)
+
+        // 4. 참조 변수 t2에 t1의 주소 값 복사 (핵심!)
+        t2 = t1; // **이것이 중요합니다!**
+                 // `t1`이 저장하고 있는 'Tv 객체의 주소 값'을 `t2` 변수에 복사해서 저장합니다.
+                 // 이제 `t2`는 이전에 가리키던 Tv 객체 B를 더 이상 가리키지 않고,
+                 // `t1`이 가리키는 것과 **동일한 Tv 객체 A**를 가리키게 됩니다.
+                 // (이전의 Tv 객체 B는 이제 아무도 가리키지 않게 되어 나중에 자바의 가비지 컬렉터에 의해 메모리에서 정리될 수 있습니다.)
+
+        System.out.println("--- t2 = t1 실행 후 ---"); // 설명 위한 출력
+        // (가상의 메모리 상태)
+        // t1 변 ------> [Tv 객체 A (channel: 0)] (메모리 주소 ex: @100)
+        //              ^
+        // t2 변 -------|
+
+        // 5. t1의 채널 값 변경
+        t1.setChannel(7); // `t1`이 가리키는 Tv 객체(객체 A)의 채널 값을 7로 변경합니다.
+        System.out.println("t1의 채널 값을 " + t1.getChannel() + "로 변경되었습니다."); // 출력: "t1의 채널 값을 7로 변경되었습니다."
+        
+        System.out.println("--- t1.setChannel(7) 실행 후 ---"); // 설명 위한 출력
+        // (가상의 메모리 상태)
+        // t1 변 ------> [Tv 객체 A (channel: 7)] (메모리 주소 ex: @100)
+        //              ^
+        // t2 변 -------|
+
+        // 6. t1과 t2의 채널 값 최종 확인
+        System.out.println("t1의 채널 값은 " + t1.getChannel() + "입니다."); // 출력: "t1의 채널 값은 7입니다."
+        // t1은 객체 A를 가리키고, 객체 A의 채널은 7이므로 7이 출력됩니다.
+
+        System.out.println("t2의 채널 값은 " + t2.getChannel() + "입니다."); // 출력: "t2의 채널 값은 7입니다."
+        // t2 또한 객체 A를 가리키고 있습니다. 따라서 t1이 객체 A의 채널을 7로 변경했기 때문에,
+        // t2로 접근해도 변경된 값인 7이 출력되는 것을 볼 수 있습니다!
+        // 이것이 바로 참조 변수의 '주소 값 복사'의 핵심입니다.
+    }
 }
