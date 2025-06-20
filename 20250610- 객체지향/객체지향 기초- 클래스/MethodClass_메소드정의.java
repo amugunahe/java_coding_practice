@@ -1,42 +1,55 @@
-package com.objectex;
+package com.objectex; // 이 코드가 속한 패키지(폴더) 이름이에요.
 
 /* 메소드
- -  특정 작업을 수행하는 일련의 문장을 하나로 묶은 것을 의미함
- 	기본적으로 수학의 함수와 유사하다.
- 	
- 	Math.sqrt() -> 제곱근 -> 4.0을 입력하면 결과 -> 2.0
- 	
- 	메소드를 사용하는 이유
- 	1. 높은 재사용성
-	2. 중복 코드를 제거
-	3. 프로그램을 구조화 
+  - 특정 작업을 수행하는 일련의 문장을 하나로 묶은 것을 의미함
+  기본적으로 수학의 함수와 유사하다.
+ 
+  Math.sqrt() -> 제곱근 -> 4.0을 입력하면 결과 -> 2.0
+ 
+  메소드를 사용하는 이유
+  1. 높은 재사용성
+  2. 중복 코드를 제거
+  3. 프로그램을 구조화
  */
 
-public class MethodClass {
-	
-	static void printArr(int[] numArr) {
-		for (int i = 0; i < 10; i++) {
-			System.out.print(numArr[i] + " ");
-		}
-		System.out.println();
-	}
-	
-	static void intiArr(int[] numArr) {
-		
-		for (int i = 0; i < 10; i++) {
-			numArr[i] = (int)(Math.random() * 10);
-		}
-	}
-	
-	public static void main(String[] args) {
-		
-		int [] arr = new int[10];
-		
-		intiArr(arr);
-		printArr(arr);
-		printArr(arr);
-		printArr(arr);
-		
-		}	
-	}
+public class MethodClass { // MethodClass라는 이름의 클래스를 정의합니다.
 
+    // 1. 배열을 화면에 출력하는 메소드: printArr
+    // 'static'은 이 메소드가 클래스에 속하며, 객체(인스턴스)를 만들지 않고도 바로 사용할 수 있다는 뜻이에요.
+    // 'void'는 이 메소드가 작업을 수행한 후 어떤 값도 돌려주지 않는다는 의미예요.
+    // 'int[] numArr'는 이 메소드가 '정수형 배열' 하나를 입력(매개변수)으로 받는다는 뜻이에요.
+    static void printArr(int[] numArr) {
+        for (int i = 0; i < 10; i++) { // 배열의 첫 번째 요소부터 열 번째 요소까지 (총 10개) 반복합니다.
+            System.out.print(numArr[i] + " "); // 배열의 각 요소를 출력하고 한 칸 띄웁니다.
+        }
+        System.out.println(); // 10개 요소를 모두 출력한 후 다음 내용을 위해 줄바꿈을 합니다.
+    }
+
+    // 2. 배열을 랜덤 값으로 초기화하는 메소드: intiArr
+    // 이 메소드도 'static'이고, 'void' (반환값 없음)이며, '정수형 배열'을 매개변수로 받아요.
+    // **참고: 이 메소드의 이름은 `intiArr`로 되어 있지만, 일반적인 작명 관례는 `initArr`입니다. 오타일 수 있어요.**
+    static void intiArr(int[] numArr) { // (만약 오타가 아니라면, 그대로 사용해야 하지만, 실제 프로젝트에선 통일성을 위해 보통 `initArr`로 씁니다.)
+
+        for (int i = 0; i < 10; i++) { // 배열의 첫 번째 요소부터 열 번째 요소까지 반복합니다.
+            // Math.random()은 0.0 이상 1.0 미만의 랜덤한 실수를 반환해요.
+            // 여기에 10을 곱하면 0.0 이상 10.0 미만의 실수가 됩니다.
+            // (int)를 붙여 정수로 강제 형변환하면 소수점 아래는 버려지고 0부터 9까지의 정수가 됩니다.
+            numArr[i] = (int)(Math.random() * 10); // 배열의 각 요소에 0~9 사이의 랜덤한 정수를 채워 넣습니다.
+        }
+    }
+
+    // 3. main 메소드: 프로그램의 시작점
+    public static void main(String[] args) { // 프로그램이 시작될 때 가장 먼저 실행되는 부분입니다.
+
+        int [] arr = new int[10]; // 'arr'이라는 이름의 정수형 배열을 만듭니다. 이 배열은 10개의 정수를 저장할 수 있어요.
+
+        // 메소드 호출 예시
+        // `intiArr` 메소드를 호출하여 `arr` 배열에 랜덤한 값들을 채워 넣습니다.
+        intiArr(arr);
+
+        // `printArr` 메소드를 호출하여 `arr` 배열의 내용을 화면에 출력합니다.
+        printArr(arr); // 배열을 한 번 출력합니다.
+        printArr(arr); // 같은 배열을 또 출력합니다. (메소드를 한 번 만들어두면 이렇게 여러 번 쉽게 재사용할 수 있어요!)
+        printArr(arr); // 또 출력합니다.
+    }
+}
