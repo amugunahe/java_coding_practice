@@ -1,27 +1,42 @@
-package com.ioex;
+package com.ioex; // 이 코드가 속한 폴더(패키지)를 나타내요. (패키지는 관련된 클래스들을 모아두는 일종의 폴더입니다.)
 
-import java.io.*;
+import java.io.*; // 'java.io' 패키지 안에 있는 모든 클래스들을 사용하겠다고 선언하는 부분이에요.
+                   // 'IOException'이 이 패키지 안에 있어서 이 줄이 필요합니다.
 
-public class inputEx03 {
- 
-	public static void main(String[] args) throws IOException {
+public class inputEx03 { // 'inputEx03'이라는 이름의 프로그램을 시작하는 클래스입니다.
+
+	public static void main(String[] args) throws IOException { // 프로그램이 실제로 시작되는 부분인 'main' 메소드예요.
+		// throws IOException: 이 'main' 메소드 안에서 'IOException'이 발생할 경우,
+		//                      메소드를 호출한 상위 시스템(JVM)으로 예외 처리를 전가하겠다는 뜻입니다.
+		//                      `System.in.read()` 메소드가 `IOException`을 발생시킬 수 있기 때문에 필요해요.
 	
-	int num1, num2;
+		int num1, num2; // 'num1'과 'num2'라는 이름의 'int' (정수) 타입 변수를 선언했어요. 여기에 사용자가 입력한 숫자가 저장될 거예요.
 		
-	System.out.print("첫번째 숫자: ");
-	num1 = System.in.read()-'0';
+		System.out.print("첫번째 숫자: "); // 사용자에게 '첫번째 숫자:'라는 메시지를 출력해요.
+		// num1 = System.in.read()-'0'; // 첫 번째 숫자 입력을 처리하는 부분입니다.
+		                               // 1. `System.in.read()`: 사용자가 입력한 첫 번째 문자(예: '5')의 아스키 코드 값(예: 53)을 읽어와요.
+		                               // 2. `-'0'`: 읽어온 아스키 코드 값에서 문자 '0'의 아스키 코드 값(48)을 빼줍니다.
+		                               //    예: 53 - 48 = 5. 이렇게 실제 숫자 5를 얻게 됩니다.
+		num1 = System.in.read()-'0'; 
 		
-	/* System.in.read();  // \r-> 아스키 코드값 13
-	System.in.read();  // \n:개행
-	*/
+		/* System.in.read();   // \r-> 아스키 코드값 13 // 첫 번째 숫자 입력 후 누른 엔터 키의 `\r` (캐리지 리턴) 문자를 읽는 부분이에요.
+		System.in.read();   // \n:개행 // 첫 번째 숫자 입력 후 누른 엔터 키의 `\n` (개행) 문자를 읽는 부분이에요.
+		*/ // 이 두 줄의 주석은, 만약 `skip(2)`를 쓰지 않았다면 이처럼 두 번 `read()`를 호출하여 엔터 문자를 버려야 함을 설명합니다.
 		
-	System.in.skip(2);
+		System.in.skip(2); // 입력 버퍼에 남아있는 다음 2바이트를 건너뛰어요.
+		                   // 이는 첫 번째 숫자 입력 후 사용자가 누른 엔터 키(`\r`, `\n` 두 바이트)를 버리기 위함입니다.
+		                   // 이 줄이 없으면 다음 숫자 입력 시 엔터 키가 숫자로 잘못 인식될 수 있어요.
 		
-	System.out.print("두번째 숫자 :");
-	
-	num2 = System.in.read()-48;   // 아스키 코드 값에서 '-48'을 빼거나 '0'을 하면 정상값이 출력된다 (*공식
+		System.out.print("두번째 숫자 :"); // 사용자에게 '두번째 숫자:'라는 메시지를 출력해요.
+		
+		// num2 = System.in.read()-48;   // 두 번째 숫자 입력을 처리하는 부분입니다.
+		                               // 1. `System.in.read()`: 사용자가 입력한 두 번째 문자(예: '7')의 아스키 코드 값(예: 55)을 읽어와요.
+		                               // 2. `-48`: 읽어온 아스키 코드 값에서 48을 빼줍니다. (문자 '0'의 아스키 코드 값과 같아요.)
+		                               //    예: 55 - 48 = 7. 이렇게 실제 숫자 7을 얻게 됩니다.
+		                               // 아스키 코드 값에서 '-48'을 빼거나 '0'을 하면 정상값이 출력된다 (*공식) // 이 주석은 위 변환 공식을 다시 한번 강조합니다.
+		num2 = System.in.read()-48; 
 
-	System.out.println(num1);
-	System.out.println(num2);
+		System.out.println(num1); // 변수 'num1'에 저장된 실제 숫자 값을 화면에 출력해요.
+		System.out.println(num2); // 변수 'num2'에 저장된 실제 숫자 값을 화면에 출력해요.
 	}
 }
