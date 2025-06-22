@@ -1,6 +1,23 @@
 package com.variable; // 이 코드가 속한 폴더(패키지)를 나타내요.
 
-/* ... */ // 여기에 주석으로 변수/상수/자료형 개념이 설명되어 있어요.
+/* 변수와 상수의 개념
+변수: 상수를 저장하거나 보관하는 공간(메모리)
+상수: 항상 동일한 의미의 가치를 가지는 개체
+변수명: 변수에 대한 특정 이름
+자료형: 변수의 크기를 미리 만들어 놓은 크기의 약속
+
+기본 자료형과 참조 자료형
+기본 자료형
+자바 컴파일러에 의해서 해석되는 자료형
+기본 자료형: 8개(byte, short, int, long, float, double, boolean, char)
+글자 => 1byte, 2byte (boolean, char)
+정수 => 1byte, 2byte, 4byte, 8byte(byte, short, int, long)
+실수 => 4byte, 8byte(float, double)
+
+참조 자료형(reference data type)
+- 자바 API(Application programming interface)에서 제공 되거나,
+프로그래머에 의해서 만들어진 클래스를 자료형으로 선언하는 경우
+*/
 
 class AA { // 'AA'라는 이름의 새로운 클래스를 정의해요.
 	int a; // 'AA' 클래스 안에 'a'라는 이름의 'int' 타입 변수를 선언해요.
