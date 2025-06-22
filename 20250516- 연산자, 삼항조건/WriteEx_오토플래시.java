@@ -1,18 +1,37 @@
-package ioex;
+package ioex; // 이 코드가 속한 폴더(패키지)를 나타내요. (패키지는 관련된 클래스들을 모아두는 일종의 폴더입니다.)
 
 /* write() 메소드: 화면 출력시 버퍼에 저장됨 
-  System.out.flush(); 메소드 실행-> 버퍼에 저장되어 있는 내용을 비워라 
-*/
+   System.out.flush(); 메소드 실행-> 버퍼에 저장되어 있는 내용을 비워라 
+*/ // 'write()'는 버퍼에 저장되고, 'flush()'는 버퍼를 비워서 내용을 출력한다는 내용입니다.
 
-public class WriteEx {
+public class WriteEx { // 'WriteEx'라는 이름의 프로그램을 시작하는 클래스입니다.
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // 프로그램이 실제로 시작되는 부분이에요. 자바 프로그램은 항상 이 'main' 메서드부터 실행됩니다.
 		
-		System.out.write(65);
-		System.out.flush();  
-		System.out.println();
+		System.out.write(65); // 정수 65를 화면에 출력하려고 해요.
+		// 하지만 실제로는 이 65(아스키코드 65는 'A'입니다)가 바로 화면에 보이는 것이 아니라,
+		// System.out 스트림의 내부 "버퍼"에 잠시 저장됩니다.
 		
-		byte[] by = {'J','A','V','A'};
-		System.out.write(by, 0, 4);   // 바이트 배열의 사용한 경우는 autoflush 기능이 내장되어있다 
+		System.out.flush(); // 이 메소드가 매우 중요합니다!
+		// 'flush()'는 버퍼에 임시로 저장되어 있던 모든 데이터를 "강제로" 화면으로 내보내서 비우는 역할을 해요.
+		// 이 줄이 없으면 'A'가 바로 보이지 않을 수 있습니다. (프로그램이 종료될 때 자동으로 버퍼가 비워지기는 하지만, 바로 보고 싶을 때 사용해요.)
+		
+		System.out.println(); // 화면에 빈 줄을 하나 출력해요. (줄 바꿈 효과)
+		// System.out.println()은 내부적으로 flush() 기능을 포함하고 있는 경우가 많아,
+		// 앞선 write()의 내용이 println() 때문에 자동으로 출력될 수도 있어요.
+		
+		byte[] by = {'J','A','V','A'}; // 'J', 'A', 'V', 'A' 문자를 바이트(byte) 배열로 만들었어요.
+		// 각 문자는 컴퓨터에서 숫자로 표현되는데, 이 숫자들을 byte 타입으로 배열에 저장한 것입니다.
+		// 'J'는 74, 'A'는 65, 'V'는 86 입니다.
+		
+		System.out.write(by, 0, 4); // 배열 'by'에 있는 데이터를 화면에 출력해요.
+		// by: 출력할 데이터가 담긴 바이트 배열
+		// 0: 배열의 첫 번째 요소(인덱스 0)부터 시작해서 출력하라는 의미
+		// 4: 총 4개의 요소(J, A, V, A)를 출력하라는 의미
+		
+		// 바이트 배열을 사용한 경우는 autoflush 기능이 내장되어있다
+		// 주석에 설명된 것처럼, 배열을 write()할 때는 대부분의 시스템에서 자동으로 버퍼를 비워주는 'autoflush' 기능이 활성화됩니다.
+		// 따라서 이 경우에는 System.out.flush(); 를 명시적으로 호출하지 않아도 'JAVA'가 바로 화면에 보일 거예요.
+		// (일반적으로 System.out.println()도 autoflush 기능을 가집니다.)
 	}
 }
