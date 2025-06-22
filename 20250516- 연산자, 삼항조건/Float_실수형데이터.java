@@ -1,23 +1,30 @@
-package com.test;
+package com.test; // 이 코드가 속한 폴더(패키지)를 나타내요. (패키지는 관련된 클래스들을 모아두는 일종의 폴더입니다.)
 
 /* float: 실수형 데이터(4byte)
 실수형의 기본 자료형은 double
-*/
+*/ // 'float'는 4바이트 실수형이고, 자바에서 실수형의 기본은 'double'이라는 내용입니다.
 
-public class Float {
+public class Float { // 'Float'라는 이름의 프로그램을 시작하는 클래스입니다. (클래스는 자바 프로그램의 기본 단위이자 설계도와 같아요.)
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // 프로그램이 실제로 시작되는 부분이에요. 자바 프로그램은 항상 이 'main' 메서드부터 실행됩니다.
 		
-		float var1;
-		var1 = 3.4f;
+		float var1; // 'var1'이라는 이름의 'float' 타입 변수를 선언했어요. 이제 이 변수에는 소수점 있는 숫자를 저장할 수 있습니다.
+		var1 = 3.4f; // 변수 'var1'에 '3.4'라는 값을 저장했어요. 'f'를 붙인 것은 이 숫자가 'float' 타입임을 알려주는 약속이에요.
 		
-		double var2;
-		var2 = 55.55;
+		double var2; // 'var2'라는 이름의 'double' 타입 변수를 선언했어요. 이 변수에도 소수점 있는 숫자를 저장할 수 있습니다.
+		var2 = 55.55; // 변수 'var2'에 '55.55'라는 값을 저장했어요. 'double'은 자바 실수형의 기본이라 숫자 뒤에 아무것도 붙이지 않아도 돼요.
 		
-		System.out.println("var1: " + var1);
-		System.out.println("var2: " + var2);
+		System.out.println("var1: " + var1); // 'var1' 변수에 저장된 값을 화면에 출력해요. "var1: " 이라는 글자와 'var1'의 값이 함께 나옵니다.
+		System.out.println("var2: " + var2); // 'var2' 변수에 저장된 값을 화면에 출력해요. "var2: " 이라는 글자와 'var2'의 값이 함께 나옵니다.
 	
-		int a = 99;
-		System.out.printf("%b", (a > =100) && (a <= 200));
+		int a = 99; // 'a'라는 이름의 'int' (정수) 타입 변수를 만들고 '99'라는 값을 넣어줬어요.
+		// System.out.printf("%b", (a > =100) && (a <= 200)); // 원본 코드 (오타 수정 필요)
+		System.out.printf("%b", (a >= 100) && (a <= 200)); // 수정된 코드: 'a > =100' -> 'a >= 100'으로 오타를 수정했습니다.
+		// 이 부분은 특정 형식으로 값을 출력하는 코드예요. '%b'는 불리언(boolean) 값을 출력하라는 의미입니다.
+		// 괄호 안의 (a >= 100) && (a <= 200) 은 조건식을 나타내요.
+		//   - (a >= 100): 'a'가 100보다 크거나 같은가? (a는 99이므로 false)
+		//   - (a <= 200): 'a'가 200보다 작거나 같은가? (a는 99이므로 true)
+		//   - &&: 논리곱 (AND) 연산자. 양쪽 조건이 모두 true일 때만 전체가 true가 돼요.
+		// 결과적으로 (false && true) 이므로 최종 결과는 'false'가 됩니다. 이 'false' 값을 화면에 출력합니다.
 	}
 }
