@@ -1,18 +1,26 @@
-package com.operex;
+package com.operex; // 이 코드가 속한 폴더(패키지)를 나타내요. (패키지는 관련된 클래스들을 모아두는 일종의 폴더입니다.)
 
-/* 삼항 조건 연산자 -> 삼항연산자
-조건항 ? 항1(true) : 항2(false)
-*/
+/* 삼항 조건 연산자 -> 삼항연산자 // 이 연산자를 부르는 이름들입니다. '조건 연산자'라고도 불려요.
+조건항 ? 항1(true) : 항2(false) // 삼항 연산자의 기본 문법과 각 항의 의미를 설명하고 있어요.
+*/ // 이 코드에 대한 기본적인 설명이 여기에 적혀있어요.
 
-public class OperEx05 {
+public class OperEx05 { // 'OperEx05'라는 이름의 프로그램을 시작하는 클래스입니다. (모든 자바 코드는 클래스 안에 작성돼요.)
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // 프로그램이 실제로 시작되는 부분이에요. 자바 프로그램은 항상 이 'main' 메서드부터 실행됩니다.
 
-		int a = 20, b = 30, max;
+		int a = 20, b = 30, max; // 세 개의 'int' (정수) 타입 변수를 선언하고 'a'는 20, 'b'는 30으로 초기화했어요. 'max'는 아직 값을 넣지 않았습니다.
 		
-		max = a > b ? ++a : ++b;
-		System.out.println("max: " + max);
-		System.out.println("a: " + a);
-		System.out.println("b: " + b);
+		// 이 줄이 삼항 조건 연산자의 핵심입니다!
+		// max = a > b ? ++a : ++b;
+		// 1. 조건식 평가: 'a > b' (20 > 30)를 평가합니다.
+		//    - 20은 30보다 크지 않으므로, 이 조건식의 결과는 'false'입니다.
+		// 2. 결과 선택: 조건식이 'false'이므로, 콜론(:) 뒤에 있는 항, 즉 '++b'가 선택되어 실행됩니다.
+		//    - '++b'는 전위 증감 연산자예요. 'b'의 값을 먼저 1 증가시킨 후, 그 증가된 값을 반환합니다.
+		//    - 따라서 'b'는 30에서 31이 되고, 이 값 31이 'max'에 대입됩니다.
+		max = a > b ? ++a : ++b; 
+		
+		System.out.println("max: " + max); // 'max' 변수에 저장된 값을 화면에 출력해요.
+		System.out.println("a: " + a);     // 'a' 변수에 저장된 값을 화면에 출력해요.
+		System.out.println("b: " + b);     // 'b' 변수에 저장된 값을 화면에 출력해요.
 	}
 }
