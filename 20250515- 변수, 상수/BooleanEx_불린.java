@@ -2,7 +2,7 @@ package com.variable; // 이 코드가 속한 폴더(패키지)를 나타내요.
 
 /* boolean: 자바에서 유일한 논리 자료형: 크기 1byte이지만 
 실제 사용은 1bit만 사용함
-*/ // 여기에 이 코드에 대한 설명이 적혀있어요.
+*/ 
 
 public class BooleanEx { // 'BooleanEx'라는 이름의 프로그램을 시작해요.
 
