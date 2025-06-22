@@ -1,15 +1,20 @@
-package com.operex;
+package com.operex; // 이 코드가 속한 폴더(패키지)를 나타내요. (패키지는 관련된 클래스들을 모아두는 일종의 폴더입니다.)
 
-public class OperEx {
+public class OperEx { // 'OperEx'라는 이름의 프로그램을 시작하는 클래스입니다.
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // 프로그램이 실제로 시작되는 부분이에요.
 		
-		int x = 10;
+		int x = 10; // 'x'라는 이름의 'int' (정수) 타입 변수를 만들고 '10'이라는 값을 넣어줬어요.
 		
-		int y = ++x; // 선연산 후대입
-			   // x++ 선대입 후연산
+		int y = ++x; // 이 줄이 핵심입니다!
+			   // ++x: 'x'의 값을 먼저 1 증가시킨 후, 그 증가된 값을 'y'에 대입합니다.
+			   // 현재 x는 10이었으므로,
+			   // 1. x를 1 증가시킴: x는 11이 됩니다.
+			   // 2. 증가된 x의 값(11)을 y에 대입: y는 11이 됩니다.
+			   // 코드에 적힌 주석처럼 '선연산 후대입' (먼저 연산하고 나중에 대입)과 유사한 개념으로 이해할 수 있습니다.
+			   // x++ 선대입 후연산 (이 부분은 주석이므로 실제 코드에 영향을 주지 않고, 이해를 돕기 위한 설명입니다.)
 		
-		System.out.println("x:" + x);
-		System.out.println("y:" + y);
+		System.out.println("x:" + x); // 'x' 변수에 저장된 값을 화면에 출력해요. 현재 x는 11입니다.
+		System.out.println("y:" + y); // 'y' 변수에 저장된 값을 화면에 출력해요. 현재 y는 11입니다.
 	}
 }
