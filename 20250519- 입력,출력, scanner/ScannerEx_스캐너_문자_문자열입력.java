@@ -1,23 +1,33 @@
-package com.ioex;
+package com.ioex; // 이 코드가 속한 폴더(패키지)를 나타내요. (패키지는 관련된 클래스들을 모아두는 일종의 폴더입니다.)
 
-import java.util.*;
+import java.util.*; // 'java.util' 패키지 안에 있는 모든 클래스들을 사용하겠다고 선언하는 부분이에요.
+                     // 'Scanner' 클래스가 이 패키지 안에 있어서 이 줄이 필요합니다.
 
-public class ScannerEx {
+public class ScannerEx { // 'ScannerEx'라는 이름의 프로그램을 시작하는 클래스입니다. (모든 자바 코드는 클래스 안에 작성돼요.)
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // 프로그램이 실제로 시작되는 부분이에요. 자바 프로그램은 항상 이 'main' 메서드부터 실행됩니다.
 		
-		Scanner sc = new Scanner(System.in); // 스캐너 객체 생성
+		Scanner sc = new Scanner(System.in); // 스캐너 객체 생성: 'Scanner'를 사용하기 위한 첫 단계입니다.
+		                                     // 'sc'라는 이름의 'Scanner' 객체를 만들고, 'System.in' (표준 입력, 즉 키보드)으로부터
+		                                     // 데이터를 읽어들이도록 설정했어요. 이제 'sc'를 통해 사용자 입력을 받을 수 있습니다.
 		
-		String name;  // 문자가 하나 이상
-		char c; // 문자 하나
+		String name; // 'name'이라는 이름의 'String' (문자열) 타입 변수를 선언했어요. 문자가 하나 이상인 단어나 문장을 저장할 수 있어요.
+		char c;      // 'c'라는 이름의 'char' (문자) 타입 변수를 선언했어요. 문자 하나만 저장할 수 있습니다.
 		
-		System.out.print("이름 입력: ");
-		name = sc.next();
+		System.out.print("이름 입력: "); // 사용자에게 '이름 입력:'이라는 메시지를 출력해요. ('print'는 줄 바꿈 없음)
+		name = sc.next();          // 사용자가 키보드로 입력한 **한 단어(공백 전까지)**를 읽어서 'name' 변수에 저장해요.
+		                           // 예: "홍길동"을 입력하면 "홍길동"이 name에 저장됩니다.
 		
-		System.out.print("혈액형: ");
-		c = sc.next().charAt(0);
+		System.out.print("혈액형: "); // 사용자에게 '혈액형:'이라는 메시지를 출력해요.
+		c = sc.next().charAt(0);   // 이 부분이 중요하고 특이해요!
+		                           // 1. `sc.next()`: 먼저 사용자가 입력한 내용을 **문자열(String)**로 읽어와요.
+		                           //    예: 사용자가 "A"를 입력했으면, "A"라는 문자열이 됩니다.
+		                           // 2. `.charAt(0)`: 이렇게 읽어온 문자열에서 **첫 번째 문자(인덱스 0)**를 추출해요.
+		                           //    (자바에서 문자열의 각 문자는 0부터 시작하는 순서(인덱스)를 가집니다. 첫 번째 문자는 인덱스 0이에요.)
+		                           //    예: 문자열 "A"에서 인덱스 0의 문자는 'A'입니다.
+		                           // 3. 이 추출된 단일 문자 'A'를 `char` 타입 변수 `c`에 저장해요.
 		
-		System.out.println(name);
-		System.out.println(c);
+		System.out.println(name); // 'name' 변수에 저장된 이름을 화면에 출력해요. (자동 줄 바꿈 포함)
+		System.out.println(c);    // 'c' 변수에 저장된 혈액형 문자(단일 문자)를 화면에 출력해요. (자동 줄 바꿈 포함)
 	}
 }
