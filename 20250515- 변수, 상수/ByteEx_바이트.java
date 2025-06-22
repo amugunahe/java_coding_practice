@@ -2,7 +2,7 @@ package com.variable; // 이 코드가 속한 폴더(패키지)를 나타내요.
 
 /* byte: 1byte 자료형
 범위: 256 => -128~ 127
-*/ // 여기에 이 코드에 대한 설명이 적혀있어요.
+*/ 
 
 public class ByteEx { // 'ByteEx'라는 이름의 프로그램을 시작해요.
 
