@@ -1,29 +1,64 @@
-package com.functionex;
+package com.functionex; // 'com.functionex'는 이 자바 파일(클래스)이 속한 패키지 이름입니다.
+                        // 패키지는 관련된 클래스들을 묶어서 관리하는 폴더 같은 역할을 합니다.
 
-import java.util.*;
+import java.util.*; // 'java.util' 패키지 안에 있는 모든 유틸리티 클래스들을 가져와 사용하겠다는 의미입니다.
+                    // 여기서는 사용자로부터 입력을 받기 위한 'Scanner' 클래스를 사용하기 위해 필요합니다.
 
-public class DicApp {
-	
-	private Scanner sc;
-	
-	public static void main(String[] args) {
-	
-		Scanner sc = new Scanner(System.in);
-		System.out.println("한영단어 검색 프로그램입니다.");
-		while(true) {
-		System.out.print("한글 단어: ");
-		String kor = sc.next();
-		if (kor.equals("그만")) {
-			System.out.print("프로그램을 종료합니다.");
-			System.exit(0);
-		}
-		
-		String eng = Dictionary.kor2Eng(kor);
-		if (eng == null) {
-			System.out.println(kor + "는 저의 사전에 없습니다.");
-		} else {
-			System.out.println(kor + "은 " + eng);
-			}
-		}
-	}
-}
+/*
+  이 'DicApp' 클래스는 한영 단어 검색 프로그램의 실행을 담당합니다.
+  사용자가 한글 단어를 입력하면, 내부적으로 'Dictionary' 클래스의 도움을 받아
+  해당하는 영어 단어를 찾아 출력해 줍니다. '그만'을 입력하면 프로그램이 종료됩니다.
+ */
+
+public class DicApp { // 'DicApp'이라는 이름의 공개(public) 클래스를 선언합니다.
+                      // 이 클래스는 프로그램의 '시작점'이자 '실행 흐름'을 제어하는 역할을 합니다.
+
+    // private Scanner sc; // 이 부분은 현재 코드에서는 사용되지 않는 멤버 변수입니다.
+                         // 만약 'DicApp' 클래스 자체에서 'Scanner'를 멤버 변수로 사용하고 싶을 때 선언합니다.
+                         // 현재 'main' 메소드 안에서 'Scanner' 객체를 직접 생성하여 사용하고 있습니다.
+
+    // --- 메인 메소드(main method): 프로그램의 시작점 ---
+    // 자바 프로그램이 실행될 때 가장 먼저 실행되는 메소드입니다.
+    // 여기서부터 프로그램의 전체적인 흐름이 시작되고 제어됩니다.
+    public static void main(String[] args) { // 'public static void'는 자바 프로그램의 시작 메소드임을 나타내는 표준 선언입니다.
+                                             // 'String[] args'는 프로그램 실행 시 외부에서 전달되는 인자(arguments)를 받을 때 사용하지만,
+                                             // 이 프로그램에서는 사용하지 않습니다.
+
+        // Scanner 객체를 생성하여 사용자로부터 키보드 입력을 받을 준비를 합니다.
+        // 'new Scanner(System.in)'은 시스템의 표준 입력 스트림(System.in, 즉 키보드)으로부터 읽어올 새 Scanner 객체를 만듭니다.
+        Scanner sc = new Scanner(System.in);
+        System.out.println("한영단어 검색 프로그램입니다."); // 프로그램 시작 메시지를 화면에 출력합니다.
+
+        // --- 무한 루프 시작 ---
+        // 'while(true)'는 조건이 항상 참이므로, 이 안의 코드가 무한히 반복됩니다.
+        // 사용자가 "그만"이라고 입력할 때까지 계속해서 단어 검색 기능을 제공합니다.
+        while(true) {
+            System.out.print("한글 단어: "); // 사용자에게 한글 단어를 입력하라고 안내하는 메시지를 출력합니다. (줄 바꿈 없음)
+            String kor = sc.next(); // 'sc.next()' 메소드를 사용하여 사용자가 콘솔에 입력한 '한 단어'(공백 이전까지)를 읽어와
+                                    // 'kor'이라는 문자열(String) 변수에 저장합니다.
+
+            // --- 프로그램 종료 조건 확인 ---
+            // 'kor.equals("그만")'은 'kor' 변수에 저장된 문자열이 "그만"과 정확히 일치하는지 비교합니다.
+            // 문자열 비교는 '==' 대신 '.equals()' 메소드를 사용해야 합니다.
+            if (kor.equals("그만")) { // 만약 사용자가 "그만"이라고 입력했다면
+                System.out.print("프로그램을 종료합니다."); // 종료 메시지를 출력합니다.
+                System.exit(0); // 'System.exit(0)'는 현재 실행 중인 자바 가상 머신(JVM)을 종료시킵니다.
+                                // 괄호 안의 '0'은 프로그램이 정상적으로 종료되었음을 의미하는 상태 코드입니다.
+            }
+
+            // --- 단어 검색 및 결과 출력 ---
+            // 'Dictionary.kor2Eng(kor)'는 'Dictionary'라는 다른 클래스 안에 있는
+            // 'kor2Eng'라는 메소드를 호출합니다. 이 메소드는 'kor'(입력받은 한글 단어)을 전달받아
+            // 해당하는 영어 단어를 찾아 반환해 줄 것으로 예상됩니다.
+            // (참고: 'Dictionary' 클래스는 이 코드에 포함되어 있지 않으므로, 이 코드를 실행하려면 별도로 'Dictionary' 클래스가 정의되어 있어야 합니다.)
+            String eng = Dictionary.kor2Eng(kor);
+
+            // 검색 결과에 따른 출력
+            if (eng == null) { // 만약 'kor2Eng' 메소드가 'null'을 반환했다면 (사전에 없는 단어일 경우 주로 'null'을 반환합니다)
+                System.out.println(kor + "는 저의 사전에 없습니다."); // 해당 단어가 사전에 없음을 알립니다.
+            } else { // 'null'이 아니라면 (즉, 영어 단어를 찾았다면)
+                System.out.println(kor + "은 " + eng); // "한글단어은 영어단어" 형식으로 결과를 출력합니다.
+            }
+        } // 'while (true)' 루프의 끝. 사용자가 "그만"을 입력하지 않는 한 이 블록은 계속 반복됩니다.
+    } // main 메소드 종료
+} // DicApp 클래스 종료

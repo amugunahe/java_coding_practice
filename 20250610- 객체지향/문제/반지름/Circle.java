@@ -1,16 +1,42 @@
-package com.functionex;
+package com.functionex; // 'com.functionex'는 이 자바 파일(클래스)이 속한 패키지 이름입니다.
+                        // 패키지는 관련된 클래스들을 묶어서 관리하는 폴더 같은 역할을 해요.
 
-public class Circle {
-	 private double x, y;
-	 private int radius;
-	 
-	 public Circle(double x, double y, int radius){
-		this.x = x;
-		this.y = y;
-		this.radius =radius;
+/*
+  이 'Circle' 클래스는 '원'이라는 기하학적 도형의 정보를 나타내는 설계도입니다.
+  원의 중심 좌표(x, y)와 반지름(radius)을 저장하고,
+  그 정보를 출력하는 기능을 가지고 있어요.
+  예를 들어, 그래픽 프로그램에서 화면에 원을 그릴 때 이 'Circle' 클래스의 객체를 만들어서 사용할 수 있습니다.
+ */
+
+public class Circle { // 'Circle'이라는 이름의 공개(public) 클래스를 선언합니다.
+                      // 이 클래스는 '원' 객체를 만들기 위한 '설계도' 또는 '틀'입니다.
+
+    // --- 멤버 변수 (필드) ---
+    // 이들은 'Circle' 클래스로 만들어지는 각각의 객체가 가질 고유한 정보들을 저장하는 공간입니다.
+    // 'private' 접근 제어자는 이 변수들이 'Circle' 클래스 내부에서만 직접 접근 가능하도록 하여 데이터를 안전하게 보호해요.
+	 private double x, y; // 원의 중심 좌표를 나타내는 변수입니다. 'double'은 소수점 이하의 숫자도 저장할 수 있는 타입이에요.
+                         // 'x'는 가로 좌표, 'y'는 세로 좌표를 의미합니다.
+	 private int radius; // 원의 '반지름'을 저장할 정수(int) 변수입니다.
+
+    // --- 생성자(Constructor) ---
+    // 'Circle' 클래스의 생성자입니다.
+    // 'Circle' 객체(예: 'Circle c = new Circle(10.0, 20.0, 5);'와 같이)가 생성될 때 자동으로 호출되며,
+    // 객체가 만들어질 때 원의 중심 좌표와 반지름을 초기화하는 역할을 해요.
+	 public Circle(double x, double y, int radius){ // 'Circle' 객체를 만들 때, 중심 좌표 'x', 'y' (double 타입)와 'radius' (int 타입)를 매개변수로 받습니다.
+		this.x = x;       // 전달받은 'x' 매개변수 값을 현재 'Circle' 객체의 'x' 멤버 변수(필드)에 할당합니다.
+                          // 'this.x'는 이 객체 자신의 'x' 변수를 의미해요.
+		this.y = y;       // 전달받은 'y' 매개변수 값을 현재 'Circle' 객체의 'y' 멤버 변수(필드)에 할당합니다.
+		this.radius =radius; // 전달받은 'radius' 매개변수 값을 현재 'Circle' 객체의 'radius' 멤버 변수(필드)에 할당합니다.
 	 }
-	 
-	  public void show(){
-	  System.out.println("(" + x + y + ")" + radius) ;
-	   }
-}
+
+    // --- 원 정보 출력 메소드 ---
+    // 이 메소드는 현재 'Circle' 객체가 가지고 있는 원의 중심 좌표와 반지름 정보를 화면에 출력합니다.
+	 public void show(){ // 이 메소드는 어떤 값도 반환하지 않고(void), 단순히 정보를 출력하는 역할만 해요.
+                          // 'show'는 "보여주다"라는 의미로, 객체의 상태를 출력할 때 자주 사용되는 메소드 이름입니다.
+        // System.out.println()을 사용하여 원의 정보를 출력합니다.
+        // 출력 결과는 "(x좌표y좌표)반지름" 형태가 됩니다. (예: (10.020.0)5)
+        // 참고: 현재 'x'와 'y' 사이에 공백이나 쉼표가 없어서 "(10.020.0)"처럼 붙여서 출력될 거예요.
+        // 만약 "(10.0, 20.0)5"처럼 출력하고 싶다면 출력문을 수정해야 합니다.
+	   System.out.println("(" + x + y + ")" + radius) ;
+	  }
+} // Circle 클래스 종료

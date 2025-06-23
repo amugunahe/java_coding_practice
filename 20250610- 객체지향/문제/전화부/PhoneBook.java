@@ -1,91 +1,120 @@
-package com.functionex;
+package com.functionex; // 'com.functionex'는 이 자바 파일(클래스)이 속한 패키지 이름입니다.
+                        // 같은 패키지 안에 있는 클래스들(여기서는 Phone과 PhoneBook)은 서로를 쉽게 찾아 사용할 수 있습니다.
+
+import java.util.*; // 'java.util' 패키지 안에 있는 모든 유틸리티 클래스들을 가져와 사용하겠다는 의미입니다.
+                    // 주로 사용자로부터 키보드 입력을 받기 위한 'Scanner' 클래스를 사용하기 위해 필요합니다.
 
 /*
- 이름(name), 전화번호(tel), 필드와 생성자 등을 가진 phone 클래스를 작성하고, 아래와 같이 실행되도록 phonebook 클래스를 작성하시오.
-검색 search() 
-
-인원수: 3
-이름과 전화번호(이름과 번호는 빈칸없이 입력): 가길동 111-1111
-이름과 전화번호(이름과 번호는 빈칸없이 입력): 나길동 222-2222
-이름과 전화번호(이름과 번호는 빈칸없이 입력): 다길동 333-3333
-저장되었습니다.
-
-검색할 이름: 홍길동
-홍길동이 없습니다.
-검색할 이름: 다길동
-다길동의 번호는 333-3333 입니다.
-// 그만 을 입력하면 프로그램을 종료
-검색할 이름: 그만 
+ * 이 'PhoneBook' 클래스는 여러 사람의 전화번호 정보(Phone 객체)를 관리하는 프로그램의 핵심입니다.
+ * 사용자로부터 전화번호부에 저장할 인원수와 각 사람의 이름, 전화번호를 입력받아 저장하고,
+ * 나중에 이름을 검색하여 해당 전화번호를 찾아주는 기능을 제공합니다.
+ * '그만'을 입력하면 프로그램이 종료됩니다.
  */
+public class PhoneBook { // 'PhoneBook'이라는 이름의 공개(public) 클래스를 선언합니다.
+                         // 이 클래스는 '전화번호부' 프로그램 자체를 나타내는 설계도입니다.
 
+    // --- 멤버 변수 (필드) ---
+    // 이들은 'PhoneBook' 객체가 프로그램 실행 중에 필요한 데이터와 도구들을 저장하는 공간입니다.
+    private Scanner sc; // 사용자로부터 키보드 입력을 받기 위한 'Scanner' 객체입니다.
+                        // 이 'Scanner' 객체는 'PhoneBook' 객체가 생성될 때 초기화됩니다.
+    private Phone[] p;  // 'Phone' 객체(즉, 한 사람의 전화번호 정보)들을 여러 개 저장할 수 있는 '배열'입니다.
+                        // 배열의 크기는 사용자가 입력하는 '인원수'에 따라 동적으로 결정됩니다.
 
-import java.util.*;
+    // --- 생성자(Constructor) ---
+    // 'PhoneBook' 클래스의 생성자입니다.
+    // 'PhoneBook' 객체(예: 'PhoneBook pb = new PhoneBook();'와 같이)가 생성될 때 자동으로 호출됩니다.
+    public PhoneBook() {
+        sc = new Scanner(System.in); // 'PhoneBook' 객체가 만들어질 때, 키보드 입력을 위한 'Scanner' 객체를 초기화합니다.
+    }
 
+    // --- 전화번호부 정보 입력 메소드 ---
+    // 사용자로부터 전화번호부에 저장할 인원수와 각 사람의 이름, 전화번호를 입력받아 'p' 배열에 저장합니다.
+    public void input() { // 이 메소드는 어떤 값도 반환하지 않고(void), 단순히 입력을 처리합니다.
 
-public class PhoneBook {
+        System.out.print("인원수: "); // 사용자에게 저장할 인원수를 입력하라고 안내합니다.
+        int n = sc.nextInt(); // 'sc.nextInt()'로 사용자가 입력한 정수(인원수)를 읽어와 'n' 변수에 저장합니다.
 
-	private Scanner sc;
+        p = new Phone[n]; // 'Phone' 객체를 'n'개(인원수만큼) 저장할 수 있는 배열 'p'를 생성합니다.
+                          // 이제 'p' 배열은 'n'개의 'Phone' 객체를 담을 준비가 되었습니다.
 
-	private Phone[] p;
+        // 'for' 반복문을 사용하여 'n'명(배열의 길이)만큼 이름과 전화번호를 입력받습니다.
+        for (int i = 0; i < p.length; i++) { // 'i'는 0부터 시작하여 'p' 배열의 길이보다 작을 때까지 1씩 증가합니다.
+            System.out.print("이름과 전화번호(이름과 번호는 빈칸없이 입력):"); // 각 사람의 이름과 전화번호 입력을 안내합니다.
+            String name = sc.next(); // 'sc.next()'로 사용자가 입력한 '이름'을 읽어와 'name' 변수에 저장합니다. (공백 전까지)
+            String tel = sc.next();  // 'sc.next()'로 사용자가 입력한 '전화번호'를 읽어와 'tel' 변수에 저장합니다. (공백 전까지)
 
-	public PhoneBook() {
-		sc = new Scanner(System.in);
-	}
+            // 'Phone' 클래스의 생성자를 호출하여 새로운 'Phone' 객체를 생성하고,
+            // 입력받은 'name'과 'tel' 값을 이 객체에 저장합니다.
+            // 그리고 이 'Phone' 객체를 'p' 배열의 'i'번째 위치에 저장합니다.
+            p[i] = new Phone(name, tel);
+        }
+        System.out.println("저장되었습니다."); // 모든 정보가 성공적으로 저장되었음을 알리는 메시지를 출력합니다.
+    }
 
-	public void input() {
-		
-		System.out.print("인원수: ");
-		int n = sc.nextInt();
+    // public void read() { // 이 'read' 메소드는 현재 코드에서 비어있습니다.
+    //                      // 만약 나중에 저장된 전화번호부 전체를 출력하는 기능을 추가하고 싶다면 이 메소드 안에 코드를 작성하면 됩니다.
+    // }
 
-		p = new Phone[n]; // n명을 저장할 배열을 선언
+    // --- 전화번호 검색 메소드 ---
+    // 입력받은 'name'(이름)과 일치하는 'Phone' 객체를 'p' 배열에서 찾아 해당 전화번호를 반환합니다.
+    public String search(String name) { // 'String'은 이 메소드가 문자열(찾은 전화번호)을 반환한다는 의미입니다.
+                                        // 'String name'은 검색하고자 하는 이름을 매개변수로 받습니다.
 
-		for (int i = 0; i < p.length; i++) {
-			System.out.print("이름과 전화번호(이름과 번호는 빈칸없이 입력):");
-			String name = sc.next();
-			String tel = sc.next();
-			p[i] = new Phone(name, tel);
-		}
-		System.out.println("저장되었습니다.");
-	}
+        // 'for' 반복문을 사용하여 'p' 배열의 모든 'Phone' 객체를 처음부터 끝까지 순회합니다.
+        for (int i = 0; i < p.length; i++) { // 'i'는 0부터 시작하여 'p' 배열의 길이보다 작을 때까지 1씩 증가합니다.
+            // 'p[i].getName().equals(name)'는 현재 'p' 배열의 'i'번째 'Phone' 객체에서 이름을 가져온 후,
+            // 그 이름이 매개변수로 받은 'name'과 정확히 일치하는지 비교합니다. (문자열 비교는 '.equals()' 사용)
+            if (p[i].getName().equals(name)) { // 만약 일치하는 이름을 가진 'Phone' 객체를 찾았다면
+                return p[i].getTel(); // 해당 'Phone' 객체에서 전화번호를 가져와 이 메소드를 호출한 곳으로 반환합니다.
+            }
+        }
+        return null; // 반복문이 끝날 때까지 일치하는 이름을 찾지 못했다면, 'null'을 반환합니다.
+                     // 'null'은 '아무것도 없음'을 의미하며, 검색 실패를 나타낼 때 주로 사용됩니다.
+    }
 
-	public void read() {
+    // --- 프로그램 실행 흐름 제어 메소드 ---
+    // 이 메소드는 'PhoneBook' 프로그램의 전체적인 실행 흐름을 관리합니다.
+    // 입력 -> 검색 반복 -> 종료 순서로 진행됩니다.
+    public void run() {
+        input(); // 먼저 'input()' 메소드를 호출하여 사용자로부터 전화번호부 정보를 입력받습니다.
 
-	}
+        // --- 무한 루프 (검색 부분) ---
+        // 'while(true)'는 조건이 항상 참이므로, 이 안의 코드가 무한히 반복됩니다.
+        // 사용자가 "그만"이라고 입력할 때까지 계속해서 이름 검색 기능을 제공합니다.
+        while (true) {
+            System.out.print("검색할 이름: "); // 사용자에게 검색할 이름을 입력하라고 안내합니다.
+            String name = sc.next(); // 'sc.next()'로 사용자가 입력한 '검색할 이름'을 읽어와 'name' 변수에 저장합니다.
 
-	public String search(String name) {
+            // --- 프로그램 종료 조건 확인 ---
+            if (name.equals("그만")) { // 만약 사용자가 "그만"이라고 입력했다면
+                System.out.println("프로그램을 종료합니다."); // 종료 메시지를 출력합니다.
+                break; // 'break' 키워드는 현재 실행 중인 'while' 루프를 즉시 종료하고 루프 다음 코드로 넘어갑니다.
+                       // 여기서는 'main' 메소드의 끝으로 이동하게 되어 프로그램이 자연스럽게 종료됩니다.
+            }
 
-		for (int i = 0; i < p.length; i++) {
-			// phone 클래스에 저장된 이름과 내가 검색하고자하는 이름이 같으면
-			if (p[i].getName().equals(name)) {
-				// 이름으로 검색한 전화번호를 반환
-				return p[i].getTel();
-			}
-		}
-		return null;
-	}
+            // --- 이름 검색 및 결과 출력 ---
+            String tel = search(name); // 'search()' 메소드를 호출하여 입력된 'name'으로 전화번호를 검색합니다.
+                                       // 검색 결과(전화번호 또는 null)를 'tel' 변수에 저장합니다.
 
-	public void run() {
-		input();
+            if (tel == null) { // 만약 'search()' 메소드가 'null'을 반환했다면 (일치하는 이름이 없는 경우)
+                System.out.println(name + "이 없습니다."); // 해당 이름이 없음을 알리는 메시지를 출력합니다.
+            } else { // 'null'이 아니라면 (즉, 전화번호를 찾았다면)
+                System.out.println(name + "의 전화번호는 " + tel + " 입니다."); // 찾은 이름과 전화번호를 출력합니다.
+            }
+        } // 'while (true)' 루프의 끝. 'break'가 호출되기 전까지 계속 반복됩니다.
+    }
 
-		while (true) {
-			System.out.print("검색할 이름: ");
-			String name = sc.next();
-			if (name.equals("그만")) {
-				System.out.println("프로그램을 종료합니다.");
-				break;
-			}
-			String tel = search(name);
-			if (tel == null) {
-				System.out.println(name + "이 없습니다.");
-			} else {
-				System.out.println(name + "의 전화번호는 " + tel + " 입니다.");
-			}
-
-		}
-	}
-
-	public static void main(String[] args) {
-		// phoneBook pe = new PhoneBook();
-		new PhoneBook().run();
-	}
-}
+    // --- 메인 메소드(main method): 프로그램의 실제 시작점 ---
+    // 자바 프로그램을 실행하면 이 'main' 메소드부터 코드가 실행되기 시작합니다.
+    public static void main(String[] args) {
+        // 'new PhoneBook().run();'은 다음 두 가지 작업을 한 줄에 수행합니다.
+        // 1. 'new PhoneBook()': 'PhoneBook' 클래스의 새로운 객체를 생성합니다. (이때 'PhoneBook' 생성자가 호출되어 'Scanner'가 초기화됩니다.)
+        // 2. '.run()': 방금 생성된 'PhoneBook' 객체의 'run()' 메소드를 호출합니다.
+        // 이로써 프로그램의 전체 실행 흐름(입력 -> 검색 -> 종료)이 시작됩니다.
+	    
+        new PhoneBook().run();
+        // 주석 처리된 'PhoneBook pe = new PhoneBook();' 코드는 위와 동일한 객체 생성 및 메소드 호출을
+        // 두 줄로 나누어 작성한 예시입니다. 둘 중 어떤 방식을 사용해도 결과는 같습니다.
+        // pe.run();
+    }
+} // PhoneBook 클래스 종료
