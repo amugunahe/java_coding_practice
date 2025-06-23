@@ -1,98 +1,146 @@
-package com.functionex;
-/* 한달의 할일을 표현하는 MonthSchedule 
-  MonthSchedule 클래스에는 Day 객체 배열과 적절한 필드, 메소드를 작성하고 메뉴를 실행하여 구현하시오 
+package com.functionex; // 'com.functionex'는 이 자바 파일(클래스)이 속한 패키지 이름입니다.
+                        // 이전에 만들었던 'Day' 클래스와 같은 패키지에 있어야 서로를 쉽게 찾아 사용할 수 있습니다.
+
+import java.util.*; // 'java.util' 패키지 안에 있는 모든 유틸리티 클래스들을 가져와 사용하겠다는 의미입니다.
+                    // 주로 사용자로부터 키보드 입력을 받기 위한 'Scanner' 클래스를 사용하기 위해 필요합니다.
+
+/*
+  이 'MonthSchedule' 클래스는 '한 달' 동안의 스케줄을 관리하는 프로그램의 핵심입니다.
+  각 날짜별로 할 일을 저장하고 조회하는 기능을 제공하며, 'Day' 객체 배열을 사용하여
+  한 달의 각 날짜를 표현하고 관리합니다.
  
- 생성자, input(), view(), finish(), run() 메소드를 만들고 
- main()에서 run()메소드를 호출하여 실행하시오. 
+  주요 기능:
+  - 'nDays': 이 스케줄이 관리할 총 날짜 수를 저장합니다. (예: 30일)
+  - 'days[]': 각 날짜의 할 일 정보를 담을 'Day' 객체들의 배열입니다.
+  - 'Scanner': 사용자 입력을 받기 위한 객체입니다.
  
- 
- 이번달 스케쥴 관리 프로그램 
- 할일(입력:1, 보기:2. 종료:3) => 1
- 날짜(1 ~ 3): 1
- 할일(빈칸없이 입력): 자바공부
- 
- 할일(입력:1, 보기:2, 종료:3) => 2
- 날짜(1 ~ 30): 1
- 1일의 할일은 자바공부 입니다
- 
- 할일(입력:1 ,보기:2, 종료:3) => 3
- 프로그램을 종료합니다. 
+  메소드:
+  - 'MonthSchedule(int nDays)': 생성자로, 한 달의 총 일수를 받아 배열을 초기화합니다.
+  - 'input()': 사용자로부터 특정 날짜의 할 일을 입력받아 저장합니다.
+  - 'view()': 사용자로부터 특정 날짜를 입력받아 그 날짜의 할 일을 보여줍니다.
+  - 'finish()': 프로그램을 종료합니다.
+  - 'run()': 프로그램의 전체적인 실행 흐름을 제어하는 메인 메뉴를 제공합니다.
  */
 
-import java.util.*;
+public class MonthSchedule { // 'MonthSchedule'이라는 이름의 공개(public) 클래스를 선언합니다.
+                             // 이 클래스는 '한 달 스케줄러' 프로그램 자체를 나타내는 설계도입니다.
 
-public class MonthSchedule {
-	
-	private int nDays;
-	private Day[] days;
-	private Scanner sc;
-	
-	public MonthSchedule(int nDays) {
-		this.nDays = nDays;
-		this.days = new Day[nDays];
-		for(int i = 0; i < days.length; i++) {
-			days[i] = new Day();
+    // --- 멤버 변수 (필드) ---
+    // 이들은 'MonthSchedule' 객체가 프로그램 실행 중에 필요한 데이터와 도구들을 저장하는 공간입니다.
+	private int nDays; // 이 스케줄이 관리할 총 날짜 수(예: 30)를 저장하는 변수입니다.
+	private Day[] days; // 각 날짜의 할 일 정보를 담을 'Day' 객체들의 배열입니다.
+                        // 배열의 크기는 'nDays'에 따라 결정됩니다.
+	private Scanner sc; // 사용자로부터 키보드 입력을 받기 위한 'Scanner' 객체입니다.
+
+    // --- 생성자(Constructor) ---
+    // 'MonthSchedule' 클래스의 생성자입니다.
+    // 'MonthSchedule' 객체(예: 'new MonthSchedule(30);'와 같이)가 생성될 때 자동으로 호출됩니다.
+    // 한 달의 총 날짜 수(nDays)를 받아서 'days' 배열과 'Scanner' 객체를 초기화합니다.
+	public MonthSchedule(int nDays) { // 생성 시 한 달의 날짜 수(예: 30)를 매개변수로 받습니다.
+		this.nDays = nDays; // 전달받은 'nDays' 값을 현재 객체의 'nDays' 필드에 할당합니다.
+		this.days = new Day[nDays]; // 'nDays' 크기만큼의 'Day' 객체를 저장할 수 있는 배열 'days'를 생성합니다.
+                                    // 이 배열의 각 칸에는 아직 'Day' 객체가 들어있지 않고 'null' 상태입니다.
+
+        // 'for' 반복문을 사용하여 'days' 배열의 각 칸에 비어있는 'Day' 객체를 생성하여 채워 넣습니다.
+        // 이렇게 해야 나중에 'days[i].set()'과 같이 각 날짜의 'Day' 객체 메소드를 호출할 수 있습니다.
+		for(int i = 0; i < days.length; i++) { // 배열의 0번째 인덱스부터 마지막까지 순회합니다.
+			days[i] = new Day(); // 각 인덱스에 새로운 'Day' 객체(빈 할일)를 생성하여 저장합니다.
 		}
-		sc = new Scanner(System.in); 
-	}
-		
-	public void input() {
-	System.out.print("날짜(1 ~ 30): ");
-	int day = sc.nextInt();
-	
-	System.out.print("할일(빈칸없이 입력): ");
-	String work = sc.next();
-	day--;
-	
-	if(day < 0 || day > nDays) {
-		System.out.println("잘못 입력 하셨습니다/");
-	return;
-	}
-	days[day].set(work);
+		sc = new Scanner(System.in); // 사용자 입력을 위한 'Scanner' 객체를 초기화합니다.
 	}
 
-	
-	public void view() {
-		System.out.print("날짜(1 ~ 30): ");
-		int day = sc.nextInt();
-		day--;
-		
-		if(day < 0 || day > nDays) {
-			System.out.println("잘못 입력 하셨습니다/");
-		return;
+    // --- 할 일 입력 기능 ('input' 메소드) ---
+    // 사용자로부터 날짜와 해당 날짜에 할 일을 입력받아 'days' 배열의 해당 'Day' 객체에 저장합니다.
+	public void input() { // 이 메소드는 반환 값이 없습니다(void).
+		System.out.print("날짜(1 ~ 30): "); // 사용자에게 날짜 입력을 안내합니다. (예: 1부터 30까지)
+		int day = sc.nextInt(); // 사용자가 입력한 날짜(정수)를 읽어와 'day' 변수에 저장합니다.
+
+		System.out.print("할일(빈칸없이 입력): "); // 사용자에게 할 일 내용을 안내합니다.
+		String work = sc.next(); // 사용자가 입력한 할 일 내용(문자열)을 읽어와 'work' 변수에 저장합니다.
+
+        // 사용자가 입력한 날짜는 1부터 시작하지만, 배열의 인덱스는 0부터 시작하므로 1을 빼줍니다.
+        // 예를 들어, 1일을 입력하면 배열의 0번째 인덱스에 접근합니다.
+		day--; // 'day = day - 1;'과 같습니다.
+
+        // --- 입력 유효성 검사 ---
+        // 입력된 'day'가 유효한 범위(0부터 nDays-1)를 벗어나는지 확인합니다.
+		if(day < 0 || day >= nDays) { // 'day'가 0보다 작거나 'nDays'보다 크거나 같으면 (즉, 잘못된 인덱스이면)
+			System.out.println("잘못 입력 하셨습니다/"); // 오류 메시지를 출력합니다.
+			return; // 메소드 실행을 여기서 중단하고 호출한 곳으로 돌아갑니다. (더 이상 진행하지 않음)
 		}
+        // 유효한 날짜라면, 'days' 배열의 해당 'Day' 객체에 'work' 내용을 설정합니다.
+        // 'days[day]'는 특정 날짜에 해당하는 'Day' 객체를 의미하며, '.set(work)'는 그 'Day' 객체의 'work' 필드를 업데이트합니다.
+		days[day].set(work);
+		System.out.println("할 일이 성공적으로 저장되었습니다."); // (추가: 저장 성공 메시지)
+	}
+
+    // --- 할 일 보기 기능 ('view' 메소드) ---
+    // 사용자로부터 날짜를 입력받아, 해당 날짜에 저장된 할 일 내용을 출력합니다.
+	public void view() { // 이 메소드는 반환 값이 없습니다(void).
+		System.out.print("날짜(1 ~ 30): "); // 사용자에게 날짜 입력을 안내합니다.
+		int day = sc.nextInt(); // 사용자가 입력한 날짜를 읽어와 'day' 변수에 저장합니다.
+		day--; // 배열 인덱스에 맞추기 위해 1을 빼줍니다.
+
+        // --- 입력 유효성 검사 ---
+        // 'input()' 메소드와 동일하게 입력된 날짜가 유효한 범위인지 확인합니다.
+		if(day < 0 || day >= nDays) { // 잘못된 날짜 범위라면
+			System.out.println("잘못 입력 하셨습니다/"); // 오류 메시지를 출력합니다.
+		    return; // 메소드 실행을 중단하고 돌아갑니다.
+		}
+        // 유효한 날짜라면, 사용자에게 보여줄 날짜 정보를 출력합니다. (배열 인덱스에 1을 더하여 원래 날짜로 표시)
 		System.out.println((day + 1) + "일의 할일은: ");
+        // 'days' 배열의 해당 'Day' 객체의 'show()' 메소드를 호출하여 저장된 할 일 내용을 출력합니다.
+        // 'Day.show()' 메소드는 내용이 없으면 "없습니다."를, 있으면 "OOO입니다."를 출력합니다.
 		days[day].show();
-		
 	}
-	
-	public void finish() {
-	System.out.println("프로그램을 종료합니다.");	
-	System.exit(0);
+
+    // --- 프로그램 종료 기능 ('finish' 메소드) ---
+    // 프로그램 종료 메시지를 출력하고, 자바 프로그램을 완전히 종료시킵니다.
+	public void finish() { // 이 메소드는 반환 값이 없습니다(void).
+		System.out.println("프로그램을 종료합니다."); // 종료 메시지를 화면에 출력합니다.
+		sc.close(); // (추가) 프로그램 종료 전에 사용했던 Scanner 객체를 닫아 자원을 해제합니다. 좋은 습관입니다.
+		System.exit(0); // 'System.exit(0)'는 현재 실행 중인 자바 가상 머신(JVM)을 종료시킵니다.
+                        // 괄호 안의 '0'은 프로그램이 정상적으로 종료되었음을 의미하는 상태 코드입니다.
 	}
-	
+
+    // --- 프로그램 실행 흐름 제어 메소드 ('run' 메소드) ---
+    // 이 메소드는 'MonthSchedule' 프로그램의 전체적인 실행 흐름을 관리하고, 사용자에게 메뉴를 제공합니다.
 	public void run() {
-	System.out.println("이번달 스케줄 관리 프로그램");
-	
-	while(true) {
-	System.out.print("할일(입력:1, 보기:2, 종료:3) >> ");
-		int menu = sc.nextInt();
-		switch(menu) {
-		case 1: input(); 
-		break;
-		case 2: view();
-		break;
-		case 3: finish();
-		break;
-		default: 
-			System.out.println("메뉴에 없습니다.");
-		}
-		System.out.println();
+		System.out.println("이번달 스케줄 관리 프로그램"); // 프로그램 시작 메시지를 출력합니다.
+
+        // --- 무한 루프 (메인 메뉴) ---
+        // 'while(true)'는 조건이 항상 참이므로, 이 안의 코드가 무한히 반복됩니다.
+        // 사용자가 3번(종료)을 선택할 때까지 계속해서 메뉴를 보여주고 기능을 수행합니다.
+		while(true) {
+			System.out.print("할일(입력:1, 보기:2, 종료:3) >> "); // 사용자에게 메뉴 선택지를 출력하고 입력을 기다립니다.
+			int menu = sc.nextInt(); // 사용자가 입력한 메뉴 번호(정수)를 읽어와 'menu' 변수에 저장합니다.
+
+            // --- 'switch' 문: 사용자 메뉴 선택에 따라 다른 기능 실행 ---
+            // 'menu' 변수의 값에 따라 해당하는 'case' 블록으로 이동하여 코드를 실행합니다.
+			switch(menu) {
+			case 1: // 'menu'가 1일 경우 (할 일 입력 기능 선택)
+				input(); // 'input()' 메소드를 호출하여 할 일 입력을 처리합니다.
+				break; // 현재 'case' 블록의 실행을 종료하고 'switch' 문을 빠져나갑니다.
+			case 2: // 'menu'가 2일 경우 (할 일 보기 기능 선택)
+				view(); // 'view()' 메소드를 호출하여 할 일 조회를 처리합니다.
+				break; // 'switch' 문을 빠져나갑니다.
+			case 3: // 'menu'가 3일 경우 (프로그램 종료 기능 선택)
+				finish(); // 'finish()' 메소드를 호출하여 프로그램을 종료합니다.
+				break; // 'switch' 문을 빠져나갑니다. (하지만 'finish()' 내부에서 프로그램이 종료되므로 사실상 이 'break'는 실행되지 않습니다.)
+			default: // 'menu'가 1, 2, 3이 아닌 다른 값일 경우 (잘못된 입력)
+				System.out.println("메뉴에 없습니다."); // 잘못된 입력임을 알리는 메시지를 출력합니다.
+			}
+			System.out.println(); // 각 기능 실행 후 한 줄을 비워 출력합니다. (보기 좋게)
 		}
 	}
+
+    // --- 메인 메소드(main method): 프로그램의 실제 시작점 ---
+    // 자바 프로그램을 실행하면 이 'main' 메소드부터 코드가 실행되기 시작합니다.
 	public static void main(String[] args) {
+        // 'new MonthSchedule(30);'은 'MonthSchedule' 클래스의 새로운 객체를 생성합니다.
+        // 이때 생성자에 '30'을 전달하여 30일짜리 스케줄러를 만듭니다.
+        // 생성된 객체를 'me'라는 'MonthSchedule' 타입의 참조 변수에 저장합니다.
 		MonthSchedule me = new MonthSchedule(30);
-		me.run();
- 
+		me.run(); // 'me' 객체의 'run()' 메소드를 호출하여 프로그램의 전체 실행 흐름을 시작합니다.
 	}
-}
+} // MonthSchedule 클래스 종료
