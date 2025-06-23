@@ -26,6 +26,7 @@ public class ArrayUtil { // 'ArrayUtil'이라는 이름의 클래스를 정의�
         //    새로운 배열의 크기는 첫 번째 배열 'a'의 길이와 두 번째 배열 'b'의 길이를 합한 값입니다.
         //    예: a = {1, 2} (길이 2), b = {3, 4, 5} (길이 3) 이라면,
         //        'arr'은 총 2 + 3 = 5개의 요소를 저장할 수 있는 크기로 생성됩니다.
+	    
         int[] arr = new int[a.length + b.length];
 
         // 2. 배열 'a'의 내용을 새로운 배열 'arr'에 복사:
@@ -36,6 +37,7 @@ public class ArrayUtil { // 'ArrayUtil'이라는 이름의 클래스를 정의�
         for (int i = 0; i < a.length; i++) {
             arr[i] = a[i]; // 'a'의 i번째 요소를 'arr'의 i번째 위치에 복사합니다.
         }
+	    
         // 예: a = {1, 2}
         //    - i=0: arr[0] = a[0] (arr[0] = 1)
         //    - i=1: arr[1] = a[1] (arr[1] = 2)
@@ -83,6 +85,7 @@ public class ArrayUtil { // 'ArrayUtil'이라는 이름의 클래스를 정의�
         // 'i'는 배열의 인덱스(0부터 시작)입니다.
         // 'a.length'는 배열 'a'의 총 길이를 의미합니다.
         // 반복문은 'i'가 0부터 시작해서 'a.length - 1'까지 실행됩니다 (배열의 마지막 인덱스).
+	    
         for (int i = 0; i < a.length; i++) {
             // 'a'의 현재 i번째 요소를 출력하고, 뒤에 공백 하나를 추가하여 숫자들을 구분합니다.
             System.out.print(a[i] + " ");
