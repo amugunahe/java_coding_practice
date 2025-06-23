@@ -1,22 +1,45 @@
-package com.functionex;
+package com.functionex; // 'com.functionex'는 이 자바 파일(클래스)이 속한 패키지 이름입니다.
+                        // 패키지는 관련된 클래스들을 묶어서 관리하는 폴더와 같은 역할을 해요.
 
-public class Day {
+/*
+  이 'Day' 클래스는 특정 '하루'에 수행할 '작업(work)'을 저장하고 관리하는 데 사용됩니다.
+  예를 들어, 간단한 스케줄러에서 각 날짜에 대한 할 일을 기록할 때 이 클래스의 객체를 사용할 수 있어요.
+ 
+  주요 기능:
+  - 'work' 필드: 해당 날짜의 작업 내용을 저장합니다.
+  - 'set()' 메소드: 'work' 필드에 새로운 작업 내용을 설정합니다.
+  - 'get()' 메소드: 'work' 필드에 저장된 작업 내용을 반환합니다.
+  - 'show()' 메소드: 'work' 필드에 작업 내용이 있는지 확인하고, 있으면 내용을, 없으면 "없습니다."를 출력합니다.
+ */
 
-	private String work;
+public class Day { // 'Day'라는 이름의 공개(public) 클래스를 선언합니다.
+                   // 이 클래스는 '하루'라는 개념과 그에 연결된 '작업'을 나타내는 '설계도' 또는 '틀'입니다.
 
-	public void set(String work) {
-		this.work = work;
+    // --- 멤버 변수 (필드) ---
+    // 이 변수는 'Day' 클래스로 만들어지는 각각의 객체가 가질 고유한 정보(작업 내용)를 저장하는 공간입니다.
+    // 'private' 접근 제어자는 이 변수가 'Day' 클래스 내부에서만 직접 접근 가능하도록 하여 데이터를 안전하게 보호해요.
+	private String work; // 해당 'Day' 객체에 저장될 '작업' 내용을 문자열(String) 타입으로 저장하는 변수입니다.
+
+    // --- 작업 내용 설정 메소드 (Setter) ---
+    // 'work' 필드의 값을 외부에서 설정할 수 있도록 해주는 메소드입니다.
+	public void set(String work) { // 이 메소드는 어떤 값도 반환하지 않고(void), 'String' 타입의 'work' 매개변수를 받습니다.
+		this.work = work; // 전달받은 'work' 매개변수 값을 현재 'Day' 객체의 'work' 멤버 변수(필드)에 할당합니다.
+                          // 'this.work'는 이 객체 자신의 'work' 변수를 의미해요.
 	}
 
-	public String get() {
-		return work;
+    // --- 작업 내용 가져오기 메소드 (Getter) ---
+    // 'work' 필드의 값을 외부에서 읽어갈 수 있도록 해주는 메소드입니다.
+	public String get() { // 이 메소드는 'work' 필드에 저장된 값을 문자열(String) 타입으로 반환합니다.
+		return work; // 현재 'Day' 객체의 'work' 값을 반환합니다.
 	}
 
-	public void show() {
-		if (work == null)
-			System.out.println("없습니다.");
-		else
-			System.out.println(work + "입니다.");
+    // --- 작업 내용 보여주기 메소드 ---
+    // 'work' 필드에 작업 내용이 저장되어 있는지 확인하고, 그에 따라 다른 메시지를 출력합니다.
+	public void show() { // 이 메소드는 어떤 값도 반환하지 않고(void), 단순히 정보를 출력하는 역할만 해요.
+		if (work == null) // 만약 'work' 필드가 'null'이라면 (즉, 아직 아무런 작업 내용도 설정되지 않았다면)
+			System.out.println("없습니다."); // "없습니다."라는 메시지를 화면에 출력합니다.
+		else // 'work' 필드가 'null'이 아니라면 (즉, 작업 내용이 저장되어 있다면)
+			System.out.println(work + "입니다."); // 저장된 'work' 내용 뒤에 "입니다."를 붙여 화면에 출력합니다.
 	}
 
-}
+} // Day 클래스 종료
