@@ -57,10 +57,12 @@ public class TvExam03 { // TvExam03 이라는 이름의 클래스를 정의합�
 
         // 2. Tv 객체를 생성해서 배열의 각 요소에 저장 (매우 중요!)
         // 이 `for` 반복문 안에서 비로소 실제 `Tv` 객체들이 생성됩니다.
+      
         for (int i = 0; i < tvArr.length; i++) {
             // `tvArr[i] = new Tv();`
             // `new Tv()`를 호출하여 새로운 Tv 객체를 메모리에 만듭니다.
             // 그리고 이 객체의 '주소'를 `tvArr[i]` (배열의 각 위치)에 저장합니다.
+          
             tvArr[i] = new Tv(); // 각 배열 요소가 독립적인 Tv 객체를 가리키게 됩니다.
 
             // `tvArr[i].channel = i + 10;`
@@ -87,6 +89,7 @@ public class TvExam03 { // TvExam03 이라는 이름의 클래스를 정의합�
             // i가 0일 때: tvArr[0]의 channel (10)이 11로 증가
             // i가 1일 때: tvArr[1]의 channel (11)이 12로 증가
             // i가 2일 때: tvArr[2]의 channel (12)이 13으로 증가
+          
             tvArr[i].channelUp();
 
             // 변경된 채널 값을 출력합니다.
