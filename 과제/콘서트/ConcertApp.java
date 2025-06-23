@@ -1,10 +1,32 @@
-package com.homework;
+package com.homework; // 이 클래스(ConcertApp.java)가 속한 패키지 이름입니다.
+                      // 'Concert' 클래스와 같은 패키지에 있어서 서로 쉽게 찾아 사용할 수 있습니다.
 
-public class ConcertApp {
+/*
+  이 'ConcertApp' 클래스는 콘서트 예약 시스템 프로그램의 **실제 시작점**입니다.
+  자바 애플리케이션은 'main' 메소드부터 실행되기 때문에, 이 클래스는
+  'Concert' 예약 시스템을 구동시키는 역할을 합니다.
+ 
+  주요 역할:
+  1. 'Concert' 클래스의 객체(인스턴스)를 생성합니다.
+  2. 생성된 'Concert' 객체의 'run()' 메소드를 호출하여 예약 시스템을 시작합니다.
+ */
 
-	public static void main(String[] args) {
-		// "글로벌인 콘서트"라는 이름으로 Concert 객체 생성
+public class ConcertApp { // 'ConcertApp'이라는 이름의 공개(public) 클래스를 선언합니다.
+
+	// --- main 메소드 ---
+	// 자바 프로그램이 시작될 때 가장 먼저 실행되는 특별한 메소드입니다.
+	// 모든 자바 애플리케이션은 이 'main' 메소드부터 시작합니다.
+	public static void main(String[] args) { // 'public static void'는 자바 프로그램의 시작 메소드임을 나타내는 표준 선언입니다.
+		                                      // 'String[] args'는 프로그램 실행 시 외부에서 전달받을 수 있는 인자(매개변수)들입니다.
+
+		// "글로벌인 콘서트"라는 이름으로 Concert 객체를 생성합니다.
+		// 이 코드가 실행되면 'Concert' 클래스 안에 정의된 생성자가 호출됩니다.
+		// 생성자는 콘서트 홀 이름 설정, Scanner 초기화, 그리고 S/A/B 등급별 좌석 그룹(Group 객체)을 생성하는 역할을 합니다.
 		Concert con = new Concert("글로벌인 콘서트");
-		con.run(); // 콘서트 예약 시스템 실행
+
+		// 생성된 'con' 객체의 'run()' 메소드를 호출합니다.
+		// 'run()' 메소드는 콘서트 예약 시스템의 메인 메뉴를 표시하고,
+		// 사용자의 입력을 받아 예약, 조회, 취소 기능을 수행하는 루프를 시작합니다.
+		con.run();
 	}
 }
