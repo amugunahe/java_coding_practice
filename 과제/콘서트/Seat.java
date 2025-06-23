@@ -1,29 +1,70 @@
-package com.homework;
+package com.homework; // 이 클래스(Seat.java)가 속한 패키지 이름입니다.
+                      // 'Concert'나 'Group' 클래스와 같은 패키지에 있어서 서로 쉽게 찾아 사용할 수 있습니다.
 
-public class Seat {
-	private String name; // 좌석을 예약한 사람의 이름
+/*
+  이 'Seat' 클래스는 콘서트 좌석 예약 시스템에서 **개별 좌석 하나**의 상태를 관리하는 설계도입니다.
+  각 좌석이 누가 예약했는지, 또는 현재 비어있는지 등의 정보를 저장하고 처리하는 기능을 가집니다.
+ 
+  주요 구성 요소:
+  - 좌석을 예약한 사람의 이름 (name)
+ */
 
-	public Seat() {
-		name = null; // 초기에는 아무도 예약하지 않으므로 null로 설정
+public class Seat { // 'Seat'라는 이름의 공개(public) 클래스를 선언합니다.
+
+	// --- 1. 클래스의 속성 (멤버 변수) ---
+	// 이 변수는 'Seat' 객체가 가지는 '상태'를 나타냅니다.
+	private String name; // 이 좌석을 예약한 사람의 이름을 저장할 문자열(String) 변수입니다.
+	                     // 'private'이므로 이 클래스 내부에서만 직접 접근 가능합니다.
+
+	// --- 2. 생성자(Constructor) ---
+	// 'Seat' 객체가 생성될 때 가장 먼저 실행되는 특별한 메소드입니다.
+	// 좌석을 처음 만들 때의 초기 상태를 설정합니다.
+	public Seat() { // 'Seat' 생성자입니다. 매개변수가 없는 기본 생성자입니다.
+		name = null; // 좌석이 처음 생성될 때는 아무도 예약하지 않은 상태이므로, 'name'을 'null'로 설정합니다.
+		             // 'null'은 '아무것도 참조하지 않는다', '값이 없다'는 의미입니다.
 	}
 
-	public String getName() {
-		return name; // 예약자 이름 반환
+	// --- 3. 메소드 (좌석 관리 기능) ---
+
+	/*
+	  이 좌석을 예약한 사람의 이름을 반환합니다.
+	 
+	  @return 좌석 예약자의 이름 (예약되지 않았다면 null)
+	 */
+	
+	public String getName() { // 'getName()' 메소드는 이 좌석을 예약한 사람의 이름을 문자열 형태로 반환합니다.
+		return name; // 'name' 변수에 저장된 값을 반환합니다.
 	}
 
-	// 좌석 예약 취소
-	public void cancel() {
-		name = null; // 이름을 null로 설정하여 예약 취소
+	/*
+	  좌석 예약을 취소합니다.
+	  좌석 예약자의 이름을 null로 설정하여 좌석을 빈 상태로 만듭니다.
+	 */
+	
+	public void cancel() { // 'cancel()' 메소드는 외부에서 호출될 수 있습니다.
+		name = null; // 'name' 변수를 다시 'null'로 설정하여 이 좌석의 예약을 취소합니다.
+		             // 이제 이 좌석은 다시 비어있는 상태가 됩니다.
 	}
 
-	// 좌석 예약
-	public void reserve(String name) {
-		this.name = name; // 예약자 이름을 설정
+	/*
+	  좌석을 예약합니다.
+	 
+	  @param name 좌석을 예약할 사람의 이름
+	 */
+	
+	public void reserve(String name) { // 'reserve(String name)' 메소드는 외부에서 호출될 수 있으며, 예약할 사람의 이름을 매개변수로 받습니다.
+		this.name = name; // 매개변수로 받은 'name'을 이 객체의 'name' 멤버 변수에 저장합니다.
+		                  // 이제 이 좌석은 해당 'name'을 가진 사람이 예약한 상태가 됩니다.
 	}
 
-	// 좌석이 예약되어 있는지 확인 (true: 예약됨, false: 비어있음)
-	public boolean isOccupied() {
-		// 좌석이 예약되어 있으면 true를 반환함 (name이 null이 아니면 예약된 것)
-		return name != null; // 논리 오류 수정: name이 null이 아니어야 true 반환
+	/*
+	  현재 좌석이 예약되어 있는지 여부를 확인합니다.
+	 
+	  @return 좌석이 예약되어 있으면 true, 비어있으면 false를 반환합니다.
+	 */
+	
+	public boolean isOccupied() { // 'isOccupied()' 메소드는 이 좌석이 현재 예약되어 있는지 여부를 논리값(true/false)으로 반환합니다.
+		// 좌석이 예약되어 있다는 것은 'name' 변수에 어떤 이름이 저장되어 있고, 그 값이 'null'이 아니라는 의미입니다.
+		return name != null; // 'name'이 'null'이 아니라면 'true'를 반환하고 (예약됨), 'null'이라면 'false'를 반환합니다 (비어있음).
 	}
 }
