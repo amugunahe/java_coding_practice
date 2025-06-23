@@ -1,22 +1,40 @@
-package com.functionex;
+package com.functionex; // 'com.functionex'는 이 자바 파일(클래스)이 속한 패키지 이름입니다.
+                        // 패키지는 관련된 클래스들을 묶어서 관리하는 폴더 같은 역할을 해요.
 
-public class Phone {
+/*
+ * 이 'Phone' 클래스는 '하나의 전화번호 정보'를 나타내는 설계도입니다.
+ * 즉, 이름과 전화번호를 묶어서 관리하기 위한 틀을 제공해요.
+ * 예를 들어, 연락처 앱에서 한 사람의 정보를 저장할 때 이 'Phone' 클래스의 객체를 만들어서 사용할 수 있습니다.
+ */
+public class Phone { // 'Phone'이라는 이름의 공개(public) 클래스를 선언합니다.
+                     // 이 클래스는 '전화번호 정보' 객체를 만들기 위한 '설계도' 또는 '틀'입니다.
 
-	private String name;
-	private String tel;
+    // --- 멤버 변수 (필드) ---
+    // 이들은 'Phone' 클래스로 만들어지는 각각의 객체가 가질 고유한 정보들을 저장하는 공간입니다.
+    // 'private' 접근 제어자는 이 변수들이 'Phone' 클래스 내부에서만 직접 접근 가능하도록 하여 데이터를 안전하게 보호해요.
+	private String name; // 전화번호의 주인이 되는 '이름'을 저장할 문자열(String) 변수입니다.
+	private String tel;  // '전화번호' 자체를 저장할 문자열(String) 변수입니다. (전화번호는 숫자로만 이루어져 있지만, 계산에 사용되지 않고
+                         // 하이픈(-) 같은 문자도 포함될 수 있으므로 보통 String 타입으로 저장해요.)
 
-	public Phone(String name, String tel) {
-		this.name = name;
-		this.tel = tel;
-
+    // --- 생성자(Constructor) ---
+    // 'Phone' 클래스의 생성자입니다.
+    // 'Phone' 객체(예: 'Phone p = new Phone("홍길동", "010-1234-5678");'와 같이)가 생성될 때 자동으로 호출되며,
+    // 객체가 만들어질 때 이름과 전화번호를 초기화하는 역할을 해요.
+	public Phone(String name, String tel) { // 'Phone' 객체를 만들 때, 'name'과 'tel' 두 개의 문자열 값을 매개변수로 받습니다.
+		this.name = name; // 전달받은 'name' 매개변수 값을 현재 'Phone' 객체의 'name' 멤버 변수(필드)에 할당합니다.
+                          // 'this.name'은 이 객체 자신의 'name' 변수를 의미해요.
+		this.tel = tel;   // 전달받은 'tel' 매개변수 값을 현재 'Phone' 객체의 'tel' 멤버 변수(필드)에 할당합니다.
 	}
 
-	public String getName() {
-		return name;
+    // --- Getter 메소드 ---
+    // 'private'으로 선언된 멤버 변수('name'과 'tel')의 값을 외부에서 읽어갈 수 있도록 해주는 메소드들입니다.
+    // 직접 변수에 접근하는 대신 메소드를 통해 접근하게 함으로써 데이터를 안전하게 관리할 수 있어요.
+	public String getName() { // 이 메소드는 'name' 필드(이름)의 값을 문자열(String) 타입으로 반환합니다.
+		return name; // 현재 'Phone' 객체의 'name' 값을 반환합니다.
 	}
 
-	public String getTel() {
-		return tel;
+	public String getTel() { // 이 메소드는 'tel' 필드(전화번호)의 값을 문자열(String) 타입으로 반환합니다.
+		return tel; // 현재 'Phone' 객체의 'tel' 값을 반환합니다.
 	}
 
-}
+} // Phone 클래스 종료
