@@ -19,6 +19,7 @@ public class Dictionary { // 'Dictionary'라는 이름의 공개(public) 클래�
     //           즉, 'Dictionary' 객체를 여러 개 만들어도 'kor'과 'eng' 배열은 하나만 존재합니다.
     private static String[] kor = { "사랑", "아기", "돈", "미래", "희망" }; // 한글 단어들을 저장하는 문자열 배열입니다.
                                                                         // 미리 정해진 단어들로 초기화되어 있습니다. (우리 사전의 한글 부분)
+	
     private static String[] eng = { "love", "baby", "money", "future", "hope" }; // 위 'kor' 배열의 단어와 순서가 일치하는
                                                                                  // 영어 단어들을 저장하는 문자열 배열입니다. (우리 사전의 영어 부분)
 
@@ -34,6 +35,7 @@ public class Dictionary { // 'Dictionary'라는 이름의 공개(public) 클래�
 		for(int i = 0; i < kor.length; i++) { // 'int i = 0;': 반복문의 시작 인덱스를 0으로 초기화합니다.
                                               // 'i < kor.length;': 'i'가 'kor' 배열의 길이보다 작은 동안 (즉, 배열의 모든 요소에 대해) 반복합니다.
                                               // 'i++': 반복할 때마다 'i' 값을 1씩 증가시킵니다.
+			
             // 'kor[i].equals(word)'는 'kor' 배열의 현재 'i'번째 한글 단어가
             // 매개변수로 받은 'word'와 정확히 일치하는지 비교합니다. (문자열 비교는 '==' 대신 '.equals()'를 사용합니다.)
 			if(kor[i].equals(word)) { // 만약 일치하는 한글 단어를 찾았다면
