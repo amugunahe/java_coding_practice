@@ -2,6 +2,7 @@ package com.polymorphism;
 
 // --- A 클래스: 부모 (기본 좌표) ---
 // 모든 자식들이 물려받을 기본 틀이다.
+
 class A {
 	private int x = 100; // x 좌표 (나만 건드릴 수 있음)
 	private int y = 200; // y 좌표 (나만 건드릴 수 있음)
