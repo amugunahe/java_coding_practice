@@ -1,87 +1,83 @@
-package com.objectex; // 이 코드가 속한 패키지(폴더) 이름이에요.
+package com.objectex; // 이 코드는 'com.objectex' 패키지에 들어있어. 파일들을 종류별로 묶어두는 폴더라고 생각하면 됨.
 
-class MyMath { // MyMath라는 이름의 클래스를 정의합니다. 수학 계산 관련 메소드를 담을 거예요.
+class MyMath { // 'MyMath'라는 이름의 클래스를 정의한다 이기. 여기선 수학 계산하는 메소드들을 모아둘 거야.
 
     // 1. 덧셈 메소드: add
-    int add(int a, int b) // 선언부 (int형 a와 b를 받아 int형 값 반환)
-    {
-        int result = a + b; // 구현부: a와 b를 더한 값을 result에 저장
-        return result;      // result 값을 반환
+    // 'int add(int a, int b)' : 이 메소드는 'int' 타입 값 두 개(a, b)를 받아서 'int' 타입의 결과값을 반환할 거라는 선언부임.
+    int add(int a, int b) {
+        int result = a + b; // 'a'랑 'b'를 더한 값을 'result'라는 변수에 저장한다.
+        return result;      // 계산된 'result' 값을 이 메소드를 호출한 곳으로 돌려준다.
     }
 
     // 2. 뺄셈 메소드: sub
-    int sub(int a, int b) // 선언부 (int형 a와 b를 받아 int형 값 반환)
-    {
-        int result = a - b; // 구현부: a에서 b를 뺀 값을 result에 저장
-        return result;      // result 값을 반환
+    // 'int sub(int a, int b)' : 'a'에서 'b'를 뺀 값을 'int' 타입으로 반환할 거라는 선언부.
+    int sub(int a, int b) {
+        int result = a - b; // 'a'에서 'b'를 뺀 값을 'result'에 저장.
+        return result;      // 'result' 값을 반환.
     }
 
     // 3. 곱셈 메소드: mul
-    int mul(int a, int b) // 선언부 (int형 a와 b를 받아 int형 값 반환)
-    {
-        int result = a * b; // 구현부: a와 b를 곱한 값을 result에 저장
-        return result;      // result 값을 반환
+    // 'int mul(int a, int b)' : 'a'와 'b'를 곱한 값을 'int' 타입으로 반환할 거라는 선언부.
+    int mul(int a, int b) {
+        int result = a * b; // 'a'와 'b'를 곱한 값을 'result'에 저장.
+        return result;      // 'result' 값을 반환.
     }
 
     // 4. 나눗셈 메소드: div
-    int div(int a, int b) // 선언부 (int형 a와 b를 받아 int형 값 반환)
-    {
-        int result = a / b; // 구현부: a를 b로 나눈 값을 result에 저장
-                            // (주의: 정수 나눗셈은 소수점 이하를 버립니다. 예를 들어 10 / 3은 3이 됩니다.)
-        return result;      // result 값을 반환
+    // 'int div(int a, int b)' : 'a'를 'b'로 나눈 값을 'int' 타입으로 반환할 거라는 선언부.
+    int div(int a, int b) {
+        int result = a / b; // 'a'를 'b'로 나눈 값을 'result'에 저장.
+                            // **★중요: 여기서 정수(int)끼리 나누면 소수점 이하는 그냥 잘린다!**
+                            // 예를 들어, 10 / 3은 3.333...이 아니라 그냥 '3'이 됨.
+        return result;      // 'result' 값을 반환.
     }
 }
 
 
-public class MyMathEx { // MyMathEx 라는 이름의 클래스를 정의합니다. 여기서 프로그램을 실행해요.
+public class MyMathEx { // 'MyMathEx'라는 이름의 클래스. 여기서 실제 프로그램을 돌려볼 거다
 
-    public static void main(String[] args) { // 프로그램의 시작점인 main 메소드입니다.
+    // ★★★ main 메소드: 여기가 프로그램의 시작점임! 무조건 여기서부터 코드가 실행된다. ★★★
+    public static void main(String[] args) {
 
         // 1. MyMath 클래스의 객체(인스턴스) 생성
-        MyMath mm = new MyMath(); // 'new MyMath()'는 MyMath 클래스를 바탕으로 실제 '수학 계산기' 객체를 메모리에 만드세요! 라는 명령이에요.
-                                  // 이렇게 만들어진 객체를 'mm'이라는 변수가 가리키게 됩니다.
-                                  // 이제 'mm'을 통해 MyMath 클래스 안에 있는 메소드들을 사용할 수 있어요.
+        // 'MyMath mm = new MyMath();' : 'MyMath' 클래스를 가지고 'mm'이라는 실제 '수학 계산기' 객체를 만드는 코드다.
+        // 이렇게 객체를 만들어야 'MyMath' 클래스 안에 정의된 'add', 'sub' 같은 메소드들을 사용할 수 있다.
+        MyMath mm = new MyMath();
 
         // 2. MyMath 객체의 메소드 호출 및 결과 저장
-        long r1 = mm.add(6, 7); // mm 객체의 add 메소드를 호출합니다. 인자 6과 7을 넘겨줍니다.
-                                // add 메소드는 6 + 7 = 13을 계산하고 int형으로 반환합니다.
-                                // 이 13을 long 타입 변수 r1에 저장합니다. (int가 long으로 자동 형변환됩니다.)
-        long r2 = mm.sub(10, 2); // mm 객체의 sub 메소드를 호출합니다. 인자 10과 2를 넘겨줍니다.
-                                // sub 메소드는 10 - 2 = 8을 계산하고 int형으로 반환합니다.
-                                // 이 8을 long 타입 변수 r2에 저장합니다.
-        long r3 = mm.mul(2, 3); // mm 객체의 mul 메소드를 호출합니다. 인자 2와 3을 넘겨줍니다.
-                                // mul 메소드는 2 * 3 = 6을 계산하고 int형으로 반환합니다.
-                                // 이 6을 long 타입 변수 r3에 저장합니다.
-        long r4 = mm.div(10, 2); // mm 객체의 div 메소드를 호출합니다. 인자 10과 2를 넘겨줍니다.
-                                // div 메소드는 10 / 2 = 5를 계산하고 int형으로 반환합니다.
-                                // 이 5를 long 타입 변수 r4에 저장합니다.
+        // 'mm.add(6, 7)' : 'mm' 객체한테 'add' 메소드를 호출하라고 시키면서, 6과 7을 넘겨주는 거다.
+        // 'add' 메소드가 6 + 7 = 13을 계산해서 int형으로 돌려주면, 그 13을 'r1'이라는 long 타입 변수에 저장한다.
+        // **★참고: int형(13)이 long형(r1)으로 저장될 때는 자바가 알아서 바꿔주니까(자동 형변환) 문제 없다 **
+        long r1 = mm.add(6, 7);
+        long r2 = mm.sub(10, 2); // 'sub' 메소드 호출, 10 - 2 = 8 계산해서 'r2'에 저장.
+        long r3 = mm.mul(2, 3); // 'mul' 메소드 호출, 2 * 3 = 6 계산해서 'r3'에 저장.
+        long r4 = mm.div(10, 2); // 'div' 메소드 호출, 10 / 2 = 5 계산해서 'r4'에 저장.
 
         // 3. 계산 결과 출력
-        System.out.println(mm.add(6, 7)); // mm.add(6, 7)을 다시 호출하여 반환된 값 13을 바로 출력합니다.
-        System.out.println(r1); // 변수 r1에 저장된 값 13을 출력합니다.
-        System.out.println(r2); // 변수 r2에 저장된 값 8을 출력합니다.
-        System.out.println(r3); // 변수 r3에 저장된 값 6을 출력합니다.
-        System.out.println(r4); // 변수 r4에 저장된 값 5를 출력합니다.
+        // 'System.out.println()' : 괄호 안의 내용을 화면에 출력하라는 명령어다.
+        System.out.println(mm.add(6, 7)); // 'mm.add(6, 7)'을 또 호출해서 나온 결과값 13을 바로 출력한다.
+        System.out.println(r1); // 변수 'r1'에 저장된 값 13을 출력.
+        System.out.println(r2); // 변수 'r2'에 저장된 값 8을 출력.
+        System.out.println(r3); // 변수 'r3'에 저장된 값 6을 출력.
+        System.out.println(r4); // 변수 'r4'에 저장된 값 5를 출력.
 
-        // 4. static 메소드 호출 (중요!)
-        // 'static' 메소드는 객체를 만들지 않고도 클래스 이름으로 바로 호출할 수 있어요.
-        // `main` 메소드도 `static`이므로, 같은 클래스 안에 있는 다른 `static` 메소드들은
-        // 클래스 이름 없이 바로 호출할 수 있습니다.
-        firstMethod(); // firstMethod() 메소드를 호출합니다.
-                       // firstMethod() 안에서는 다시 secondMethod()를 호출합니다.
-                       // 결국 "secondMethod()..."가 출력될 거예요.
+        // 4. ★★★ static 메소드 호출 (존나 중요!) ★★★
+        // 'static' 메소드는 객체(`mm`처럼 `new`로 만든 거)를 만들 필요 없이, 클래스 이름으로 바로 호출할 수 있다.
+        // 아니면 지금처럼 같은 클래스 안에 있으면 클래스 이름(`MyMathEx.firstMethod()`)도 생략하고 그냥 메소드 이름만 불러도 된다.
+        firstMethod(); // 'firstMethod()'를 호출하면, 얘가 다시 'secondMethod()'를 호출할 거다.
+                       // 결과적으로 "secondMethod()..."가 화면에 출력될 거임.
     }
 
     // static 메소드: firstMethod
-    // 이 메소드는 'static'으로 선언되어 있어서 `main` 메소드처럼 객체 생성 없이 바로 호출될 수 있어요.
+    // 'static void firstMethod()' : 이 메소드도 'static'이라서 'main' 메소드처럼 객체 없이 바로 호출된다.
     static void firstMethod() {
-        secondMethod(); // 같은 클래스 내의 다른 static 메소드인 secondMethod()를 호출합니다.
-                        // (여기서 `MyMathEx.secondMethod();` 라고 써도 되지만, 보통 생략해요.)
+        secondMethod(); // 같은 'MyMathEx' 클래스 안에 있는 'static' 메소드인 'secondMethod()'를 호출.
+                        // (원래는 'MyMathEx.secondMethod();' 라고 써야 하지만, 같은 클래스라 생략하는 거다.)
     }
 
     // static 메소드: secondMethod
-    // 이 메소드도 'static'으로 선언되어 있어요.
+    // 이 메소드도 'static'이다. 그냥 메시지를 출력하는 간단한 역할만 함.
     static void secondMethod() {
-        System.out.println("secondMethod()..."); // "secondMethod()..."라는 문자열을 출력합니다.
+        System.out.println("secondMethod()..."); // "secondMethod()..."라는 문장을 화면에 출력.
     }
 }
