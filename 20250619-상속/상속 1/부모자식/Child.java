@@ -1,58 +1,43 @@
-package com.inher; // 이 코드가 속한 패키지 이름입니다.
+package com.inher; // 이 코드는 'com.inher' 패키지에 들어있음.
 
 /*
-  생성자와 초기화 블록은 상속되지 않습니다. (중요!)
-  -> 자식 클래스는 부모의 생성자나 초기화 블록을 직접 물려받지 않아요.
-  하지만 자식 객체를 만들 때, 부모의 생성자가 먼저 호출되어 부모 부분을 초기화합니다.
- 
-  멤버(변수와 메서드)만 상속됩니다.
-  -> 부모 클래스에 선언된 변수와 메서드는 자식 클래스에서 마치 자기 것인 것처럼 사용할 수 있습니다.
- 
-  자손(자식) 클래스의 멤버 개수는 조상(부모) 클래스보다 항상 같거나 많습니다.
-  -> 자식은 부모의 모든 것을 물려받고, 추가적으로 자신만의 변수나 메서드를 가질 수 있기 때문입니다.
+  ★★★ 상속의 핵심 개념 ★★★
+  - 생성자/초기화 블록은 상속 안 됨! -> BUT, 자식 객체 만들 때 부모 생성자가 먼저 호출돼서 부모 부분 초기화함.
+  - 멤버(변수, 메서드)만 상속됨. -> 자식은 부모 꺼 내 것인 양 쓸 수 있음.
+  - 자식 클래스 멤버 수는 부모보다 항상 같거나 많음. (물려받고 자기 거 추가 가능)
  */
 
-import java.io.IOException; // 파일 입출력 시 발생할 수 있는 예외(오류)를 처리하기 위해 필요한 클래스입니다.
-// import java.sql.SQLException; // 데이터베이스 관련 예외를 처리하기 위한 클래스인데, 현재 코드에서는 사용되지 않습니다.
+import java.io.IOException; // 파일 입출력 오류 처리용.
 
-public class Child extends Parent { // ★★★ 중요 ★★★
-	// 'Child' 클래스는 'Parent' 클래스를 '상속(extends)'받습니다.
-	// 이는 Child가 Parent의 모든 변수와 메서드를 물려받았다는 뜻입니다.
+public class Child extends Parent { // ★★★개중요★★★ 'Child'는 'Parent'를 상속받음.
+	// Child는 Parent의 모든 변수와 메서드를 물려받았다는 뜻.
 
-	int x = 20; // 'Child' 클래스만의 고유한 멤버 변수 'x'입니다.
-				// 만약 부모 클래스에도 'x'라는 변수가 있다면, 이 'x'는 부모의 'x'와는 별개의,
-				// 자식 클래스 내부에서만 유효한 'x'가 됩니다. (나중에 `method()`에서 자세히 설명)
+	int x = 20; // Child 클래스만의 고유 변수 'x'.
+				// ★주의★ 부모에도 'x'가 있다면 이건 별개임! (아래 method()에서 확인)
 
-	@Override // ★★★ 중요 ★★★
-	// 이 어노테이션(Annotation)은 "아래 메서드가 부모 클래스의 메서드를 재정의(Override)한 것이다"라고
-	// 자바 컴파일러에게 알려주는 역할을 합니다. 오타 등으로 재정의가 잘못되었을 때 오류를 알려줘서 실수를 막아줍니다.
-	void parentMethod() { // 부모 클래스의 `parentMethod()`를 자식 클래스에 맞게 내용을 바꾼 것입니다.
-						// 이 메서드는 `IOException`만 던져도 문제가 없습니다.
-						// (부모 메서드가 더 넓은 범위의 예외를 던지거나, 같은 예외를 던질 수 있기 때문)
-		System.out.println("여기는 자식 클래스임당"); // 부모 메서드와 다르게 출력됩니다.
+	@Override // ★★★필수★★★ "아래 메서드, 부모 거 재정의(Override)했음!" 컴파일러한테 알려주는 표시.
+	void parentMethod() { // 부모의 `parentMethod()` 내용을 Child에 맞게 바꿈.
+						// 부모보다 좁거나 같은 범위의 예외(IOException) 던질 수 있음.
+		System.out.println("여기는 자식 클래스임당"); // 부모랑 다르게 출력됨.
 	}
 
-	// 아래 두 메서드는 '오버로딩(Overloading)'의 예시입니다.
-	// 오버로딩: 같은 이름의 메서드를 여러 개 만들 수 있지만, 매개변수(괄호 안의 입력값)의 개수나 타입이 달라야 합니다.
-	void parentMethod(int i) throws IOException { // `int i`라는 매개변수를 하나 받는 `parentMethod`
+	// ★오버로딩(Overloading) 예시★
+	// 같은 이름의 메서드를 여러 개 만들지만, 매개변수 개수나 타입이 달라야 함.
+	void parentMethod(int i) throws IOException { // int i 하나 받는 `parentMethod`
 		System.out.println("여기는 자식 클래스임당 (오버로딩 - int i)");
 	}
 
-	void parentMethod(int i, int j) throws IOException { // `int i`, `int j` 두 개의 매개변수를 받는 `parentMethod`
+	void parentMethod(int i, int j) throws IOException { // int i, int j 두 개 받는 `parentMethod`
 		System.out.println("여기는 자식 클래스임당 (오버로딩 - int i, int j)");
 	}
 
-	void play() { // 'Child' 클래스에만 있는 고유한 메서드(기능)입니다.
+	void play() { // 'Child' 클래스에만 있는 고유 메서드.
 		System.out.println("놀자~~~~");
 	}
 
-	void method() { // 변수 'x'의 다양한 접근 방법을 보여주는 메서드입니다.
-		System.out.println("x: " + x); // 그냥 'x'라고 하면, 현재 이 `Child` 클래스의 'x' (값: 20)를 가리킵니다.
-		System.out.println("this.x: " + this.x); // 'this.x'도 현재 이 `Child` 클래스의 'x' (값: 20)를 가리킵니다.
-												// 'this'는 "지금 내가 속한 객체 자신"을 의미해요.
-		System.out.println("super.x: " + super.x); // 'super.x'는 "나를 상속해 준 부모 클래스의 'x'"를 가리킵니다.
-												// 만약 `Parent` 클래스에 `x = 10`이라고 선언되어 있다면,
-												// 여기서는 10이 출력될 것입니다.
-												// 'super'는 "나의 직계 부모"를 의미해요.
+	void method() { // 변수 'x' 접근 방법 비교 메서드.
+		System.out.println("x: " + x);         // 그냥 'x': 현재 Child 클래스의 'x' (값: 20)
+		System.out.println("this.x: " + this.x); // 'this.x': 'this'는 "지금 내 객체 자신". 역시 Child의 'x' (값: 20)
+		System.out.println("super.x: " + super.x); // ★존나중요★ 'super.x': 'super'는 "내 직계 부모". 부모 클래스의 'x' (Parent에 x=10 있으면 10 출력됨)
 	}
 }
