@@ -1,22 +1,33 @@
 // HospitalMain.java 파일
 package com.polymorphism;
 
-public class HospitalMain { // 이 파일의 유일한 public 클래스이며, 파일 이름과 정확히 일치해야 합니다.
+/*
+  HospitalMain 클래스: ★★★ 다형성 테스트의 존나게 중요한 메인 프로그램! ★★★
+ 
+  핵심:
+  - 'Hospital'에 모든 종류의 'Animal'을 (Dog, Cat, Tiger) 보낼 수 있음을 보여준다.
+  - Animal 타입 변수 하나로 Dog, Cat, Tiger 객체를 모두 참조한다.
+  이게 바로 **'다형성(Polymorphism)'이라는 개념의 개핵심**이다!
+  - 'injection()' 메소드 호출할 때, 실제로는 Dog, Cat, Tiger 각자의
+  'scream()'이나 'getName()'이 실행된다. (오버라이딩된 메소드 호출)
+  덕분에 코드 존나 깔끔해지고 확장성도 미친다!
+ */
+
+public class HospitalMain {
 
     public static void main(String[] args) {
-        Hospital h = new Hospital(); // 병원 객체 생성
+        Hospital h = new Hospital(); // 동물 병원 개원!
 
-        // Animal 타입의 참조 변수로 Dog, Cat, Tiger 객체를 생성합니다.
-        // 이것이 바로 '다형성(Polymorphism)'의 핵심 예시입니다.
-        Animal dog = new Dog();    // Dog 객체 생성 및 Animal 타입으로 참조
-        Animal cat = new Cat();    // Cat 객체 생성 및 Animal 타입으로 참조
-        Animal tiger = new Tiger(); // Tiger 객체 생성 및 Animal 타입으로 참조
+        // --- ★★★ 존나 중요! 다형성의 진정한 맛! ★★★
+        // Animal 타입 변수 하나로 개, 고양이, 호랑이 새끼들을 다 가리킨다!
+        Animal dog = new Dog();    // '개' 객체를 'Animal' 타입으로 본다.
+        Animal cat = new Cat();    // '고양이' 객체를 'Animal' 타입으로 본다.
+        Animal tiger = new Tiger(); // '호랑이' 객체를 'Animal' 타입으로 본다.
 
-        // Hospital 객체의 injection 메소드를 호출하면서 다양한 Animal 타입 객체를 전달합니다.
-        // injection 메소드 내부에서는 전달된 실제 객체(Dog, Cat, Tiger)의
-        // 오버라이딩된 getName()과 scream() 메소드가 자동으로 호출됩니다.
-        h.injection(dog);
-        h.injection(cat);
-        h.injection(tiger);
+        // Hospital의 injection 메소드에 이 동물들을 하나씩 던져 넣는다.
+        // 메소드 안에서는 각 동물의 실제 울음소리랑 이름이 나온다! (오버라이딩의 힘!)
+        h.injection(dog);   // 개새끼 주사 놓기
+        h.injection(cat);   // 고양이 주사 놓기
+        h.injection(tiger); // 호랑이 주사 놓기
     }
 }
