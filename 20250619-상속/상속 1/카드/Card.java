@@ -1,50 +1,50 @@
-package com.inher;
+package com.inher; // 이 코드는 'com.inher' 패키지에 들어있음.
 
-public class Card {
+public class Card { // 'Card'라는 이름의 설계도. 카드 한 장 만드는 용도임.
 
-	// 상수는 대문자로 표기하며, static final을 사용하여 클래스 수준에서 고정된 값을 가집니다.
-	// 'static'은 Card 객체를 만들지 않아도 'Card.KIND_MAX'처럼 바로 사용할 수 있게 해줍니다.
-	// 'final'은 한 번 정해지면 값을 바꿀 수 없다는 의미입니다.
+	// ★★★ 중요 상수들 (static final) ★★★
+	// 'static'은 카드 객체 없어도 'Card.KIND_MAX'처럼 바로 쓸 수 있다는 뜻.
+	// 'final'은 한 번 정하면 절대로 못 바꿈. 고정값임.
 
-	// 카드 무늬의 최대 종류 수 (총 4가지 무늬)
-	static final int KIND_MAX = 4;
-	// 각 무늬별 카드 수 (A, 2~10, J, Q, K -> 총 13장)
-	static final int NUM_MAX = 13;
+	static final int KIND_MAX = 4; // 카드 무늬 최대 4종류 (스페이드, 다이아, 하트, 클로버)
+	static final int NUM_MAX = 13; // 각 무늬별 카드 수 13장 (A, 2~K)
 
-	// 각 카드 무늬를 나타내는 상수 정의 (값을 정해두어 나중에 헷갈리지 않게 함)
-	static final int SPADE = 4;   // 스페이드 무늬는 4
-	static final int DIAMOND = 3; // 다이아몬드 무늬는 3
-	static final int HEART = 2;   // 하트 무늬는 2
-	static final int CLOVER = 1;  // 클로버 무늬는 1
+	// 각 카드 무늬를 숫자로 정해놓은 거임. (헷갈리지 않게)
+	static final int SPADE = 4;
+	static final int DIAMOND = 3;
+	static final int HEART = 2;
+	static final int CLOVER = 1;
 
-	int kind;   // 이 카드의 무늬를 저장하는 변수 (예: SPADE, DIAMOND)
-	int number; // 이 카드의 숫자를 저장하는 변수 (예: 1, 7, 13)
+	int kind; // 이 카드의 무늬 (위의 SPADE, DIAMOND 같은 값 들어감)
+	int number; // 이 카드의 숫자 (1~13까지)
 
-	// 기본 생성자: Card 객체를 'new Card()'처럼 만들 때 호출됩니다.
-	// 기본적으로 스페이드 1 (Ace) 카드를 만듭니다.
+	// --- 생성자 (카드 만드는 놈) ---
+
+	// 1. 기본 생성자: 'new Card()' 하면 얘 호출됨.
+	// 기본으로 스페이드 1 (A) 카드를 만들어 줌.
 	public Card() {
-		this(SPADE, 1); // 다른 생성자(kind, number를 받는 생성자)를 호출하여 초기화합니다.
+		this(SPADE, 1); // ★중요: 아래 '무늬, 숫자 받는 생성자'를 호출해서 초기화함. (코드 재활용)
 	}
-	
-	// '무늬'와 '숫자'를 받아서 Card 객체를 만드는 생성자
+
+	// 2. 무늬랑 숫자를 받아서 카드 만드는 생성자
 	public Card(int kind, int number) {
-		this.kind = kind;     // 매개변수로 받은 kind를 이 Card 객체의 kind에 저장
-		this.number = number; // 매개변수로 받은 number를 이 Card 객체의 number에 저장
+		this.kind = kind;     // 입력받은 무늬를 이 카드의 'kind'에 저장.
+		this.number = number; // 입력받은 숫자를 이 카드의 'number'에 저장.
 	}
-	
-	// 객체를 문자열로 표현할 때 자동으로 호출되는 메서드 (예: System.out.println(card_object);)
-	@Override // 부모 클래스인 Object의 toString() 메서드를 재정의한다는 의미입니다.
-	public String toString() {
-		// 무늬 상수에 해당하는 이름을 찾아오기 위한 배열 (인덱스 0은 비워두고 1부터 시작)
+
+	// --- 메서드 (카드 기능) ---
+
+	@Override // ★필수★ 부모 클래스(Object)의 toString()을 재정의(Override)한다는 표시.
+	public String toString() { // 이 카드를 문자열로 보여줄 때 자동으로 호출됨. (예: System.out.println(카드객체))
+
+		// 카드 무늬 이름 매칭용 배열 (인덱스 0은 비워둠)
 		String[] kinds = {"", "CLOVER", "HEART", "DIAMOND", "SPADE"};
 		
-		// 카드 숫자에 해당하는 문자를 찾아오기 위한 문자열 (인덱스 0은 무시하고 1부터 사용)
-		// '0'은 자리 맞춤용이고, 1~9는 숫자, 'X'는 10, 'J'는 11, 'Q'는 12, 'K'는 13을 나타냅니다.
-		String numbers= "0123456789XJQK";
+		// 카드 숫자/문자 매칭용 문자열 (1은 1, 10은 X, 11은 J, 12는 Q, 13은 K)
+		String numbers = "0123456789XJQK";
 		
-		// "kind:SPADE, number:A"와 같은 형식의 문자열을 반환합니다.
-		// this.kind (4, 3, 2, 1 중 하나)를 kinds 배열의 인덱스로 사용하여 무늬 이름을 가져오고,
-		// this.number (1~13)를 numbers 문자열의 인덱스로 사용하여 숫자 문자를 가져옵니다.
+		// "kind:SPADE, number:A" 같은 형식으로 만들어서 반환함.
+		// this.kind로 무늬 이름 가져오고, this.number로 숫자 문자 가져옴.
 		return "kind:" + kinds[this.kind] + ", number:" + numbers.charAt(this.number);
 	}
 }
