@@ -1,85 +1,64 @@
-package com.test; // 이 코드가 속한 패키지 이름입니다. 보통 관련된 클래스들을 묶어두는 폴더 같은 개념이에요.
+package com.test; // 이 코드 덩어리가 속한 폴더(패키지) 이름이다.
 
 /*
-  [문제 2]
-  - 목표: 사칙연산자(+, -, *, /)를 입력받아 두 실수를 계산하는 프로그램을 구현합니다.
-  - 조건:
-  - 연산자는 +, -, *, / 네 가지입니다.
-  - 피연산자(계산할 숫자)는 모두 실수(소수점 있는 숫자)로 처리합니다.
-  - 0으로 나누기 연산을 시도할 경우, "0으로 나눌 수 없습니다."라는 메시지를 출력합니다.
+  [문제 2] 간단한 사칙연산 계산기
+  - 목표: 사칙연산자(+, -, *, /) 입력받아서 두 실수 계산.
+  - 규칙:
+  - 연산자: +, -, *, / 만 됨.
+  - 숫자(피연산자): 무조건 소수점 있는 실수(double)로 처리.
+  - ★★★ 존나 중요! 0으로 나누면 "0으로 나눌 수 없습니다." 출력. ★★★
  */
 
-import java.util.*; // 사용자로부터 키보드 입력을 받기 위해 'Scanner' 클래스가 포함된 java.util 패키지 전체를 불러옵니다.
+import java.util.*; // 사용자 입력받는 도구 'Scanner'가 들어있는 패키지 통째로 가져오기.
 
-public class HomeWork02 { // 'HomeWork02'라는 이름의 클래스를 정의합니다.
+public class HomeWork02 {
 
-	public static void main(String[] args) { // ★★★ 프로그램의 시작점 ★★★
-		// 이 `main` 메서드 안의 코드가 프로그램이 실행될 때 가장 먼저 동작합니다.
-		// `public static void`는 외부에서 접근 가능하고(public), 객체를 생성하지 않고도 바로 실행할 수 있으며(static),
-		// 어떤 결과 값도 반환하지 않는다는(void) 의미입니다.
+	public static void main(String[] args) { // ★★★ 여.기.서.부.터. 프로그램 시작! ★★★
 
-		// 사용자 입력을 받기 위한 Scanner 객체를 생성합니다.
-		Scanner sc = new Scanner(System.in); // `System.in`은 표준 입력 장치(키보드)를 의미합니다.
+		Scanner sc = new Scanner(System.in); // 키보드 입력받을 준비!
 
-		// 첫 번째 숫자, 두 번째 숫자를 저장할 변수들을 선언합니다.
-		// `double`은 소수점을 포함하는 실수를 저장할 수 있는 자료형입니다.
-		double num1, num2;
-
-		// 연산 기호(+, -, *, /)를 저장할 변수를 선언합니다.
-		// `char`는 문자 하나를 저장할 수 있는 자료형입니다.
-		char cal;
+		double num1, num2; // 첫 번째, 두 번째 숫자 (소수점 있는 실수) 저장용 변수.
+		char cal;          // 연산 기호 (+, -, *, /) 저장용 변수.
 
 		// 1. 첫 번째 숫자 입력받기
-		System.out.print("첫번째 수 입력: "); // 사용자에게 메시지를 출력합니다.
-		num1 = sc.nextDouble(); // 사용자가 입력한 double형 숫자(실수)를 읽어서 `num1` 변수에 저장합니다.
+		System.out.print("첫번째 수 입력: ");
+		num1 = sc.nextDouble(); // 사용자가 입력한 실수 'num1'에 저장.
 
 		// 2. 연산 기호 입력받기
-		System.out.print("연산기호 입력(+, -, *, /): "); // 사용자에게 메시지를 출력합니다.
-		// `sc.next()`는 사용자가 입력한 한 단어(문자열)를 읽어옵니다.
-		// `.charAt(0)`는 그 문자열의 첫 번째 문자만 추출합니다. (예: 사용자가 "abc" 입력 시 'a'만 가져옴)
-		cal = sc.next().charAt(0);
+		System.out.print("연산기호 입력(+, -, *, /): ");
+		cal = sc.next().charAt(0); // 사용자가 입력한 문자열 중 첫 글자만 가져와서 'cal'에 저장.
 
 		// 3. 두 번째 숫자 입력받기
-		System.out.print("두번째수 입력:"); // 사용자에게 메시지를 출력합니다.
-		num2 = sc.nextDouble(); // 사용자가 입력한 double형 숫자(실수)를 읽어서 `num2` 변수에 저장합니다.
+		System.out.print("두번째수 입력:");
+		num2 = sc.nextDouble(); // 사용자가 입력한 실수 'num2'에 저장.
 
-		// 4. 입력받은 연산 기호에 따라 계산 수행 (Switch 문)
-		// `switch` 문은 'cal' 변수의 값에 따라 여러 경우 중 하나를 선택하여 실행할 때 사용합니다.
+		// --- ★★★ 존나 중요! 연산 기호에 따라 계산 수행 (Switch 문) ★★★
 		switch (cal) {
-		case '+': // 'cal'이 '+'와 같다면 이 코드를 실행합니다.
-			// `printf`는 형식화된 출력을 제공합니다.
-			// `%f`는 double형 숫자를 출력할 때 사용합니다.
-			// `%n`은 운영체제에 맞는 줄바꿈 문자를 출력합니다.
-			System.out.printf("%f + %f = %f%n", num1, num2, num1 + num2);
-			break; // `break`는 현재 `switch` 문을 빠져나가게 합니다. `break`가 없으면 다음 `case` 문도 이어서 실행될 수 있습니다.
+		case '+': // 연산 기호가 '+'면
+			System.out.printf("%f + %f = %f%n", num1, num2, num1 + num2); // 덧셈 계산 후 출력.
+			break; // 여기서 스위치문 탈출.
 
-		case '-': // 'cal'이 '-'와 같다면 이 코드를 실행합니다.
-			System.out.printf("%f - %f = %f%n", num1, num2, num1 - num2);
+		case '-': // 연산 기호가 '-'면
+			System.out.printf("%f - %f = %f%n", num1, num2, num1 - num2); // 뺄셈 계산 후 출력.
 			break;
 
-		case '*': // 'cal'이 '*'와 같다면 이 코드를 실행합니다.
-			System.out.printf("%f * %f = %f%n", num1, num2, num1 * num2);
+		case '*': // 연산 기호가 '*'면
+			System.out.printf("%f * %f = %f%n", num1, num2, num1 * num2); // 곱셈 계산 후 출력.
 			break;
 
-		case '/': // 'cal'이 '/'와 같다면 이 코드를 실행합니다. (나눗셈은 특별한 조건이 있습니다!)
-			// 0으로 나누는 경우를 방지하기 위한 조건문입니다.
-			if (num2 == 0) { // 만약 두 번째 숫자(`num2`)가 0이라면
-				System.out.println("0으로 나눌 수 없습니다."); // 경고 메시지를 출력합니다.
-			} else { // 'num2'가 0이 아니라면 (안전하게 나눗셈을 할 수 있다면)
-				System.out.printf("%f / %f = %f%n", num1, num2, num1 / num2); // 나눗셈을 수행하고 결과를 출력합니다.
+		case '/': // 연산 기호가 '/'면 (★★★★ 나눗셈은 특히 주의 ★★★★)
+			if (num2 == 0) { // ★★★ 존나 중요! 두 번째 숫자가 0이면 (0으로 나누기 시도!) ★★★
+				System.out.println("0으로 나눌 수 없습니다."); // 에러 메시지 뱉어라!
+			} else { // 0이 아니면 안전하게
+				System.out.printf("%f / %f = %f%n", num1, num2, num1 / num2); // 나눗셈 계산 후 출력.
 			}
-			break;
+			break; // 여기서 스위치문 탈출.
 
-		default: // 위의 어떤 `case`에도 해당하지 않을 경우 (즉, +, -, *, / 외의 다른 연산 기호를 입력했을 때)
-			System.out.println("잘못된 연산자입니다."); // "잘못된 연산자입니다." 메시지를 출력합니다.
+		default: // 위에 해당하는 연산 기호가 아니면 (잘못된 입력)
+			System.out.println("잘못된 연산자입니다."); // 에러 메시지 뱉어라!
 		}
 
-		// 5. 자원 해제
-		sc.close(); // 더 이상 `Scanner` 객체를 사용하지 않으므로, 열려있던 자원(메모리 등)을 시스템에 반환합니다.
-					// 이는 좋은 프로그래밍 습관입니다.
-	}
-}
-		// 더 이상 Scanner 객체를 사용하지 않을 때, 리소스를 해제합니다.
-		sc.close();
+		// 5. 사용했던 자원 깔끔하게 해제
+		sc.close(); // 입력 도구 다 썼으면 시스템 자원 깔끔하게 닫아라.
 	}
 }
