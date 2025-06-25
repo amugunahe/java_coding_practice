@@ -5,13 +5,13 @@ package com.exam;
 
 출력
 2자리 정수 입력(10~99): 77
-10의 자리와 1의 자리가 같습니다.  
+10의 자리와 1의 자리가 같습니다.
 
 2자리 정수 입력(10~99): 57
-10의 자리와 1의 자리가 다릅니다.  
+10의 자리와 1의 자리가 다릅니다.
 
-10의자리와 1의 자리를 구분 
-몫은 10의자리로 나머지는 1의 자리로 
+10의자리와 1의 자리를 구분
+몫은 10의자리로 나머지는 1의 자리로
 */
 
 import java.util.*;
@@ -19,44 +19,26 @@ import java.util.*;
 public class EXam02 {
 
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
-		int a;
-		
-		System.out.print("10자리 정수를 입력해라: ");
-		a = sc.nextInt();
-		
-		if (a > 9 && a <= 99) {
-			if (a / 10 == a % 10)
-				System.out.println("10자리와 1의 자리가 같습니다.");
-			else
-				System.out.println("10의 자리와 1의 자리가 다릅니다.");
-		} else
-			System.out.println("범위를 벗어났습니다.");			
-		}
-	}
 
-		/* 다른 답) 
-		Scanner sc = new Scanner(System.in);
-  
-		int n, ten, one;
-		
-		System.out.print("2자리 정수를 입력(10 ~ 99): ");
-		n = sc.nextInt();
-		
-		// 범위
-		if (n < 10 || n > 99){
-		System.out.Pritnln("정수의 범위는 10 ~ 99만 입력하세요.");
-		return;
+		Scanner sc = new Scanner(System.in); // 사용자 입력 받기 위한 Scanner 객체 생성
+
+		int a; // 입력받을 정수를 저장할 변수
+
+		System.out.print("2자리 정수 입력(10~99): "); // 사용자에게 입력 지침 제공
+		a = sc.nextInt(); // 사용자가 입력한 정수를 변수 'a'에 저장
+
+		// 입력된 정수가 두 자리(10~99) 범위 내에 있는지 먼저 확인
+		if (a >= 10 && a <= 99) { // 10 이상 99 이하인지 체크
+			// 10의 자리와 1의 자리를 분리하여 비교
+			if (a / 10 == a % 10) { // 몫(10의 자리)과 나머지(1의 자리)가 같은지 비교
+				System.out.println("10의 자리와 1의 자리가 같습니다.");
+			} else { // 몫과 나머지가 다르면
+				System.out.println("10의 자리와 1의 자리가 다릅니다.");
+			}
+		} else { // 입력된 정수가 범위를 벗어났을 경우
+			System.out.println("범위를 벗어났습니다. 10에서 99 사이의 정수를 입력하세요.");
 		}
-		
-		ten = n / 10;   // 10의 자리
-		one = n % 10;  // 1의 자리
-	
-	  // 십의 자리와 일의 자리가 같은지를 비교
-	  if (ten == one)
-	  System.out.Pritnln("10자리와 1의 자리가 같습니다.");
-	  else
-	  System.out.Pritnln("10의 자리와 1의 자리가 다릅니다.");
- 		*/
+
+		sc.close(); // Scanner 사용이 끝났으면 반드시 닫아줘야 함
+	}
+}
