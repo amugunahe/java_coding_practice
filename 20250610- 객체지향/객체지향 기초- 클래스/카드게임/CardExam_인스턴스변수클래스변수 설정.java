@@ -64,19 +64,19 @@ public class CardExam { // 'CardExam'이라는 이름의 공개(public) 클래�
 		c2.number = 4;        // `c2` 객체의 `number`를 4로 설정
 
 		/* (이 시점에서 메모리 상의 상황)
-		 * Card 클래스:
-		 * static width = 100
-		 * static height = 250
-		 *
-		 * c1 객체: (인스턴스)
-		 * kind = "Heart"
-		 * number = 7
-		 *
-		 * c2 객체: (인스턴스)
-		 * kind = "Spade"
-		 * number = 4
-		 *
-		 * *주의: `c1.width`와 `c2.width`는 사실 `Card.width`와 같은 메모리 공간을 가리킨다!*
+		  Card 클래스:
+		  static width = 100
+		  static height = 250
+		 
+		  c1 객체: (인스턴스)
+		  kind = "Heart"
+		  number = 7
+		 
+		  c2 객체: (인스턴스)
+		  kind = "Spade"
+		  number = 4
+		 
+		  *주의: `c1.width`와 `c2.width`는 사실 `Card.width`와 같은 메모리 공간을 가리킨다!*
 		 */
 		System.out.println(); // 줄 바꿈
 
@@ -101,19 +101,19 @@ public class CardExam { // 'CardExam'이라는 이름의 공개(public) 클래�
 		c1.height = 300;   // Card.height가 300으로 변경됨 (c2에도 영향!)
 
 		/* (이 시점에서 메모리 상의 상황)
-		 * Card 클래스:
-		 * static width = 150 (값이 변경됨)
-		 * static height = 300 (값이 변경됨)
-		 *
-		 * c1 객체: (인스턴스)
-		 * kind = "Heart"
-		 * number = 7
-		 *
-		 * c2 객체: (인스턴스)
-		 * kind = "Spade"
-		 * number = 4
-		 *
-		 * *주의: `c1.width`와 `c2.width`는 이제 모두 변경된 150, 300을 가리킨다!*
+		  Card 클래스:
+		  static width = 150 (값이 변경됨)
+		  static height = 300 (값이 변경됨)
+		 
+		  c1 객체: (인스턴스)
+		  kind = "Heart"
+		  number = 7
+		 
+		  c2 객체: (인스턴스)
+		  kind = "Spade"
+		  number = 4
+		 
+		  *주의: `c1.width`와 `c2.width`는 이제 모두 변경된 150, 300을 가리킨다!*
 		 */
 		System.out.println(); // 줄 바꿈
 
