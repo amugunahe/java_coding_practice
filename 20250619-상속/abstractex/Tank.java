@@ -20,5 +20,4 @@ public class Tank extends Unit{
 	void move(int x, int y) {
 		System.out.println("x:" + x + ",y:" + y); // 탱크가 (x, y)로 이동했다고 출력!
 	}
-	
 }
