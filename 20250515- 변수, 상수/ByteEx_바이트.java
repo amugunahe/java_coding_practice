@@ -1,17 +1,21 @@
-package com.variable; // 이 코드가 속한 폴더(패키지)를 나타내요.
+package com.variable; // 야, 이 코드가 여기 산다. 주소 박아놨으니까 딴 데서 헤매지 마라.
 
 /* byte: 1byte 자료형
 범위: 256 => -128~ 127
-*/ 
+*/ // byte는 1바이트짜리 정수형이다. 범위는 -128부터 127까지밖에 안 됨.
 
-public class ByteEx { // 'ByteEx'라는 이름의 프로그램을 시작해요.
+public class ByteEx { // 야, ByteEx 이름으로 프로그램 시작한다. 이 파일 이름이랑 똑같으니까 틀리면 뒤진다.
 
-	public static void main(String[] args) { // 프로그램이 실제로 시작되는 부분이에요.
-		
-		byte bb = 127; // 'bb'라는 이름의 'byte' 타입 변수를 만들고 '127' 값을 넣어줘요.
-		int a; // 'a'라는 이름의 'int' 타입 변수를 선언만 해요 (아직 값을 넣지 않음).
-		
-		a = (int)(bb + 1); // 'bb'에 1을 더한 값을 'int' 타입으로 변환해서 'a'에 넣어줘요.
-		System.out.println("a = " + a); // 'a' 변수에 저장된 값을 화면에 보여줘요.
+	public static void main(String[] args) { // 여기가 진짜 시작점이다. 무조건 여기부터 실행된다고 보면 됨.
+
+		byte bb = 127; // bb라는 byte 변수에 127 박아 넣었다. byte가 저장할 수 있는 최댓값임.
+		int a; // a라는 int 변수 하나 만들었다. 아직 값은 안 넣었음.
+
+		a = (int)(bb + 1); // bb에 1을 더한 값을 int로 바꿔서 a에 넣어라.
+		// 여기서 중요한 건, bb(127)에 1을 더하면 128인데, byte는 127이 최대라서 오버플로우 난다.
+		// 그래서 byte 타입인 bb를 계산하기 전에 int로 바꿔줘야 제대로 128이 나온다.
+		// (bb + 1)이 먼저 계산되는데, 이때 byte 타입인 bb가 int로 자동 변환되어서 계산된다.
+		// 결과적으로 127 + 1 = 128이 되고, 이걸 다시 int 타입인 a에 넣는 거다.
+		System.out.println("a = " + a); // a에 뭐 들어있는지 화면에 보여준다.
 	}
 }
