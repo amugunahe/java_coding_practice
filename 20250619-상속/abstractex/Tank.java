@@ -9,8 +9,8 @@ package com.abstractex; // 이 코드가 속한 폴더(패키지) 이름이다.
   - **`changeMode()`라는 탱크 고유의 기능**도 가지고 있다. (시즈 모드 같은 거겠지, 씨발!)
  */
 
-public class Tank extends Unit{ 
-                              
+public class Tank extends Unit{ // 이제 'Unit'을 제대로 상속받고 있다, 씨발!
+	
 	void changeMode() {} // 탱크 고유의 기능. (모드 전환 같은 거겠지!)
 	
 	// ★★★ 존나 중요! 'move()' 메소드 재정의(Override)! ★★★
@@ -20,4 +20,5 @@ public class Tank extends Unit{
 	void move(int x, int y) {
 		System.out.println("x:" + x + ",y:" + y); // 탱크가 (x, y)로 이동했다고 출력!
 	}
+	
 }
