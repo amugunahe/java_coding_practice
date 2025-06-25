@@ -25,6 +25,7 @@ public class DeckTest {
 		// 2. 덱에서 첫 번째 카드(인덱스 0)를 뽑는다.
 		// 'd.pick(0)'은 덱의 맨 위(0번째) 카드를 가져오는 거다!
 		Card c = d.pick(0);
+		
 		// 뽑은 카드 정보 출력. (Card 클래스의 'toString()' 메소드가 자동으로 호출돼서 카드 정보를 보여준다!)
 		System.out.println(c);	
 
