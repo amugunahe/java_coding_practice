@@ -1,5 +1,6 @@
-package com.functionex; // 'com.functionex'는 이 자바 파일(클래스)이 속한 패키지 이름이다.
-                         // 패키지는 관련된 클래스들을 묶어서 관리하는 폴더 같은 역할을 한다.
+package com.functionex; // 이 코드가 속한 패키지(폴더) 이름이다.
+                         // 패키지는 관련 있는 클래스들을 묶어 관리하는 데 사용된다.
+                         // 나중에 이 클래스를 사용할 때 'import com.functionex.Grade;'처럼 가져올 수 있다.
 
 import java.util.*; // 'java.util' 패키지 안에 있는 모든 유틸리티 클래스들을 가져와 사용하겠다는 의미다.
                      // 여기서는 사용자로부터 입력을 받기 위한 'Scanner' 클래스를 사용하기 위해 존나게 필요하다.
