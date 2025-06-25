@@ -1,72 +1,72 @@
-package com.condition;
+package com.condition; // 야, 이 코드가 여기 산다. 주소 박아놨으니까 딴 데서 헤매지 마라.
 
-/* 문] 사용자로부터 3개의 정수를 입력받아 
+/* 문] 사용자로부터 3개의 정수를 입력받아
 작은 수부터 큰 수를 순서대로 출력하는 프로그램을 구현하시오.
 
-실행결과는 
+실행결과는
 첫번째: 16
 두번째: 8
 세번째: 21
 
-출력 결과: 8 16 21  
-*/
+출력 결과: 8 16 21
+*/ // 숫자 3개 받아서 작은 거부터 큰 거 순서대로 출력하는 프로그램이다.
 
-import java.util.*;
+import java.util.*; // java.util 패키지 다 쓸 거다. Scanner 쓸 때 필요함.
 
-public class IfEx09 {
+public class IfEx09 { // 야, IfEx09 이름으로 프로그램 시작한다. 이 파일 이름이랑 똑같으니까 틀리면 뒤진다.
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) { // 여기가 진짜 시작점이다. 무조건 여기부터 실행된다고 보면 됨.
+
 		/* 1. 첫번째 정수가 두번째 정수보다 크다면 두정수의 자리를 바꾼다. a와 b가 자리를 바꾼다
 		   2. 첫번째 정수가 세번째 정수보다 크다면 두정수의 자리를 바꾼다. a와 c가 자리를 바꾼다
-		   3. 두번째 정수가 세번째 정수보다 크다면 두정수의 자리를 바꾼다. b와 c가 자리를 바꾼다 
-		 */
-		 
-		Scanner sc = new Scanner(System.in);
-		int a, b, c, imsi;
-		
-		System.out.print("첫번째 정수: ");
-		a = sc.nextInt();
-		
-		System.out.print("두번째 정수: ");
-		b = sc.nextInt();
-		
-		System.out.print("세번째 정수: ");
-		c = sc.nextInt();
-		
-		if (a > b) {
-			
+		   3. 두번째 정수가 세번째 정수보다 크다면 두정수의 자리를 바꾼다. b와 c가 자리를 바꾼다
+		 */ // 정렬하는 방법이다. 젤 작은 거 앞으로, 그 다음 작은 거 중간으로 옮기는 식임.
+
+		Scanner sc = new Scanner(System.in); // Scanner 쓸 준비하는 거다. 키보드 입력 받으려고 sc라는 이름으로 하나 만들었다.
+		int a, b, c, imsi; // a, b, c는 숫자 받을 변수고, imsi는 값 바꿀 때 잠깐 쓰는 임시 변수다.
+
+		System.out.print("첫번째 정수: "); // "첫번째 정수: " 띄우고
+		a = sc.nextInt(); // 첫 번째 정수 받아서 a에 박아 넣는다.
+
+		System.out.print("두번째 정수: "); // "두번째 정수: " 띄우고
+		b = sc.nextInt(); // 두 번째 정수 받아서 b에 박아 넣는다.
+
+		System.out.print("세번째 정수: "); // "세번째 정수: " 띄우고
+		c = sc.nextInt(); // 세 번째 정수 받아서 c에 박아 넣는다.
+
+		if (a > b) { // 만약 a가 b보다 크면
 			/* imsi = a;
 			a = b;
-			b = imsi; 
-   			*/
-			
-			a = a ^ b;
-			b = a ^ b;
-			a = a ^ b;
+			b = imsi;
+			*/ // 원래 이렇게 임시 변수 써서 값 바꾸는데,
+
+			a = a ^ b; // XOR 연산으로 값 바꾸는 스킬이다. 임시 변수 없어도 됨.
+			b = a ^ b; // a랑 b 값 위치 바꾼다.
+			a = a ^ b; // 마지막으로 a까지 바꾸면 끝.
 		}
-		else if (a > c) {
-			
+		// else if로 하면 안된다. if로 해야 모든 경우를 다 체크할 수 있다.
+		if (a > c) { // 만약 a가 c보다 크면 (위에서 a랑 b 정렬했어도 c랑은 다시 봐야 함)
+
 			/* imsi = a;
 			a = c;
-			c = imsi; 
-   			*/
-			
-			a = a ^ c;
+			c = imsi;
+			*/ // 마찬가지로 임시 변수 쓰는 방식인데,
+
+			a = a ^ c; // XOR 연산으로 값 바꾼다.
 			c = a ^ c;
 			a = a ^ c;
 		}
-		if (b > c) {
+		if (b > c) { // 마지막으로 b가 c보다 크면 (젤 큰 놈이 아직 뒤로 안 갔을 수도 있으니 확인)
 			/* imsi = b;
 			b = c;
-			c = imsi; 
-   			*/
-			
-			b = b ^ c;
+			c = imsi;
+			*/ // 또 임시 변수 쓰는 방식인데,
+
+			b = b ^ c; // XOR 연산으로 값 바꾼다.
 			c = b ^ c;
 			b = b ^ c;
 			}
 		// 결과 출력
-		System.out.println("결과: " + a + " " + b + " " + c);
+		System.out.println("결과: " + a + " " + b + " " + c); // 정렬된 a, b, c 값 화면에 보여준다.
 		}
-}			
+}
