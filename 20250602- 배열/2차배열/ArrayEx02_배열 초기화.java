@@ -1,33 +1,66 @@
-package com.arraytwo;
+package com.arraytwo; // 이 코드가 속한 폴더(패키지) 이름이다.
+
+/*
+  ArrayEx02 클래스: **2차원 배열이랑 '향상된 for 문'을 존나게 활용하는 예제!**
+ 
+  핵심:
+  - **2차원 배열:** 행과 열로 이루어진 데이터 덩어리.
+  - **향상된 for 문 (Enhanced For Loop):** 배열이나 컬렉션의 모든 요소를 존나게 쉽게 순회할 때 쓴다!
+  - **2차원 배열에서의 향상된 for 문:**
+  1. 바깥쪽 `for` 문: 2차원 배열의 **각 행(1차원 배열)**을 하나씩 꺼내온다!
+  2. 안쪽 `for` 문: 꺼내온 **각 행(1차원 배열) 안의 요소들**을 하나씩 꺼내온다!
+  - **`sum` 변수:** 배열 안의 모든 숫자들을 존나게 더할 때 쓴다!
+ */
 
 public class ArrayEx02 {
 
 	public static void main(String[] args) {
 
-		int[][] score = { // 배열의 초기화
-				{ 100, 100, 100 }, { 20, 20, 20 }, { 30, 30, 30 }, { 40, 40, 40 }, { 50, 50, 50 } };
+		// ★★★ 2차원 배열 선언 및 초기화! (5행 3열짜리 점수 배열!) ★★★
+		// `score[학생번호][과목점수]` 형태로 저장된다고 보면 된다.
+		int[][] score = {
+				{ 100, 100, 100 }, // 첫 번째 학생 점수
+				{ 20, 20, 20 },   // 두 번째 학생 점수
+				{ 30, 30, 30 },   // 세 번째 학생 점수
+				{ 40, 40, 40 },   // 네 번째 학생 점수
+				{ 50, 50, 50 }    // 다섯 번째 학생 점수
+		};
 
-		/* for (int i = 0; i < score.length; i++) { 
-  		   for (int j = 0; j < score[i].length; j++) { 
-    			System.out.print(score[i][j] + "\t"); } 
-       			System.out.println(); 
-	  		}
+		/*
+		 --- 일반 for 문으로 출력하는 예시 (주석 처리됨) ---
+		  // 바깥쪽 for문: 행(i)을 순회한다. `score.length`는 행의 개수 (5)다.
+		  for (int i = 0; i < score.length; i++) {
+		  // 안쪽 for문: 각 행의 열(j)을 순회한다. `score[i].length`는 해당 행의 열 개수 (3)다.
+		  for (int j = 0; j < score[i].length; j++) {
+		  System.out.print(score[i][j] + "\t"); // 각 점수 출력하고 탭으로 간격 띄운다.
+		  }
+		  System.out.println(); // 한 행의 출력이 끝나면 줄 바꿈!
+		  }
 		 */
 		
-		int sum = 0;
+		int sum = 0; // ★★★ 배열의 모든 요소를 더할 총점 변수! ★★★
 		
-		for (int[] temp : score) {
-			for (int i : temp) {
-				System.out.print(i + "\t");
+		// --- 향상된 for 문으로 배열 요소 출력! (존나 깔끔하다!) ---
+		// ★★★ 바깥쪽 `for` 문: `score` 배열에서 각 행(1차원 배열)을 `temp`에 하나씩 가져온다! ★★★
+		for (int[] temp : score) { // `temp`는 각 행, 즉 `int[]` 타입의 1차원 배열을 가리킨다.
+			// ★★★ 안쪽 `for` 문: `temp` (현재 행) 안의 각 `int` 요소(`i`)를 하나씩 가져온다! ★★★
+			for (int i : temp) { // `i`는 `temp` 배열 안의 실제 점수 값이다.
+				System.out.print(i + "\t"); // 각 점수 출력하고 탭으로 간격 띄운다!
 			}
-			System.out.println();
+			System.out.println(); // 한 행의 출력이 끝나면 줄 바꿈!
 		}
-		System.out.println();
-		for (int[] temp : score) { // score의 각 요소(1차원 배열 주소)를 1차원 배열의 temp에 저장
-			for (int i : temp) { // temp는 1차원 배열을 가리키는 참조변수
-				sum += i;
+		
+		System.out.println(); // 출력 사이에 빈 줄 하나 더!
+
+		// --- 향상된 for 문으로 배열의 모든 요소 합계 계산! ---
+		// ★★★ 다시 바깥쪽 `for` 문: `score` 배열의 각 행(`temp`)을 순회한다! ★★★
+		for (int[] temp : score) { // `temp`는 각 행(1차원 배열)의 주소를 저장한다.
+			// ★★★ 다시 안쪽 `for` 문: `temp` (현재 행) 안의 각 `int` 요소(`i`)를 순회한다! ★★★
+			for (int i : temp) { // `i`는 현재 요소의 값이다.
+				sum += i; // 모든 요소를 `sum` 변수에 존나게 더한다!
 			}
 		}
-		System.out.println("합계: " + sum);
+		// --- 최종 합계 출력! ---
+		System.out.println("합계: " + sum); // 계산된 총합을 출력한다.
 	}
 }
