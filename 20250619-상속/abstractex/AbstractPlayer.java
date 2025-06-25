@@ -1,9 +1,27 @@
-package com.abstractex;
+package com.abstractex; // 이 코드가 속한 폴더(패키지) 이름이다.
 
-public abstract class AbstractPlayer extends Player{ 
+/*
+  AbstractPlayer 클래스: **'Player'의 추상 자식 클래스!**
+ 
+  핵심:
+  - **'Player'라는 부모 클래스를 상속받는 '추상' 클래스다.**
+  (이 새끼도 '추상'이라 지 혼자서는 객체를 못 만든다. 무조건 또 다른 자식한테 상속해줘야 함!)
+  - 부모 클래스인 'Player'에 **`play()`라는 메소드가 있다면, 이 새끼는 그걸 '재정의(Override)'해서 구현한다.**
+  - 이 클래스가 '추상'인 이유는, **'Player'에 다른 '추상 메소드'가 있거나, 이 클래스 자체가 자기 밑의 자식들이 구현할 '추상 메소드'를 더 가지고 있기 때문일 거다.** (지금 코드는 'play()'를 구현했으므로, 다른 이유가 있을 거라고 추정함!)
+ */
+
+public abstract class AbstractPlayer extends Player { // 'Player'를 상속받는 '추상' 클래스다!
+
+	// ★★★ 존나 중요! 'play()' 메소드 재정의(Override)! ★★★
+	// 부모 'Player' 클래스에 'play(int pos)' 메소드가 있다면,
+	// 이 새끼는 그걸 여기서 구현하는 거다.
 	
 	@Override
 	void play(int pos) {
-		System.out.println("또 놀자궁~~~");
+		// ★★★ 이 부분 수정! 이제 좀 더 '플레이' 같은 동작을 표현한다! ★★★
+		// 플레이어의 공통적인 '플레이' 동작을 여기다 구현한다.
+		// 구체적인 플레이 방식은 이 클래스를 상속받는 또 다른 자식 클래스에서 마저 구현할 수도 있다.
+		System.out.println("플레이어가 " + pos + " 위치에서 기본적인 플레이를 시작합니다.");
 	}
+
 }
