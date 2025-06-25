@@ -1,36 +1,56 @@
-package com.arraytwo;
+package com.test; // 이 코드 덩어리가 속한 폴더(패키지) 이름이다.
 
-/* 문] 과목별 점수를 입력받아 총점과 평균
+/*
+  HomeWork03 클래스: **사용자가 입력한 숫자 'N'만큼 단을 묶어서 출력하는 존나게 신박한 구구단이다!**
+ 
+  핵심:
+  - **목표:** 사용자한테 'N'(몇 단씩 묶을지)을 입력받아서, 1단부터 9단까지 구구단을 N단씩 묶어서 출력한다.
+  - **예시:** N이 3이면 1~3단, 4~6단, 7~9단 이렇게 묶어서 나온다!
+  - **`★★★ 존나 중요! 9단까지만 출력한다! ★★★`**
+  - **주요 로직: `★★★ 3중 for문 ★★★`** (이거 이해하면 for문 마스터다, 씨발!)
+  1. **바깥쪽 `for` (i):** 구구단 '그룹'의 시작 단을 정한다. `N`개씩 건너뛰며 반복한다.
+  2. **중간 `for` (j):** 각 단에 곱해지는 숫자 (1부터 9까지. 구구단의 세로 줄).
+  3. **안쪽 `for` (k):** 한 줄에 `N`개의 단을 나란히 출력하기 위해 반복한다.
+  - **`System.out.printf()`:** 출력 형식을 존나게 깔끔하게 맞출 때 쓴다! (`%d`는 정수, `\t`는 탭, `\n`은 줄 바꿈!)
  */
 
-import java.io.*;
+import java.util.Scanner; // 사용자 입력받는 도구 'Scanner' 가져오기. (키보드 입력 받을 때 존나 필수다!)
 
-public class ArrayEx04 {
+public class HomeWork03 { // 'HomeWork03'이라는 이름의 공개(public) 클래스를 선언한다.
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) { // ★★★ 여.기.서.부.터. 프로그램 시작점이다! 무조건 여기부터 봄. ★★★
+		// 'main' 메소드 안에 있는 코드들이 순서대로 실행될 거다, 씨발!
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Scanner sc = new Scanner(System.in); // 'Scanner' 객체를 만들어서 키보드 입력받을 준비 완료!
 
-		String[] subname = { "국어점수", "영어점수", "수학점수" };
+		System.out.print("단 입력: "); // 사용자한테 '몇 단씩 묶을지' (N 값) 물어보기.
+		int n = sc.nextInt(); // 사용자가 키보드로 입력한 정수 값을 'n' 변수에 저장. (예: 3을 입력하면 3단씩 묶음)
 
-		int sub[] = new int[subname.length + 1];  // sub[0]: 국어점수, sub[1]: 영어점수, sub[2]: 수학점수, sub[3]: 총점
-		float avg = 0.0f;
-
-		for (int i = 0; i < sub.length - 1; i++) {
-			do {
-				System.out.print(subname[i] + ":");
-				
-				// 각 과목별 점수 입력
-				sub[i] = Integer.parseInt(br.readLine()); 
-				
-			} while (sub[i] < 0 || sub[i] > 100);
+		// --- ★★★ 존나 중요! 3중 for문으로 구구단 출력 로직 ★★★ ---
+		// ★★★ 첫 번째 for문 (i): 구구단 '그룹'의 시작 단을 정한다! ★★★
+		// `i = 1`부터 시작해서, `i`가 9보다 작은 동안 `n`만큼 증가시킨다. (예: n=3이면 i가 1 -> 4 -> 7 순으로 시작 단을 바꾼다)
+		for (int i = 1; i <= 9; i += n) { // 'i'는 현재 그룹의 시작 단을 나타낸다. (9단까지만 출력하므로 <= 9)
 			
-			// 입력받은 과목의 총점을 구함
-			sub[sub.length - 1] += sub[i];   // sub[3]
+			// ★★★ 두 번째 for문 (j): 각 단에 곱해지는 숫자 (1부터 9까지! 구구단의 세로 줄!) ★★★
+			for (int j = 1; j <= 9; j++) { // 'j'는 곱해지는 수 (예: 1 * j = j, 2 * j = j ... 9 * j = j)
+				
+				// ★★★ 세 번째 for문 (k): 한 줄에 'n'개의 단을 나란히 출력하기 위해 반복! ★★★
+				// 'k'는 0부터 'n-1'까지 돈다. (예: n=3이면 k가 0, 1, 2)
+				// `(i + k)`가 현재 출력할 단을 의미한다.
+				for (int k = 0; k < n; k++) {
+					// ★★★ 존나 중요! 현재 계산하려는 단(`i + k`)이 9단 이하일 때만 출력한다! ★★★
+					// 이렇게 하지 않으면 9단을 넘어가는 단(예: N=3일 때 10단, 11단...)이 출력될 수 있다.
+					if ((i + k) <= 9) {
+						// `printf()`를 써서 '%d * %d = %d' 형태로 깔끔하게 출력하고, 탭 두 번(`\t\t`)으로 간격 띄우기!
+						// `%d`는 정수 값을 출력할 자리다.
+						System.out.printf("%d * %d = %d\t\t", (i + k), j, ((i + k) * j));
+					}
+				}
+				System.out.println(); // 한 행(예: 1단*1, 2단*1, 3단*1)의 출력이 끝나면 줄 바꾸기.
+			}
+			System.out.println(); // 한 그룹(예: 1~3단)의 출력이 끝나면 추가로 줄 바꾸기. (그룹 간의 여백을 준다!)
 		}
-		avg = sub[sub.length - 1] / (float) (sub.length - 1);
 
-		System.out.println(sub[sub.length - 1]);
-		System.out.printf("평균: %.2f", avg);
+		sc.close(); // 다 썼으면 입력 도구 'Scanner'를 깔끔하게 닫아준다.
 	}
 }
