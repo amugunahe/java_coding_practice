@@ -1,34 +1,34 @@
-package com.arrayex;
+package com.arrayex; // 이 코드가 속한 폴더(패키지) 이름이다.
 
-/* 문] char 자료형의 배열에 알파벳 대문자를 저장하고
-저장된 배열의 전체요소를 출력하는 프로그램을 작성하시오.
+/*
+  ArrayEx03 클래스: **`char` 배열에 알파벳 대문자를 존나게 저장하고 출력하는 예제!**
  
-ABCD~Z
-*/
+  핵심:
+  - **`char` 자료형:** 문자 하나를 저장하는 자료형이다! (예: 'A', 'B', '가')
+  - **배열 활용:** 26칸짜리 `char` 배열을 만들어서 알파벳 A부터 Z까지를 한 방에 저장한다!
+  - **아스키 코드(ASCII Code)의 비밀:**
+  - 컴퓨터는 문자를 숫자로 저장한다, 씨발! 'A'는 65, 'B'는 66 이런 식이다.
+  - 그래서 `('A' + i)`처럼 숫자를 더하면 다음 알파벳으로 존나게 바뀐다! (예: 'A' + 0 = 'A', 'A' + 1 = 'B')
+  - `(char)`는 숫자를 다시 문자로 바꿔주는 **강제 형 변환(Type Casting)**이다!
+  - **`for` 문:** 배열의 모든 칸을 돌면서 알파벳을 저장하고 출력하는 데 존나게 유용하다!
+ */
 
 public class ArrayEx03 {
 
 	public static void main(String[] args) {
-		
-		/* 첫번째 
-		 char [] arr1 = new char [26]; 
-   		 arr1[0] = 'A'; 
-      		 arr1[25] = 'Z';
-	
-		 두번째
-		char[] arr2 = {'A','B','C','D','E','F','G'~~'Z'};
-	
-		 세번째
- 		char[] arr3 = new char[26]; 
-   		for(int i = 0, b = 65; i < arr3.length; i++, b++) {
-		arr3[i] = (char)b; 
-  		System.out.print(arr3[i] + " ");
-		 */
 
-		char[] arr3 = new char[26];
+		// ★★★ `char` 배열 선언 및 초기화! (깔끔하고 효율적인 방법!) ★★★
+		// 26칸짜리 `char` 배열을 만들어서 알파벳 대문자를 저장한다.
+		char[] arr3 = new char[26]; 
+
+		// ★★★ `for` 문으로 배열에 알파벳 채워 넣고 바로 출력! ★★★
+		// `i`는 0부터 25까지 돌면서 배열의 인덱스를 나타낸다.
+		// `('A' + i)`는 'A'의 아스키 값(65)에 `i`를 더해서 다음 알파벳을 만든다!
+		// `(char)`로 강제 형 변환을 해서 다시 문자로 바꿔준다.
 		for (int i = 0; i < arr3.length; i++) {
-			arr3[i] = (char) ('A' + i);
-			System.out.print(arr3[i] + " ");
+			arr3[i] = (char) ('A' + i); // 배열의 각 칸에 'A'부터 'Z'까지 순서대로 저장!
+			System.out.print(arr3[i] + " "); // 저장한 알파벳을 바로 출력하고 공백으로 구분한다!
 		}
+		System.out.println(); // 모든 출력이 끝난 후 깔끔하게 줄 바꿈!
 	}
 }
