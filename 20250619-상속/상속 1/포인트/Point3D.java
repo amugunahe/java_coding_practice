@@ -73,6 +73,7 @@ public class Point3D extends Point { // 'Point3D'는 'Point'를 ★상속(extend
         // 3. 업캐스팅 예시 (존나 중요!)
         // Point3D 객체를 부모 타입인 Point 변수로 참조할 수 있다.
         Point p_upcasted = new Point3D(7, 8, 9);
+	    
         // 이때 p_upcasted.getLocation()을 호출하면, 실제 객체가 Point3D이므로
         // Point3D의 오버라이딩된 getLocation()이 실행된다! (이게 다형성이다, 씨발!)
         System.out.println("업캐스팅된 Point의 위치: " + p_upcasted.getLocation()); // z는 없어도 출력은 Point3D 방식대로!
