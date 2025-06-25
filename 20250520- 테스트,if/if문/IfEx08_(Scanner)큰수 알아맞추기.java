@@ -1,32 +1,33 @@
-package com.condition;
+package com.condition; // 패키지 선언: 이 코드가 어디 소속인지 알려주는 거임.
 
-/* 문] 두 정수를 입력 받아 큰 수를 알아맞히는 프로그램을 구현하시오. 
+/* 문] 두 정수를 입력 받아 큰 수를 알아맞히는 프로그램을 구현하시오.
 */
 
-import java.util.*;
+import java.util.*; // Scanner 클래스를 쓰기 위해 import 하는 거. 이거 없으면 입력 못 받음.
 
-public class IfEx08 {
-	
-	public static void main(String[] args) {
-	
-	Scanner sc = new Scanner(System.in);
-	
-	int a, b, max = 0;
-	
-	System.out.print("첫번째 정수: ");
-	a = sc.nextInt();
-	
-	System.out.print("두번째 정수: ");
-	b = sc.nextInt();
-	
-	if (a > b) {
-		max = a; 
+public class IfEx08 { // IfEx08 이라는 클래스 선언. 자바는 모든 코드를 클래스 안에 넣어야 함.
+
+	public static void main(String[] args) { // 프로그램 시작점. 무조건 여기부터 실행됨.
+
+	Scanner sc = new Scanner(System.in); // 사용자 입력 받기 위한 객체 생성. 키보드 입력은 얘로 받는다 생각해라.
+
+	int a, b, max = 0; // 정수형 변수 3개 선언. a, b는 입력받을 숫자, max는 둘 중 큰 놈 저장할 변수.
+
+	System.out.print("첫번째 정수: "); // "첫번째 정수: " 출력. 그냥 사용자한테 뭐 입력할지 알려주는 글자임.
+	a = sc.nextInt(); // 사용자가 입력한 정수를 변수 a에 저장.
+
+	System.out.print("두번째 정수: "); // "두번째 정수: " 출력.
+	b = sc.nextInt(); // 사용자가 입력한 정수를 변수 b에 저장.
+
+	if (a > b) { // 만약 a가 b보다 크다면 (조건이 참이면)
+		max = a; // max에 a 값을 넣어라.
 		System.out.print("첫번째 수 " + a + "가 두번째 수 " + b + "보다 크기 때문에 큰 수는 "+ max + "입니다.");
-		 // System.out.print("첫번째 수 (" + a +")가 두번째 수 ("+ b +")보다 큰 수입니다.");
-	} else {
-		max = b;  
+		 // 위 조건이 참일 때 출력되는 문장. 예를 들어 5랑 3 넣으면 "첫번째 수 5가 두번째 수 3보다 크기 때문에 큰 수는 5입니다." 이렇게 나옴.
+	} else { // 그게 아니라면 (a가 b보다 작거나 같으면)
+		max = b; // max에 b 값을 넣어라.
 		System.out.print("첫번째 수 " + a + "가 두번째 수 "+ b + "보다 작기 때문에 큰 수는 "+ max + "입니다.");
-		//System.out.print("첫번째 수 ("+a+")가 두번째 수 ("+ b +")보다 작은 수입니다.");
-	  }
-   }
-}	
+		// 위 조건이 거짓일 때 출력되는 문장. 예를 들어 3이랑 5 넣으면 "첫번째 수 3가 두번째 수 5보다 작기 때문에 큰 수는 5입니다." 이렇게 나옴.
+	}
+	// 참고: sc.close(); 를 여기에 추가해서 Scanner 객체를 닫아주는 게 좋음. 리소스 낭비 방지!
+   }
+}
