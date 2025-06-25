@@ -2,6 +2,7 @@ package com.innerex; // 이 코드가 속한 패키지 이름이다.
 
 // 필요한 AWT 컴포넌트 및 이벤트 관련 클래스들을 존나게 불러온다!
 import java.awt.*;   
+
 // AWT의 기본 컴포넌트들 (Frame, TextField, FlowLayout 등)
 import java.awt.event.*;    // AWT 이벤트 처리 관련 클래스들 (ActionEvent, ActionListener 등)
 
