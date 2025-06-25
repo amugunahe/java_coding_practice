@@ -1,6 +1,6 @@
 package com.polymorphism; // 이 코드가 속한 패키지(폴더) 이름이다.
 
-import java.util.*; // 'Scanner' 클래스를 쓰려면 이 새끼를 불러와야 한다, 씨발!
+import java.util.*; // 'Scanner' 클래스를 쓰려면 이 새끼를 불러와야 한다!
 
 // --- MyPoint 클래스: 모든 도형의 **존나 중요한 부모 (기본 '점')** ---
 // 모든 도형은 기본적으로 x, y 좌표를 가진다. 그 공통점을 여기서 정의한다.
