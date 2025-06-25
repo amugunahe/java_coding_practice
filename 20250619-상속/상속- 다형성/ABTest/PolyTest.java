@@ -1,4 +1,6 @@
-package com.polymorphism;
+package com.polymorphism; // 이 코드가 속한 패키지(폴더) 이름이다.
+
+import java.util.*; // 'Scanner' 클래스를 쓰려면 이 새끼를 불러와야 한다, 씨발!
 
 // --- MyPoint 클래스: 모든 도형의 **존나 중요한 부모 (기본 '점')** ---
 // 모든 도형은 기본적으로 x, y 좌표를 가진다. 그 공통점을 여기서 정의한다.
@@ -13,6 +15,7 @@ class MyPoint {
 	// static 블록: 이 클래스가 메모리에 올라올 때 (가장 처음 쓰일 때) **단 한 번만 실행된다.**
 	static {
 		sc = new Scanner(System.in); // Scanner 객체를 여기서 미리 만들어 둔다.
+        System.out.println("--- MyPoint 클래스 로드됨: Scanner 준비 완료 ---"); // 디버깅용 메시지
 	}
 
 	// 생성자: 새로운 '점' 객체 만들 때 실행된다. x, y 좌표는 사용자한테 입력받아서 초기화한다.
@@ -89,7 +92,7 @@ public class PolyTest {
 			// 배열이 꽉 찼으면 사용자한테 알려준다.
 			if (count >= mp.length) {
 				System.out.println("\n[알림] 더 이상 도형을 입력할 수 없습니다. (최대 10개)");
-				System.out.println("      '3. 현재까지 입력된 도형 보기'를 이용하거나 '4. 프로그램 종료'를 선택해주세요.");
+				System.out.println("       '3. 현재까지 입력된 도형 보기'를 이용하거나 '4. 프로그램 종료'를 선택해주세요.");
 			}
 
 			System.out.println("\n--- 도형 관리 메뉴 ---");
