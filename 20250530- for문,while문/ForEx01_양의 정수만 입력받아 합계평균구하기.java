@@ -1,20 +1,8 @@
-package com.exam;
-
-/*　문] 양의 정수만 입력받아 입력받은 정수의 합계와 평균을 구하시오.
-단, 음수가 입력되면 합계와 평균을 출력하시오.
-
-결과 
-1 
-2 
-3 
-4 
--5
-지금까지의 합계와 평균은 2.2 입니다.
- */package com.exam; // 이 코드가 속한 패키지(폴더) 이름이다.
+package com.exam; // 이 코드가 속한 패키지(폴더) 이름이다.
 
 /*
   ForEx01 클래스: **양의 정수만 입력받아서 합계랑 평균을 존나게 계산하는 프로그램이다!**
- 
+
   핵심:
   - **문제:** 사용자한테 양의 정수를 계속 입력받는다. 음수가 입력되면 그 시점에서 입력을 멈추고,
   지금까지 입력된 양의 정수들의 합계와 평균을 출력한다!
@@ -72,44 +60,12 @@ public class ForEx01 {
 		// ★★★ 최종 평균 출력! (존나 중요! 소수점 나오게 형 변환!) ★★★
 		// 'sum'을 `float`으로 강제 형 변환(`(float)sum`)해서 나누면 소수점까지 평균이 나온다!
 		// `cnt - 1`을 하는 이유: 마지막에 음수가 입력되었을 때도 `cnt`가 증가했기 때문에,
-		// 실제 양의 정수 개수보다 1이 더 많다. 그래서 하나 빼줘야 정확한 평균이 나온다
+		// 실제 양의 정수 개수보다 1이 더 많다. 그래서 하나 빼줘야 정확한 평균이 나온다, 씨발!
 		// (단, `cnt - 1`이 0이 되는 경우(첫 입력부터 음수)는 나눗셈 오류가 생길 수 있으니 실제로는 예외 처리 필요!)
 		System.out.println("평균: " + (float)sum / (cnt - 1));
 
 		// ★★★ Scanner 닫기! (존나 중요!) ★★★
 		// 자원 낭비를 막기 위해 다 쓴 'Scanner'는 꼭 닫아줘야 한다!
 		sc.close();
-	}
-}
-
-import java.util.*;
-
-public class ForEx01 {
-
-	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-
-		int n;
-		int sum;
-		int cnt;
-		n = sum = cnt = 0;
-
-		/*　for (; n >= 0;) { 
-  		　　sum += n; 
-　　　　　　　　　　　System.out.print("정수 입력:"); 
-　		  　n = sc.nextInt();
-  　　　　　　　　　cnt++; 
-	   　　　　　}
-		 */
-		
-	while (n >=　0){
-		sum　+=　n;
-			System.out.print("정수 입력:");
-			n = sc.nextInt();
-			cnt++;
-	}
-		System.out.println("합계: " + sum);
-		System.out.println("평균: " + sum / cnt);
 	}
 }
