@@ -1,7 +1,20 @@
-package com.abstractex;
+package com.abstractex; // 이 코드가 속한 폴더(패키지) 이름이다.
+
+/*
+  Movable 인터페이스: **존나게 중요한 '움직일 수 있는' 객체들의 설계도!**
+ 
+  핵심:
+  - **'interface' 키워드가 붙어서 이 새끼는 인터페이스다!** (객체 못 만든다, 씨발!)
+  - **`move()`라는 '추상 메소드'를 가지고 있다!**
+  -> 이게 존나 중요하다! 인터페이스의 메소드는 무조건 'public abstract'가 자동으로 붙는다!
+  -> 이 인터페이스를 'implements'하는 모든 클래스들은 이 `move()` 메소드를 무조건 구현해야 한다! (움직이는 방식은 지들 맘대로!)
+ */
 
 public interface Movable {
-	
-	void move(int x, int y);
-}
 
+	// ★★★ 존나 중요! 인터페이스의 메소드는 무조건 'public abstract'가 자동으로 붙는다! ★★★
+	// 내용이 없다. 그냥 선언만 돼 있다.
+	// 이걸 'implements'하는 모든 클래스들은 **무조건 이 메소드를 지만의 방식으로 구현해야 한다!**
+	void move(int x, int y); // (x, y) 좌표로 이동시키는 추상 메소드.
+
+}
