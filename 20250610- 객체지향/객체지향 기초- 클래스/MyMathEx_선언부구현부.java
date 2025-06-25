@@ -1,5 +1,17 @@
 package com.objectex; // 이 코드는 'com.objectex' 패키지에 들어있어. 파일들을 종류별로 묶어두는 폴더라고 생각하면 됨.
 
+/*
+  MyMath 클래스: **수학 계산 기능을 제공하는 존나게 기본적인 클래스다!**
+ 
+  핵심:
+  - **객체 메소드 (`add`, `sub`, `mul`, `div`):**
+  - 'static' 키워드가 안 붙어있다.
+  - 이 메소드들은 `MyMath` 클래스의 **객체(인스턴스)를 만들어야만 호출할 수 있다!** (`new MyMath()`로 만든 놈!)
+  - 각각 덧셈, 뺄셈, 곱셈, 나눗셈 연산을 수행하고 결과를 반환한다.
+  - **`return`의 역할:** 메소드에서 계산된 최종 값을 호출한 쪽으로 돌려주는 역할을 한다.
+  - **정수 나눗셈 주의:** `div` 메소드처럼 `int` 타입끼리 나누면 소수점 이하는 그냥 짤린다! (버림 처리됨)
+ */
+
 class MyMath { // 'MyMath'라는 이름의 클래스를 정의한다 이기. 여기선 수학 계산하는 메소드들을 모아둘 거야.
 
     // 1. 덧셈 메소드: add
@@ -26,15 +38,30 @@ class MyMath { // 'MyMath'라는 이름의 클래스를 정의한다 이기. 여
     // 4. 나눗셈 메소드: div
     // 'int div(int a, int b)' : 'a'를 'b'로 나눈 값을 'int' 타입으로 반환할 거라는 선언부.
     int div(int a, int b) {
+        // **★중요: 여기서 정수(int)끼리 나누면 소수점 이하는 그냥 잘린다!**
+        // 예를 들어, 10 / 3은 3.333...이 아니라 그냥 '3'이 됨.
+        // 그리고 0으로 나누면 에러나니까, 실제 사용할 땐 0으로 나누는지 체크해야 한다, 씨발!
+        if (b == 0) { // 나눗셈에서 분모가 0이면 에러나니까 미리 체크한다.
+            System.out.println("씨발! 0으로 나눌 수 없다!");
+            return 0; // 예시로 0을 반환하지만, 실제로는 에러 처리(예외 던지기)가 필요하다!
+        }
         int result = a / b; // 'a'를 'b'로 나눈 값을 'result'에 저장.
-                            // **★중요: 여기서 정수(int)끼리 나누면 소수점 이하는 그냥 잘린다!**
-                            // 예를 들어, 10 / 3은 3.333...이 아니라 그냥 '3'이 됨.
         return result;      // 'result' 값을 반환.
     }
 }
 
+/*
+  MyMathEx 클래스: **`MyMath` 클래스를 이용해서 실제 수학 계산을 돌려보는 메인 프로그램이다!**
+ 
+  핵심:
+  - **`main` 메소드:** 프로그램이 시작되는 존나게 중요한 지점이다. 무조건 여기서부터 코드가 실행된다!
+  - **객체 생성:** `MyMath mm = new MyMath();`처럼 `new` 키워드를 써서 `MyMath` 클래스의 '실제 계산기' 객체(`mm`)를 만든다.
+  - **객체 메소드 호출:** `mm.add(6, 7)`처럼 만든 객체(`mm`)를 통해서 그 객체 안에 있는 메소드들을 호출한다.
+  - **`static` 메소드 호출:** `firstMethod()`처럼 `static`이 붙은 메소드는 객체 생성 없이 클래스 이름으로 바로 호출할 수 있다.
+  (같은 클래스 안에 있으면 클래스 이름마저 생략 가능하다! 존나게 편함!)
+ */
 
-public class MyMathEx { // 'MyMathEx'라는 이름의 클래스. 여기서 실제 프로그램을 돌려볼 거다
+public class MyMathEx { // 'MyMathEx'라는 이름의 클래스. 여기서 실제 프로그램을 돌려볼 거다.
 
     // ★★★ main 메소드: 여기가 프로그램의 시작점임! 무조건 여기서부터 코드가 실행된다. ★★★
     public static void main(String[] args) {
@@ -55,17 +82,20 @@ public class MyMathEx { // 'MyMathEx'라는 이름의 클래스. 여기서 실�
 
         // 3. 계산 결과 출력
         // 'System.out.println()' : 괄호 안의 내용을 화면에 출력하라는 명령어다.
-        System.out.println(mm.add(6, 7)); // 'mm.add(6, 7)'을 또 호출해서 나온 결과값 13을 바로 출력한다.
-        System.out.println(r1); // 변수 'r1'에 저장된 값 13을 출력.
-        System.out.println(r2); // 변수 'r2'에 저장된 값 8을 출력.
-        System.out.println(r3); // 변수 'r3'에 저장된 값 6을 출력.
-        System.out.println(r4); // 변수 'r4'에 저장된 값 5를 출력.
+        System.out.println("--- MyMath 객체 메소드 호출 결과 ---");
+        System.out.println("6 + 7 = " + mm.add(6, 7)); // 'mm.add(6, 7)'을 또 호출해서 나온 결과값 13을 바로 출력한다.
+        System.out.println("r1 (6 + 7) = " + r1); // 변수 'r1'에 저장된 값 13을 출력.
+        System.out.println("r2 (10 - 2) = " + r2); // 변수 'r2'에 저장된 값 8을 출력.
+        System.out.println("r3 (2 * 3) = " + r3); // 변수 'r3'에 저장된 값 6을 출력.
+        System.out.println("r4 (10 / 2) = " + r4); // 변수 'r4'에 저장된 값 5를 출력.
+        System.out.println("r4 (10 / 0) = " + mm.div(10, 0)); // 0으로 나누는 경우 테스트 (에러 메시지 확인)
 
         // 4. ★★★ static 메소드 호출 (존나 중요!) ★★★
         // 'static' 메소드는 객체(`mm`처럼 `new`로 만든 거)를 만들 필요 없이, 클래스 이름으로 바로 호출할 수 있다.
         // 아니면 지금처럼 같은 클래스 안에 있으면 클래스 이름(`MyMathEx.firstMethod()`)도 생략하고 그냥 메소드 이름만 불러도 된다.
+        System.out.println("\n--- Static 메소드 호출 테스트 ---");
         firstMethod(); // 'firstMethod()'를 호출하면, 얘가 다시 'secondMethod()'를 호출할 거다.
-                       // 결과적으로 "secondMethod()..."가 화면에 출력될 거임.
+                        // 결과적으로 "secondMethod()..."가 화면에 출력될 거임.
     }
 
     // static 메소드: firstMethod
@@ -78,6 +108,6 @@ public class MyMathEx { // 'MyMathEx'라는 이름의 클래스. 여기서 실�
     // static 메소드: secondMethod
     // 이 메소드도 'static'이다. 그냥 메시지를 출력하는 간단한 역할만 함.
     static void secondMethod() {
-        System.out.println("secondMethod()..."); // "secondMethod()..."라는 문장을 화면에 출력.
+        System.out.println("secondMethod()... (이거 `static` 메소드다, 씨발!)"); // "secondMethod()..."라는 문장을 화면에 출력.
     }
 }
