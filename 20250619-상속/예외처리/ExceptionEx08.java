@@ -27,31 +27,31 @@ class MemoryException extends Exception {
 }
 
 /*
- * ExceptionEx08 클래스: **'사용자 정의 예외'를 활용해서 프로그램 설치 중 발생할 수 있는 문제를 존나게 처리하는 예제다!**
- *
- * 핵심:
- * - **`InstallException` (새로 추가됨!):** 이제 설치와 관련된 모든 예외를 이놈 하나로 묶어서 관리할 수 있다!
- * - **`SpaceException`, `MemoryException`:** 니가 직접 만든 '사용자 정의 예외'다! (존나 똑똑함!)
- * - **`try-catch-finally` 블록 (복습이다, 씨발!):**
- * - `try`: 예외가 발생할 가능성이 있는 코드 (여기선 `startInstall()`, `copyFiles()`, 또는 `install()`)
- * - `catch (SpaceException se)`: 'SpaceException' 예외가 터지면 여기로 점프해서 처리한다.
- * - `catch (MemoryException me)`: 'MemoryException' 예외가 터지면 여기로 점프해서 처리한다.
- * - `catch (InstallException ie)`: 'InstallException' 예외를 잡는다. (이제 `main` 메소드에서는 이 예외를 잡는다!)
- * -> **다중 `catch` 블록을 써서 예외 종류별로 존나게 섬세하게 처리하는 거다!**
- * - `finally`: 예외가 터지든 안 터지든 **무조건 실행되는 블록!** (여기선 임시 파일 삭제)
- * - **`throws` 키워드:** 메소드가 어떤 예외를 던질 수 있다고 선언하는 거다.
- * - **`System.gc()`:** 'Garbage Collection'을 요청하는 거다. 메모리 정리해 달라고 부탁하는 건데, 실제로 바로 실행될지는 모른다!
- * - **`e.printStackTrace()`:** 예외가 어디서, 왜 터졌는지 존나게 자세히 출력해준다. (디버깅할 때 존나 유용!)
- * - **`ie.initCause(se);` (존나 중요!):** '예외 연결(Exception Chaining)'이다!
- * `InstallException`이라는 새로운 예외를 던지면서, 원래 무슨 예외(`SpaceException` 또는 `MemoryException`) 때문에
- * 이 예외가 발생했는지 '원인'을 알려주는 거다! 이렇게 하면 나중에 예외 추적하기가 존나게 편해진다!
- *
- * ★★★ `startInstall()` 메소드 로직의 함정 (존나 중요!): ★★★
- * - `if(!enoughSpace()) { throw new SpaceException("..."); }` : 공간이 없으면 `SpaceException`을 던진다.
- * - `if(enoughMemory()) { throw new MemoryException("..."); }` : 메모리가 '있으면' `MemoryException`을 던진다.
- * -> **원래 `enoughMemory()`는 '메모리가 충분한지'를 리턴해야 하므로, `false`일 때 `MemoryException`을 던지는 게 맞다!**
- * -> 니 코드의 `enoughMemory()`는 `true`를 반환하므로, 항상 `MemoryException`이 터지게 돼 있다, 씨발!
- * -> 실제로는 `if(!enoughMemory())` 처럼 `!`를 붙여서 '메모리가 충분하지 않으면' 예외를 던지도록 해야 한다.
+  ExceptionEx08 클래스: **'사용자 정의 예외'를 활용해서 프로그램 설치 중 발생할 수 있는 문제를 존나게 처리하는 예제다!**
+ 
+  핵심:
+  - **`InstallException` (새로 추가됨!):** 이제 설치와 관련된 모든 예외를 이놈 하나로 묶어서 관리할 수 있다!
+  - **`SpaceException`, `MemoryException`:** 니가 직접 만든 '사용자 정의 예외'다! (존나 똑똑함!)
+  - **`try-catch-finally` 블록 (복습이다):**
+  - `try`: 예외가 발생할 가능성이 있는 코드 (여기선 `startInstall()`, `copyFiles()`, 또는 `install()`)
+  - `catch (SpaceException se)`: 'SpaceException' 예외가 터지면 여기로 점프해서 처리한다.
+  - `catch (MemoryException me)`: 'MemoryException' 예외가 터지면 여기로 점프해서 처리한다.
+  - `catch (InstallException ie)`: 'InstallException' 예외를 잡는다. (이제 `main` 메소드에서는 이 예외를 잡는다!)
+  -> **다중 `catch` 블록을 써서 예외 종류별로 존나게 섬세하게 처리하는 거다!**
+  - `finally`: 예외가 터지든 안 터지든 **무조건 실행되는 블록!** (여기선 임시 파일 삭제)
+  - **`throws` 키워드:** 메소드가 어떤 예외를 던질 수 있다고 선언하는 거다.
+  - **`System.gc()`:** 'Garbage Collection'을 요청하는 거다. 메모리 정리해 달라고 부탁하는 건데, 실제로 바로 실행될지는 모른다!
+  - **`e.printStackTrace()`:** 예외가 어디서, 왜 터졌는지 존나게 자세히 출력해준다. (디버깅할 때 존나 유용!)
+  - **`ie.initCause(se);` (존나 중요!):** '예외 연결(Exception Chaining)'이다!
+  `InstallException`이라는 새로운 예외를 던지면서, 원래 무슨 예외(`SpaceException` 또는 `MemoryException`) 때문에
+  이 예외가 발생했는지 '원인'을 알려주는 거다! 이렇게 하면 나중에 예외 추적하기가 존나게 편해진다!
+ 
+  ★★★ `startInstall()` 메소드 로직의 함정 (존나 중요!): ★★★
+  - `if(!enoughSpace()) { throw new SpaceException("..."); }` : 공간이 없으면 `SpaceException`을 던진다.
+  - `if(enoughMemory()) { throw new MemoryException("..."); }` : 메모리가 '있으면' `MemoryException`을 던진다.
+  -> **원래 `enoughMemory()`는 '메모리가 충분한지'를 리턴해야 하므로, `false`일 때 `MemoryException`을 던지는 게 맞다!**
+  -> 니 코드의 `enoughMemory()`는 `true`를 반환하므로, 항상 `MemoryException`이 터지게 돼 있다!
+  -> 실제로는 `if(!enoughMemory())` 처럼 `!`를 붙여서 '메모리가 충분하지 않으면' 예외를 던지도록 해야 한다.
  */
 
 public class ExceptionEx08 {
@@ -112,7 +112,7 @@ public class ExceptionEx08 {
 			System.out.println("공간 부족 감지!");
 			throw new SpaceException("설치할 공간이 부족하다, 씨발!"); // 'SpaceException' 예외를 던진다!
 		}
-		// ★★★ 니 코드의 이 부분은 논리 오류가 있다, 씨발! ★★★
+		// ★★★ 니 코드의 이 부분은 논리 오류가 있다★★★
 		// `enoughMemory()`가 `true` (메모리 충분)일 때 `MemoryException`을 던지고 있다!
 		// 아마 `!enoughMemory()` (메모리 부족)일 때 던지려던 거겠지?
 		// 현재 `enoughMemory()`는 항상 `true`를 반환하므로, 항상 `MemoryException`이 터지게 돼 있다.
