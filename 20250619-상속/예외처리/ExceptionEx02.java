@@ -20,7 +20,7 @@ public class ExceptionEx02 {
 			} catch(ArithmeticException ae) { // ★★★ 'ArithmeticException'이라는 예외가 터지면 여기로 점프한다! ★★★
 				// `ArithmeticException`은 '산술적인 계산' 관련 오류가 났을 때 터진다. 대표적인 게 '0으로 나누는 것'이다!
 				// ae.printStackTrace(); // 이 주석을 풀면, 예외가 어디서, 왜 터졌는지 존나게 자세히 나온다. (디버깅할 때 존나 유용!)
-				System.out.println("0으로 나눌 수 없다, 씨발!"); // 사용자에게 0으로 나눌 수 없다고 알려준다.
+				System.out.println("0으로 나눌 수 없다"); // 사용자에게 0으로 나눌 수 없다고 알려준다.
 			} // 'try-catch' 블록 끝
 			// 예외가 터지든 안 터지든, 프로그램은 여기서 멈추지 않고 계속 다음 반복을 실행한다! (이게 예외 처리의 핵심이다!)
 		} // for 문 끝
