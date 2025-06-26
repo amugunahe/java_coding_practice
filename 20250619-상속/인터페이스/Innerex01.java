@@ -63,7 +63,7 @@ public class Innerex01 {
 		// ★★★ 'InstanceInner'가 'static class'이므로, 그 안의 인스턴스 변수 'iv'에 접근하려면... ★★★
 		// 먼저 'InstanceInner'의 객체를 생성해야 한다!
 		// (만약 'InstanceInner'가 `static`이 없는 진짜 '인스턴스 내부 클래스'였다면,
-		// `Innerex01 outer = new Innerex01();` 한 다음에 `outer.new InstanceInner()` 이렇게 만들었어야 한다, 씨발!)
+		// `Innerex01 outer = new Innerex01();` 한 다음에 `outer.new InstanceInner()` 이렇게 만들었어야 한다)
 		Innerex01.InstanceInner instanceInnerObj = new Innerex01.InstanceInner();
 		System.out.println("InstanceInner의 iv (객체 생성 후 접근): " + instanceInnerObj.iv);
 	}
