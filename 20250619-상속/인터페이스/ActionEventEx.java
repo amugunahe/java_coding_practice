@@ -3,6 +3,7 @@ package com.innerex; // 이 코드가 속한 패키지 이름이다.
 // 필요한 AWT 컴포넌트 및 이벤트 관련 클래스들을 존나게 불러온다!
 
 import java.awt.*;          // AWT의 기본 컴포넌트들 (Frame, TextField, FlowLayout 등)
+
 import java.awt.event.*;    // AWT 이벤트 처리 관련 클래스들 (ActionEvent, ActionListener 등)
 
 /*
@@ -19,12 +20,12 @@ import java.awt.event.*;    // AWT 이벤트 처리 관련 클래스들 (ActionE
   - **`tf.setText("")`:** 텍스트 필드의 내용을 지운다.
  */
 
-public class ActionEventEx extends Frame implements ActionListener { // ★★★ 오류 수정! ActionListenr -> ActionListener! ★★★
+public class ActionEventEx extends Frame implements ActionListener {
 
 	private TextField tf; // 텍스트 필드 객체를 멤버 변수로 선언한다. (이 클래스 안에서 어디서든 쓸 수 있게!)
 	
 	// --- 생성자: 객체를 만들 때 초기화하는 부분! ---
-	public ActionEventEx() { // ★★★ 오류 수정! ActionEventEx()P -> ActionEventEx() ★★★
+	public ActionEventEx() { 
 		super("액션 이벤트!!_최종 수정"); // 부모 Frame 클래스의 생성자 호출! 창 제목을 설정한다.
 		
 		tf = new TextField(10); // 10글자 너비의 텍스트 필드를 생성한다.
@@ -35,7 +36,7 @@ public class ActionEventEx extends Frame implements ActionListener { // ★★�
 		// ★★★ 텍스트 필드에 액션 리스너를 등록한다! (존나 중요!) ★★★
 		// 'this'는 현재 'ActionEventEx' 객체 자신을 의미한다.
 		// 텍스트 필드에서 액션 이벤트가 발생하면, 이 'ActionEventEx' 객체의 'actionPerformed' 메소드를 호출하라는 의미다!
-		tf.addActionListener(this); // ★★★ 오류 수정! addActionListenr -> addActionListener! ★★★
+		tf.addActionListener(this); // 
 		
 		// 창의 크기를 설정한다.
 		setSize(300, 300);
@@ -54,7 +55,7 @@ public class ActionEventEx extends Frame implements ActionListener { // ★★�
 	}
 	
 	// --- 메인 메소드: 프로그램의 시작점! ---
-	public static void main(String[] args) { // ★★★ 오류 수정! Strin[] args -> String[] args! ★★★
+	public static void main(String[] args) {
 		new ActionEventEx(); // 'ActionEventEx' 객체를 생성한다. (이 순간 창이 뜨고 프로그램이 시작된다!)
 	}
 	
