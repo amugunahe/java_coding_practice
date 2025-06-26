@@ -38,7 +38,7 @@ public class ExceptionEx05 {
 		try { // ★★★ 예외 발생 가능성이 있는 코드 블록 시작! ★★★
 			System.out.println("2단계: `RuntimeException` 발생 시도");
 			// 'RuntimeException'은 'unchecked exception'이라 `throws` 선언 안 해도 컴파일 에러 안 난다.
-			throw new RuntimeException("고의로 런타임 예외를 발생시켰다, 씨발!!"); 
+			throw new RuntimeException("고의로 런타임 예외를 발생시켰다"); 
 			// 이 코드가 실행되는 순간, `try` 블록의 나머지 코드는 건너뛰고 바로 `catch` 블록으로 점프한다!
 			// System.out.println("3단계: `RuntimeException` 발생 후 남은 코드 (실행 안 됨)"); // 실행 안 됨!
 
@@ -49,14 +49,14 @@ public class ExceptionEx05 {
 			
 			// ★★★ 여기서 새로운 '일반 예외(Exception)'를 만들어서 다시 던진다! ★★★
 			// `Exception`은 'checked exception'이라, 이 메소드(`main`)가 이걸 던지려면
-			// 반드시 `main` 메소드 선언부에 `throws Exception`을 명시해야 한다! (안 그러면 컴파일 에러난다, 씨발!)
-			System.out.println("5단계: 새로운 일반 예외를 만들어서 다시 던진다, 씨발!");
+			// 반드시 `main` 메소드 선언부에 `throws Exception`을 명시해야 한다! (안 그러면 컴파일 에러난다)
+			System.out.println("5단계: 새로운 일반 예외를 만들어서 다시 던진다");
 			throw new Exception("런타임 예외를 받아서 새로운 일반 예외로 다시 던진다!"); 
 
 		} finally { // ★★★ `try`나 `catch` 블록 실행 여부와 상관없이 무조건 실행되는 블록! ★★★
 		    // 위 `catch`에서 예외를 다시 던졌기 때문에, 이 `finally` 블록은 실행되지만
 		    // `main` 메소드 밖으로 예외가 최종적으로 던져지기 전에 실행된다.
-		    System.out.println("6단계: `finally` 블록 - 뒷정리한다, 씨발!");
+		    System.out.println("6단계: `finally` 블록 - 뒷정리한다");
 		}
 
 		// ★★★ 이 코드는 `catch` 블록에서 예외를 다시 던졌기 때문에 절대 실행되지 않는다! ★★★
