@@ -9,8 +9,10 @@ package com.innerex; // 이 코드가 속한 패키지(폴더) 이름이다.
   1. **인스턴스 멤버:** 인스턴스(객체)가 있어야 접근 가능하다.
   2. **스태틱 멤버:** 클래스 이름으로 바로 접근 가능하고, 객체 없이도 존재한다.
   - **내부 클래스별 특징:**
-  - **인스턴스 내부 클래스 (`class InstanceInner`):** 외부 클래스의 '객체'에 붙어 산다. 그래서 외부 클래스의 모든 멤버(인스턴스/스태틱)에 존나게 자유롭게 접근 가능하다. **단, 지 자신은 `static` 멤버를 못 가진다! (final static 상수는 제외!)**
-  - **스태틱 내부 클래스 (`static class StaticInner`):** 외부 클래스의 '객체' 없이도 독립적으로 존재할 수 있다. 그래서 외부 클래스의 '스태틱 멤버'에만 직접 접근 가능하다. **지 자신은 `static` 멤버를 가질 수 있다! (존나 중요!)**
+  - **인스턴스 내부 클래스 (`class InstanceInner`):** 외부 클래스의 '객체'에 붙어 산다. 그래서 외부 클래스의 모든 멤버(인스턴스/스태틱)에 존나게 자유롭게 접근 가능하다.
+                                                  **단, 지 자신은 `static` 멤버를 못 가진다! (final static 상수는 제외!)**
+  - **스태틱 내부 클래스 (`static class StaticInner`):** 외부 클래스의 '객체' 없이도 독립적으로 존재할 수 있다. 그래서 외부 클래스의 '스태틱 멤버'에만 직접 접근 가능하다. 
+                                                     **지 자신은 `static` 멤버를 가질 수 있다! (존나 중요!)**
   - **지역 내부 클래스 (`class LocalInner`):** 메소드 안에서만 만들어지고 쓰인다. 메소드 안의 'final'이 붙은 지역 변수만 가져다 쓸 수 있고, 'static' 멤버는 못 가진다! (final static 상수는 제외!)
  */
 
@@ -19,7 +21,6 @@ public class Innerex02 {
 	// --- 1. 인스턴스 내부 클래스: 'InstanceInner' ---
 	// 이 새끼는 'Innerex02' 객체가 만들어져야만 존재할 수 있다.
 	class InstanceInner {
-		// ★★★ 수정! 'iv' 변수 추가! 이 변수가 없어서 main에서 접근할 때 에러가 났었다! ★★★
 		int iv = 100;
 	} 
 	
@@ -45,7 +46,7 @@ public class Innerex02 {
 	// 그래서 이 안에서는 'Innerex02'의 '인스턴스 멤버'에 직접 접근할 수 없다!
 	static void staticMethod() {
 		// ★★★ 존나 중요! static 메소드는 인스턴스 멤버에 직접 접근이 불가능하다! ★★★
-		// 'InstanceInner'는 인스턴스 내부 클래스이므로,
+		// 'InstanceInner'는 인스턴스 내부 클래스이므로,  
 		// 'Innerex02' 객체(인스턴스)가 있어야만 만들 수 있다! 그래서 아래 코드는 에러난다.
 		// StaticInner obj1 = new InstanceInner(); // (오류 주석: StaticInner가 아니라 InstanceInner 객체 생성 시 문제 발생)
 
@@ -56,7 +57,7 @@ public class Innerex02 {
 		Innerex02 outer = new Innerex02(); // 외부 클래스 'Innerex02'의 객체를 먼저 생성한다.
 		// 'outer.new InstanceInner()': 이 'outer' 객체를 통해 'InstanceInner' 객체를 생성한다.
 		InstanceInner obj1 = outer.new InstanceInner(); 
-		// 니 코드 주석: "인스턴스 클래스는 외부 클래스 먼저 생성해야내부클래스에 접근이 가능함" -> 이 설명이 존나 정확하다!
+		// 니 코드 주석: "인스턴스 클래스는 외부 클래스 먼저 생성해야 내부클래스에 접근이 가능함" -> 이 설명이 존나 정확하다!
 	}
 	
 	// --- 인스턴스 메소드: 'instanceMethod()' ---
