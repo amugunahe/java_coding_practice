@@ -2,7 +2,7 @@ package com.listex;
 
 import java.util.*;
 
-public class VertorEx02 { 
+public class VectorEx02 { 
 
 	// 이 배열은 초기값으로 쓸 색깔들을 모아놓은 거다. 딱 정해진 값이라 final 붙여놓은 거 봐라.
 	private static final String colors[] = { "검정", "노랑", "녹색", "파랑", "주황", "연두" };
