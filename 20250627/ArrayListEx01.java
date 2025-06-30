@@ -122,7 +122,8 @@ public class ArrayListEx01 {
         System.out.println("\n--- list2에서 list1에 포함된 객체들 삭제 (새로운 로직!) ---");
         // `list2`를 뒤에서부터 앞으로 반복하는 이유:
         // 요소를 삭제하면 리스트의 인덱스가 한 칸씩 당겨지는데, 앞에서부터 삭제하면 인덱스 오류가 날 수 있다!
-        // 뒤에서부터 삭제하면 이런 문제를 피할 수 있다! (존나 중요!)
+        // 뒤에서부터 삭제하면 이런 문제를 피할 수 있다! (존나 중요)
+      
         for (int i = list2.size() - 1; i >= 0; i--) {
             Object currentElement = list2.get(i); // 현재 요소를 Object로 가져온다.
             // `list1.contains(currentElement)`: `list1`이 해당 요소를 가지고 있는지 확인한다.
