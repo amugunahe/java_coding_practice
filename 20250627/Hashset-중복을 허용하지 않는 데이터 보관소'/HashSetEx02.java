@@ -4,12 +4,13 @@ import java.util.HashSet; // HashSet 쓸 때 필요한 놈
 import java.util.Iterator; // 집합 요소들 하나씩 돌려볼 때 필요한 놈
 
 /*
- * 핵심 요약:
- * - 이 코드는 **HashSet을 이용해서 두 집합(setA, setB) 간의 연산(교집합, 합집합, 차집합)을 보여주는 예제**다.
- * - HashSet은 순서 상관없이 중복을 허용하지 않는 데이터 모음집이다.
- * - `retainAll()`로 교집합, `addAll()`로 합집합, `removeAll()`로 차집합을 구한다.
- * - **원본 집합이 변경될 수 있으니, 연산 전에 복사본을 만드는 게 중요**하다.
+  핵심 요약:
+  - 이 코드는 **HashSet을 이용해서 두 집합(setA, setB) 간의 연산(교집합, 합집합, 차집합)을 보여주는 예제**다.
+  - HashSet은 순서 상관없이 중복을 허용하지 않는 데이터 모음집이다.
+  - `retainAll()`로 교집합, `addAll()`로 합집합, `removeAll()`로 차집합을 구한다.
+  - **원본 집합이 변경될 수 있으니, 연산 전에 복사본을 만드는 게 중요**하다.
  */
+
 public class HashSetEx02 {
 
 	public static void main(String[] args) {
