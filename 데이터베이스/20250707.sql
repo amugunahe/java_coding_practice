@@ -1,118 +1,131 @@
-/* 
-´ÜÀÏÇà ÇÔ¼ö 
-    ¹®ÀÚÇÔ¼ö
-        LOWER: ¸ğµç ¹®ÀÚ¸¦ ¼Ò¹®ÀÚ·Î º¯È¯
-        UPPER: ¸ğµç ¹®ÀÚ¸¦ ´ë¹®ÀÚ·Î º¯È¯ 
-        INITCAP: °¢ ´Ü¾îÀÇ Ã¹ ±ÛÀÚ¸¸ ´ë¹®ÀÚ·Î º¯È¯ 
-        CONCAT: µÎ ¹®ÀÚ¿­À» ¿¬°á
-        SUBSTR: ÁöÁ¤ÇÑ À§Ä¡ºÎÅÍ ºÎºĞ ¹®ÀÚ¿­ ÃßÃâ
-        LENGTH: ¹®ÀÚ¿­ ±æÀÌ ¹İÈ¯
-        INSTR: Æ¯Á¤ ¹®ÀÚÀÇ À§Ä¡ ¹İÈ¯  
-        LPAD, RPAD: ¿ŞÂÊ¿¡ ¹®ÀÚ Ã¤¿ö³Ö±â, ¿À¸¥ÂÊ¿¡ ¹®ÀÚ Ã¤¿ö³Ö±â                                                        
-        CONVERT: ¹®ÀÚ¼Â º¯È¯
-        CHR: ¾Æ½ºÅ° ÄÚµå°ªÀ¸·Î º¯È¯ 
-        ASCII: ¾Æ½ºÅ° ÄÚµå °ªÀ» ¹®ÀÚ·Î º¯È¯ 
-        REPLACE: ¹®ÀÚ¿­¿¡¼­ Æ¯Á¤ ¹®ÀÚ¿­À» Ã£¾Æ¼­ º¯°æ 
-        
-    ¼ıÀÚÇÔ¼ö
-        ABS: Àı´ñ°ª ¹İÈ¯
-        COS: ÄÚ»çÀÎ °ª ¹İÈ¯
-        EXP: Áö¼ö ÇÔ¼ö (e^x)¤Ñ ½Â¼ö·Î ¹İÈ¯(2ÀÇ N½Â) 
-        FLOOR: ¼Ò¼öÁ¡ ¾Æ·¡´Â ¹«Á¶°Ç Àß¶ó¹ö¸²
-        LOG: ·Î±×°ª ¹İÈ¯
-        POWER: Á¦°ö°ª °è»ê  
-        SIGN: ºÎÈ£ È®ÀÎ (+, -, 0) n<0ÀÌ¸é -1, N=0ÀÌ¸é 0, N>0ÀÌ¸é 1À» ¹İÈ¯ 
-        SIN: »çÀÎ°ª ¹İÈ¯ 
-        TAN: ÅºÁ¨Æ® °ª ¹İÈ¯ 
-        ROUND: Æ¯Á¤ ÀÚ¸´¼ö ¹İ¿Ã¸²
-        TRUNC: Æ¯Á¤ ÀÚ¸´¼ö Àß¶ó ¹ö¸²
-        MOD: ³ª¸ÓÁö¸¦ °ªÀ» ¹İÈ¯
-        
-    ³¯Â¥ÇÔ¼ö
-        SYSDATE: ÇöÀç ³¯Â¥¿Í ½Ã°£ ¹İÈ¯
-        MONTHS_BETWEEN: µÎ ³¯Â¥ »çÀÌ°¡ ¸î°³¿ùÀÎÁö ¹İÈ¯
-        ADD_MONTHS: Æ¯Á¤ ³¯Â¥¿¡ °³¿ù ¼ö¸¦ ´õÇÔ 
-        NEXT_DAY: Æ¯Á¤ ³¯Â¥¿¡¼­ ÃÖÃÊ·Î µµ·¡ÇÏ´Â ÀÎÀÚ·Î ¹ŞÀº ¿äÀÏÀÇ ³¯Â¥ 
-        LAST_DAY: ÇØ´ç ¿ùÀÇ ¸¶Áö¸· ³¯Â¥ 
-        ROUND: ÀÎÀÚ·Î ¹ŞÀº ³¯Â¥¸¦ Æ¯Á¤ ±âÁØÀ¸·Î ¹İ¿Ã¸²
-        TRUNCE: ÀÎÀÚ·Î ¹Ş´Â ³¯Â¥¸¦ Æ¯Á¤ ±âÁØÀ¸·Î ¹ö¸²
-        
-    º¯È¯ÇÔ¼ö
-        TO_CHAR: ¼ıÀÚ/³¯Â¥ ¡æ ¹®ÀÚ·Î º¯È¯ 
-        TO_DATE: ¹®ÀÚ ¡æ ³¯Â¥Çü º¯È¯ 
-        TO_NUMBER: ¹®ÀÚ ¡æ ¼ıÀÚÇü º¯È¯ 
-        
-    ÀÏ¹İÇÔ¼ö
-        MVL: Ã¹¹øÂ° ÀÎÀÚ·Î ¹ŞÀº °ªÀÌ NULLÀÏ °æ¿ì µÎ¹øÂ° ÀÎÀÚ °ªÀ¸·Î º¯°æ  
-        DBCODE: Ã¹¹øÂ° ÀÎÀÚ·Î ¹ŞÀº °ªÀ» Á¶°Ç¿¡ ¸ÂÃç º¯°æÇÔ (if-else À¯»ç) 
-        CASE: Á¶°Ç¿¡ ¸Â´Â ¹®ÀåÀ» ¼öÇàÇÔ (switch-case À¯»ç)
-        
-±×·ì ÇÔ¼ö 
-            sum, average, count, max, min, stdev, variance 
+/*
+ë‹¨ì¼í–‰ í•¨ìˆ˜
+    ë¬¸ìí•¨ìˆ˜
+        LOWER: ëª¨ë“  ë¬¸ìë¥¼ ì†Œë¬¸ìë¡œ ë³€í™˜
+        UPPER: ëª¨ë“  ë¬¸ìë¥¼ ëŒ€ë¬¸ìë¡œ ë³€í™˜
+        INITCAP: ê° ë‹¨ì–´ì˜ ì²« ê¸€ìë§Œ ëŒ€ë¬¸ìë¡œ ë³€í™˜
+        CONCAT: ë‘ ë¬¸ìì—´ì„ ì—°ê²°
+        SUBSTR: ì§€ì •í•œ ìœ„ì¹˜ë¶€í„° ë¶€ë¶„ ë¬¸ìì—´ ì¶”ì¶œ
+        LENGTH: ë¬¸ìì—´ ê¸¸ì´ ë°˜í™˜
+        INSTR: íŠ¹ì • ë¬¸ìì˜ ìœ„ì¹˜ ë°˜í™˜
+        LPAD, RPAD: ì™¼ìª½ì— ë¬¸ì ì±„ì›Œë„£ê¸°, ì˜¤ë¥¸ìª½ì— ë¬¸ì ì±„ì›Œë„£ê¸°
+        CONVERT: ë¬¸ìì…‹ ë³€í™˜
+        CHR: ì•„ìŠ¤í‚¤ ì½”ë“œê°’ìœ¼ë¡œ ë³€í™˜
+        ASCII: ì•„ìŠ¤í‚¤ ì½”ë“œ ê°’ì„ ë¬¸ìë¡œ ë³€í™˜
+        REPLACE: ë¬¸ìì—´ì—ì„œ íŠ¹ì • ë¬¸ìì—´ì„ ì°¾ì•„ì„œ ë³€ê²½
+
+    ìˆ«ìí•¨ìˆ˜
+        ABS: ì ˆëŒ“ê°’ ë°˜í™˜
+        COS: ì½”ì‚¬ì¸ ê°’ ë°˜í™˜
+        EXP: ì§€ìˆ˜ í•¨ìˆ˜ (e^x) - ìŠ¹ìˆ˜ë¡œ ë°˜í™˜(2ì˜ NìŠ¹) -- 'ã…¡' -> '-' ì˜¤íƒ€ ìˆ˜ì •
+        FLOOR: ì†Œìˆ˜ì  ì•„ë˜ëŠ” ë¬´ì¡°ê±´ ì˜ë¼ë²„ë¦¼
+        LOG: ë¡œê·¸ê°’ ë°˜í™˜
+        POWER: ì œê³±ê°’ ê³„ì‚°
+        SIGN: ë¶€í˜¸ í™•ì¸ (+, -, 0) n<0ì´ë©´ -1, N=0ì´ë©´ 0, N>0ì´ë©´ 1ì„ ë°˜í™˜
+        SIN: ì‚¬ì¸ê°’ ë°˜í™˜
+        TAN: íƒ„ì  íŠ¸ ê°’ ë°˜í™˜
+        ROUND: íŠ¹ì • ìë¦¿ìˆ˜ ë°˜ì˜¬ë¦¼
+        TRUNC: íŠ¹ì • ìë¦¿ìˆ˜ ì˜ë¼ ë²„ë¦¼
+        MOD: ë‚˜ë¨¸ì§€ë¥¼ ê°’ì„ ë°˜í™˜
+
+    ë‚ ì§œí•¨ìˆ˜
+        SYSDATE: í˜„ì¬ ë‚ ì§œì™€ ì‹œê°„ ë°˜í™˜
+        MONTHS_BETWEEN: ë‘ ë‚ ì§œ ì‚¬ì´ê°€ ëª‡ê°œì›”ì¸ì§€ ë°˜í™˜
+        ADD_MONTHS: íŠ¹ì • ë‚ ì§œì— ê°œì›” ìˆ˜ë¥¼ ë”í•¨
+        NEXT_DAY: íŠ¹ì • ë‚ ì§œì—ì„œ ìµœì´ˆë¡œ ë„ë˜í•˜ëŠ” ì¸ìë¡œ ë°›ì€ ìš”ì¼ì˜ ë‚ ì§œ
+        LAST_DAY: í•´ë‹¹ ì›”ì˜ ë§ˆì§€ë§‰ ë‚ ì§œ
+        ROUND: ì¸ìë¡œ ë°›ì€ ë‚ ì§œë¥¼ íŠ¹ì • ê¸°ì¤€ìœ¼ë¡œ ë°˜ì˜¬ë¦¼
+        TRUNC: ì¸ìë¡œ ë°›ëŠ” ë‚ ì§œë¥¼ íŠ¹ì • ê¸°ì¤€ìœ¼ë¡œ ë²„ë¦¼ 
+
+    ë³€í™˜í•¨ìˆ˜
+        TO_CHAR: ìˆ«ì/ë‚ ì§œ â†’ ë¬¸ìë¡œ ë³€í™˜
+        TO_DATE: ë¬¸ì â†’ ë‚ ì§œí˜• ë³€í™˜
+        TO_NUMBER: ë¬¸ì â†’ ìˆ«ìí˜• ë³€í™˜
+
+    ì¼ë°˜í•¨ìˆ˜
+        NVL: ì²«ë²ˆì§¸ ì¸ìë¡œ ë°›ì€ ê°’ì´ NULLì¼ ê²½ìš° ë‘ë²ˆì§¸ ì¸ì ê°’ìœ¼ë¡œ ë³€ê²½
+        DECODE: ì²«ë²ˆì§¸ ì¸ìë¡œ ë°›ì€ ê°’ì„ ì¡°ê±´ì— ë§ì¶° ë³€ê²½í•¨ (if-else ìœ ì‚¬) 
+        CASE: ì¡°ê±´ì— ë§ëŠ” ë¬¸ì¥ì„ ìˆ˜í–‰í•¨ (switch-case ìœ ì‚¬)
+
+ê·¸ë£¹ í•¨ìˆ˜
+            sum, average, count, max, min, stdev, variance
 */
 
 select 'DataBase', lower('DataBase') from dual;
+
 select lower(ename) from emp;
+
 select 'DataBase', upper('DataBase') from dual;
 
--- Á÷±ŞÀÌ managerÀÎ »ç¿øÀ» °Ë»öÇÏ½Ã¿À. 
+-- ì§ê¸‰ì´ managerì¸ ì‚¬ì›ì„ ê²€ìƒ‰í•˜ì‹œì˜¤.
 select empno, ename, job from emp where job = upper ('manager');
 
-select INITCAP('DATA BASE FROGRAMMING') from dual;
+select INITCAP('DATA BASE PROGRAMMING') from dual; 
 
--- »ç¿ø Å×ÀÌºíÀÇ 10¹ø ºÎ¼­ ¼Ò¼ÓÀÇ ÀÌ¸§ÀÇ Ã¹±ÛÀÚ¸¸ ´ë¹®ÀÚ·Î Ãâ·ÂÇÏ½Ã¿À 
+-- ì‚¬ì› í…Œì´ë¸”ì˜ 10ë²ˆ ë¶€ì„œ ì†Œì†ì˜ ì´ë¦„ì˜ ì²«ê¸€ìë§Œ ëŒ€ë¬¸ìë¡œ ì¶œë ¥í•˜ì‹œì˜¤
 select ename, initcap(ename) from emp where deptno = 10;
 
--- 'Smith'¶õ ÀÌ¸§À» °¡Áø »ç¿øÀÇ ¹øÈ£, ÀÌ¸§, ±Ş¿©, Ä¿¹Ì¼ÇÀ» Ãâ·ÂÇÏµÇ, (initcap, upper) »ç¿ëÇÏ¿© Ãâ·Â 
+-- 'Smith'ë€ ì´ë¦„ì„ ê°€ì§„ ì‚¬ì›ì˜ ë²ˆí˜¸, ì´ë¦„, ê¸‰ì—¬, ì»¤ë¯¸ì…˜ì„ ì¶œë ¥í•˜ë˜, (initcap, upper) ì‚¬ìš©í•˜ì—¬ ì¶œë ¥
 select empno, initcap(ename), sal, comm from emp where ename = upper('Smith');
 
 select concat('Data', 'Base') from dual;
-select length ('DataBase'), length('µ¥ÀÌÅÍº£ÀÌ½º'), lengthB('µ¥ÀÌÅÍº£ÀÌ½º') from dual;
+select length ('DataBase'), length('ë°ì´í„°ë² ì´ìŠ¤'), lengthB('ë°ì´í„°ë² ì´ìŠ¤') from dual;
 
--- Á÷¿øÁß ÀÌ¸§ÀÌ 4ÀÚÀÎ Á÷¿øÀÇ ÀÌ¸§À» ¼Ò¹®ÀÚ·Î Ãâ·ÂÇÏ½Ã¿À 
+-- ì§ì›ì¤‘ ì´ë¦„ì´ 4ìì¸ ì§ì›ì˜ ì´ë¦„ì„ ì†Œë¬¸ìë¡œ ì¶œë ¥í•˜ì‹œì˜¤
 select empno, lower(ename) from emp where length(ename)=4;
 
--- ÀÌ¸§ÀÌ 6±ÛÀÚ ÀÌ»óÀÎ »ç¿øÀÇ »ç¿ø ¹øÈ£, ÀÌ¸§, ±Ş¿©¸¦ Ãâ·ÂÇÏ½Ã¿À.
+-- ì´ë¦„ì´ 6ê¸€ì ì´ìƒì¸ ì‚¬ì›ì˜ ì‚¬ì› ë²ˆí˜¸, ì´ë¦„, ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
 select empno, ename, sal from emp where length(ename)>=6;
 
 select  substr('database', -4, 3) from dual;
 
--- 20¹ø ºÎ¼­ »ç¿øµéÁß ÀÔ»ç³âµµ¸¦ ÃßÃâÇÏ¿© Ãâ·ÂÇÏ½Ã¿À.
+-- 20ë²ˆ ë¶€ì„œ ì‚¬ì›ë“¤ì¤‘ ì…ì‚¬ë…„ë„ë¥¼ ì¶”ì¶œí•˜ì—¬ ì¶œë ¥í•˜ì‹œì˜¤.
 select ename, hiredate,substr(hiredate, 1, 2)from emp where deptno = 20 and substr(hiredate, 1, 2) =87;
 
--- ÀÌ¸§ÀÌ K·Î ³¡³ª´Â Á÷¿øÀ» °Ë»öÇÏ½Ã¿À
+-- ì´ë¦„ì´ Kë¡œ ëë‚˜ëŠ” ì§ì›ì„ ê²€ìƒ‰í•˜ì‹œì˜¤
 select ename from emp where substr(ename, -1, 1)='K';
+
 select ename from emp where ename like '%K';
 
 select instr('DataBase','a', 1, 3) from dual;
-select instr('DataBase','B') from dual;
-select instrb('µ¥ÀÌÅÍº£ÀÌ½º','ÀÌ', 7, 1) from dual;
 
--- ÀÌ¸§ÀÇ µÎ¹øÂ° ÀÚ¸®¿¡ A°¡ ÀÖ´Â »ç¿øÀÇ »ç¿ø¹øÈ£, ÀÌ¸§, Á÷±ŞÀ» Ãâ·ÂÇÏ¶ó
+select instr('DataBase','B') from dual;
+
+select instrb('ë°ì´í„°ë² ì´ìŠ¤','ì´', 7, 1) from dual;
+
+-- ì´ë¦„ì˜ ë‘ë²ˆì§¸ ìë¦¬ì— Aê°€ ìˆëŠ” ì‚¬ì›ì˜ ì‚¬ì›ë²ˆí˜¸, ì´ë¦„, ì§ê¸‰ì„ ì¶œë ¥í•˜ë¼
 select empno, ename from emp where ename like '_A%';
+
 select empno, ename from emp where instr(ename, 'A', 2, 1) = 2;
 
 select  LPAD ('DataBase' ,20,'#') from dual;
+
 select  RPAD ('DataBase' ,20,'#') from dual;
 
-select  trim (LEADING from '        DataBase        ' ) from dual;
-select  trim (TRAILING from '        DataBase        ' ) from dual;
-select  trim (BOTH from '        DataBase        ' ) from dual;
--- smith => mit 
+select  trim (LEADING from '         DataBase         ' ) from dual;
+
+select  trim (TRAILING from '         DataBase         ' ) from dual;
+
+select  trim (BOTH from '         DataBase         ' ) from dual;
+-- smith => mit
 
 select ename, trim ('S' from ename) from emp where ename = 'SMITH';
+
 select ename, trim ('H' from ename) from emp where ename = 'SMITH';
 
--- ¼ıÀÚÇÔ¼ö
+-- ìˆ«ìí•¨ìˆ˜
 select abs(-41) from  dual;
+
 select floor(34.5678) from dual;
+
 select round (35.12, 1) from dual;
+
 select round(47.51,0) from dual;
 
--- ÀÏÀÇ ÀÚ¸®¿¡¼­ ¹İ¿Ã¸² 
+-- ì¼ì˜ ìë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼
 select round(834.12, -1) from dual;
 
--- ½ÊÀÇ ÀÚ¸®¿¡¼­ ¹İ¿Ã¸²
+-- ì‹­ì˜ ìë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼
 select round(834.12, -2) from dual;
 
 select trunc(12.345, 2) from dual;
@@ -120,33 +133,40 @@ select trunc(12.345, 2) from dual;
 select mod(34, 5) from dual;
 
 
---»ç¿ø¹øÈ£°¡ Â¦¼öÀÎ »ç¿øµéÀÇ »ç¹ø°ú ÀÌ¸§°ú Á÷±ŞÀ» Ãâ·ÂÇØ¶ó 
+--ì‚¬ì›ë²ˆí˜¸ê°€ ì§ìˆ˜ì¸ ì‚¬ì›ë“¤ì˜ ì‚¬ë²ˆê³¼ ì´ë¦„ê³¼ ì§ê¸‰ì„ ì¶œë ¥í•´ë¼
 
 select empno, ename, job from emp where mod(empno, 2)=0;
 
--- ³¯Â¥ÇÔ¼ö
--- ÇöÀç ³¯Â¥
-select sysdate-1 ¾îÁ¦, sysdate ¿À´Ã, sysdate+1 ³»ÀÏ from dual; 
+-- ë‚ ì§œí•¨ìˆ˜
+-- í˜„ì¬ ë‚ ì§œ
+select sysdate-1 ì–´ì œ, sysdate ì˜¤ëŠ˜, sysdate+1 ë‚´ì¼ from dual;
 
--- ºÎ¼­¹øÈ£°¡ 10¹øÀÎ »ç¿øÀ» ´ë»óÀ¸·Î ÀÔ»çÇÑ ³¯·Î ºÎÅÍ ¿À´Ã±îÁö ¸çÄ¥ÀÌ Èê·¶À»±î ±Ù¹«ÀÏ¼ö¸¦ ±¸ÇÏ½Ã¿À 
-select empno, hiredate, trunc(sysdate-hiredate) ±Ù¹«ÀÏ¼ö from emp;   
+-- ë¶€ì„œë²ˆí˜¸ê°€ 10ë²ˆì¸ ì‚¬ì›ì„ ëŒ€ìƒìœ¼ë¡œ ì…ì‚¬í•œ ë‚ ë¡œ ë¶€í„° ì˜¤ëŠ˜ê¹Œì§€ ë©°ì¹ ì´ í˜ë €ì„ê¹Œ ê·¼ë¬´ì¼ìˆ˜ë¥¼ êµ¬í•˜ì‹œì˜¤
+select empno, hiredate, trunc(sysdate-hiredate) ê·¼ë¬´ì¼ìˆ˜ from emp;
 
--- ¿À´ÃÀÇ ±âÁØÀ¸·Î 
-select sysdate, hiredate, trunc(months_between(sysdate, hiredate)) from emp where deptno = 10; 
+-- ì˜¤ëŠ˜ì˜ ê¸°ì¤€ìœ¼ë¡œ
+select sysdate, hiredate, trunc(months_between(sysdate, hiredate)) from emp where deptno = 10;
 
--- °³¿ï¼ö¸¦ ´õÇÏ´Â add_months ÇÔ¼ö
--- ÀÔ»çÀÏ¿¡¼­ 3°³¿ùÀÌ Áö³­ ³¯Â¥¸¦ ±¸ÇÏ¿© Ãâ·ÂÇÏ½Ã¿À. 
+-- ê°œì›”ìˆ˜ë¥¼ ë”í•˜ëŠ” add_months í•¨ìˆ˜
+-- ì…ì‚¬ì¼ì—ì„œ 3ê°œì›”ì´ ì§€ë‚œ ë‚ ì§œë¥¼ êµ¬í•˜ì—¬ ì¶œë ¥í•˜ì‹œì˜¤.
 select ename, hiredate, add_months(hiredate, 3) from emp where deptno = 10;
 
 
--- ÇØ´ç ¿äÀÏÀÇ °¡Àå °¡±î¿î ³¯Â¥¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö (next_day) 
--- ¿À´ÃÀ» ±âÁØÀ¸·Î ÃÖÃÊ·Î ´Ù°¡¿À´Â ÀÏ¿äÀÏÀº ¾ğÁ¦ÀÎ°¡
-select sysdate, next_day(sysdate, 'ÀÏ¿äÀÏ') from dual; 
-select sysdate, next_day(sysdate, 'ÀÏ') from dual; 
+-- í•´ë‹¹ ìš”ì¼ì˜ ê°€ì¥ ê°€ê¹Œìš´ ë‚ ì§œë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜ (next_day)
+-- ì˜¤ëŠ˜ì„ ê¸°ì¤€ìœ¼ë¡œ ìµœì´ˆë¡œ ë‹¤ê°€ì˜¤ëŠ” ì¼ìš”ì¼ì€ ì–¸ì œì¸ê°€
+select sysdate, next_day(sysdate, 'ì¼ìš”ì¼') from dual;
+
+select sysdate, next_day(sysdate, 'ì¼') from dual;
+
 select sysdate, next_day(sysdate, 1) from dual;
--- ¿äÀÏÀÇ ¿µ¾î·Î »ç¿ëÇÒ °æ¿ì¿¡´Â ¾ğ¾î¸¦ AMERICAN À¸·Î ÁöÁ¤ÇÏ¸é µÊ 
-alter session set nls_language = American; --¿µ¾îÀÏ °æ¿ì
-alter session set nls_language = KOREAN;   --ÇÑ±ÛÀÏ °æ¿ì
+
+-- ìš”ì¼ì˜ ì˜ì–´ë¡œ ì‚¬ìš©í•  ê²½ìš°ì—ëŠ” ì–¸ì–´ë¥¼ AMERICAN ìœ¼ë¡œ ì§€ì •í•˜ë©´ ë¨
+alter session set nls_language = American; --ì˜ì–´ì¼ ê²½ìš°
+
+alter session set nls_language = KOREAN;   --í•œê¸€ì¼ ê²½ìš°
+
 select sysdate, next_day(sysdate, 'sunday') from dual;
+
 select sysdate, next_day(sysdate, 'sun') from dual;
+
 select sysdate, next_day(sysdate, 1) from dual;
