@@ -1,29 +1,42 @@
-SELECT * FROM TAB; -- 아리가또 /* 아리가또 아리가또 아리가또 아리가또 아리가또 아리가또 */
+SELECT * FROM TAB; -- 아리가또 
+
+/* 아리가또 아리가또 아리가또 아리가또 아리가또 아리가또 */
 
 DESC EMP; -- 테이블 구조 확인
+
 SELECT * FROM EMP; -- EMP 테이블의 모든 사원을 검색하라
+
 SELECT * FROM EMP ORDER BY EMPNO DESC; -- EMP 테이블의 모든 사원을 사원번호 기준으로 내림차순 검색하라
+
 SELECT EMPNO, ENAME FROM EMP WHERE DEPTNO = 20;
+
 DESC DEPT;
 
 /* SELECT 데이터를 조회하기 위한 DML 형식
 SELECT 열이름 OR 컬럼명 FROM 테이블명; */
 
 SELECT * FROM TAB; -- 현재 데이터베이스에 저장된 테이블을 출력해라
+
 SHOW USER;
 
 -- DEPT 테이블의 모든 내용을 출력하시오
 SELECT * FROM DEPT;
+
 SELECT * FROM EMP;
 
 -- 컬럼 이름에 별칭 지정하기
 -- 컬럼을 기술한 다음에 AS라는 키워드를 쓴 후에 별칭을 기술하면 됨.
 -- 별칭을 부여할 때 공백문자, 특수문자($, #)를 표현하고 싶거나 대소문자를 구별하고 싶으면
 -- ""을 사용함. AS 생략하고 ""를 사용하여 별칭을 부여해도 된다.
+
 SELECT DEPTNO AS DEPARTMENTNO, DNAME AS DEPARTMENTNAME FROM DEPT;
+
 SELECT DEPTNO DEPARTMENTNO, DNAME DEPARTMENTNAME FROM DEPT;
+
 SELECT DEPTNO "departmentNo", DNAME "departmentName" FROM DEPT;
+
 SELECT DEPTNO "$no", DNAME "$name" FROM DEPT;
+
 SELECT DEPTNO 부서번호, DNAME 부서이름 FROM DEPT;
 
 /* 중복된 데이터를 한 번만 출력하는 명령어 DISTINCT
@@ -35,24 +48,26 @@ SELECT DISTINCT JOB FROM EMP;
 /* WHERE 조건절과 비교연산자
 비교연산자: = , >, <. >=, <=, 같지 않다 (<>, !=, ^=)
 */
+
 SELECT * FROM EMP;
+
 -- 급여를 3000 이상 받는 사원을 출력하라.
-
 SELECT EMPNO, ENAME, SAL FROM EMP WHERE SAL >= 3000;
+
 -- 급여를 3000 미만인 사원을 출력하라.
-
 SELECT EMPNO, ENAME, SAL FROM EMP WHERE SAL < 3000;
+
 -- 사원 테이블 중에서 부서번호가 10번인 사원의 모든 정보를 출력하라.
-
 SELECT * FROM EMP WHERE DEPTNO = 10;
--- 사원 테이블에서 급여가 2000 미만인 사원의 정보 중 사원번호, 이름, 급여를 출력하라.
 
+-- 사원 테이블에서 급여가 2000 미만인 사원의 정보 중 사원번호, 이름, 급여를 출력하라.
 SELECT EMPNO, ENAME, SAL FROM EMP WHERE SAL < 2000;
 
 -- 문자 데이터 조회
 -- 문자 데이터는 반드시 싱글 쿼터 안에 표시해야 한다. 대소문자는 반드시 구분한다.
 -- 이름이 SCOTT인 사원에 대하여 사원번호, 사원이름, 급여를 출력하라.
 SELECT EMPNO, ENAME, SAL FROM EMP WHERE ENAME = 'SCOTT';
+
 -- 이름이 MILLER인 사원에 대하여 사원번호, 사원이름, 급여를 출력하라.
 SELECT EMPNO, ENAME, SAL FROM EMP WHERE ENAME = 'MILLER';
 
@@ -71,6 +86,7 @@ NOT: 조건에 만족하지 못하는 것.
 -- AND 연산자는 여러 조건을 만족해야 하는 경우 사용함.
 -- 부서번호가 10번이고 직급이 MANAGER인 사원을 이름, 번호, 직급을 출력하시오.
 SELECT ENAME, EMPNO, JOB FROM EMP WHERE DEPTNO = 10 AND JOB = 'MANAGER';
+
 -- 급여가 1000에서 3000 사이에 있는 사원을 출력하시오.
 SELECT * FROM EMP WHERE SAL >= 1000 AND SAL <= 3000;
 
@@ -79,8 +95,11 @@ SELECT * FROM EMP WHERE SAL >= 1000 AND SAL <= 3000;
 형식: 컬럼명 BETWEEN 시작 AND 종료*/
 
 SELECT SAL FROM EMP WHERE SAL BETWEEN 1000 AND 3000;
+
 SELECT SAL FROM EMP WHERE SAL BETWEEN 1500 AND 2500;
+
 SELECT SAL FROM EMP WHERE SAL NOT BETWEEN 1500 AND 2500;
+
 SELECT SAL FROM EMP WHERE SAL NOT BETWEEN 1000 AND 3000;
 
 -- OR 연산자: 두 조건 중 한 가지라도 만족한 경우에 사용함.
@@ -102,6 +121,7 @@ SELECT EMPNO, ENAME, JOB, DEPTNO FROM EMP WHERE NOT DEPTNO = 10;
 
 -- 사원번호가 7844이거나 7654이거나 7521인 사원이 아닌 사원을 번호, 이름을 출력하라.
 SELECT EMPNO, ENAME FROM EMP WHERE NOT (EMPNO = 7844 OR EMPNO = 7654 OR EMPNO = 7521);
+
 SELECT EMPNO, ENAME FROM EMP WHERE EMPNO NOT IN (7844, 7654, 7521);
 
 /* LIKE 연산자
@@ -142,11 +162,11 @@ NULL은 연산, 할당, 비교가 불가능하다.
 IS NULL: NULL이면 만족함.
 IS NOT NULL: NULL이 아니면 만족함.
 - NULL은 값이 아니므로 = 또는 !=으로 비교할 수 없음.
-
 */
-SELECT ENAME, COMM, JOB FROM EMP WHERE COMM IS NOT NULL;
--- 자신의 직속 상관이 없는 사원의 이름과 직급과 직속 상관의 사원번호를 출력하라.
 
+SELECT ENAME, COMM, JOB FROM EMP WHERE COMM IS NOT NULL;
+
+-- 자신의 직속 상관이 없는 사원의 이름과 직급과 직속 상관의 사원번호를 출력하라.
 SELECT EMPNO, ENAME, MGR, JOB FROM EMP WHERE MGR IS NULL;
 
 /* 정렬을 위한 ORDER BY 절
